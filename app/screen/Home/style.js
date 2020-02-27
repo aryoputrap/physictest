@@ -1,0 +1,125 @@
+import {Dimensions, StyleSheet} from 'react-native';
+// import Color from '../../../config/color';
+
+const {width, height} = Dimensions.get('window');
+export default StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    flex: 1,
+  },
+  user: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 20,
+    marginTop: 50,
+  },
+  menu: {
+    width: width,
+    height: height * 0.45,
+    marginTop: 10,
+    borderBottomRightRadius: 40,
+    borderBottomLeftRadius: 40,
+  },
+  TeksMenu: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 15,
+  },
+  awan: {
+    height: height * 0.1,
+    width: width,
+    marginTop: 100,
+  },
+  ViewMenu: {
+    width: '100%',
+    height: '100%',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 5,
+    marginLeft: 10,
+    marginRight: 5,
+  },
+  TouchMenu: {
+    overflow: 'hidden',
+    width: '32%',
+    height: '20%',
+    position: 'relative',
+  },
+  MenuImage: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+    marginTop: 20,
+    marginBottom: 10,
+    alignSelf: 'center',
+    justifyContent: 'space-around',
+    marginLeft: 5,
+    marginRight: 5,
+  },
+  backgroundContainer: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
+  PilihMenu: {
+    width: '90%',
+    height: '6%',
+    backgroundColor: '#042B3E',
+    borderLeftColor: '#042B3E',
+    borderColor: 'black',
+    alignContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginTop: 25,
+    borderTopRightRadius: 40,
+    borderTopLeftRadius: 40,
+  },
+  TeksPilihMenu: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    color: 'white',
+    marginVertical: 10,
+  },
+  linearGradient: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5,
+  },
+  buttonText: {
+    fontSize: 18,
+    fontFamily: 'Gill Sans',
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+    backgroundColor: 'transparent',
+  },
+  Shape1: {
+    width: '100%',
+    height: '40%',
+    backgroundColor: '#042B3E',
+    borderBottomRightRadius: 40,
+    borderBottomLeftRadius: 40,
+  },
+  parent: {
+    backgroundColor: 'white',
+    flex: 1,
+  },
+  vieeUSer: {
+    flexDirection: 'column',
+  },
+  userGreeting: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: 10,
+    textAlign: 'center',
+    color: 'white',
+  },
+  schoolofUser: {
+    fontSize: 12,
+    color: 'white',
+    marginLeft: 10,
+  },
+});
