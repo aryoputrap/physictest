@@ -15,6 +15,8 @@ import Register from '../screen/Auth/Register';
 import HomeScreen from '../screen/Home';
 import AkunScreen from '../screen/Akun';
 import TestScreen from '../screen/Test';
+import Ctt1Screen from '../screen/Test/CTT1';
+import Ctt2Screen from '../screen/Test/CTT2';
 // import ChatScreen from '../screen/Chat';
 
 const ROUTES = {
@@ -71,7 +73,7 @@ const StackPublic = createBottomTabNavigator(
     // headerMode: null,
     tabBarOptions: {
       showLabel: true,
-      activeTintColor: Color.main.blueAkun,
+      activeTintColor: Color.main.primaryorange,
       inactiveTintColor: 'gray',
       keyboardHidesTabBar: false,
       tabStyle: {
@@ -84,8 +86,8 @@ const StackPublic = createBottomTabNavigator(
       },
     },
     // initialRouteName: 'Home',
-    // initialRouteName: 'Test',
-    initialRouteName: 'Akun',
+    initialRouteName: 'Test',
+    // initialRouteName: 'Akun',
   },
 );
 
@@ -115,13 +117,16 @@ const PublicStack = createStackNavigator(
         header: null,
       },
     },
+    Ctt1Screen: Ctt1Screen,
+    Ctt2Screen: Ctt2Screen,
     // Absensi: Absensi,
     // InputData: InputData,
   },
   {
     headerMode: 'screen',
+    initialRouteName: 'Ctt2Screen',
     // initialRouteName: 'Login',
-    initialRouteName: 'StackPublic',
+    // initialRouteName: 'StackPublic',
     // initialRouteName: 'Register',
     // initialRouteName: 'SplashScreen',
   },
