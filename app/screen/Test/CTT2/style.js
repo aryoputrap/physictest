@@ -145,6 +145,12 @@ export default StyleSheet.create({
     justifyContent: 'center',
     flex: 1,
   },
+  rmsBody: {
+    marginTop: 3,
+    marginLeft: 20,
+    justifyContent: 'center',
+    flex: 1,
+  },
   soal: {
     marginTop: 10,
   },
@@ -161,7 +167,8 @@ export default StyleSheet.create({
     fontSize: 13,
   },
   input: {
-    width: width * 0.58,
+    marginTop: 10,
+    width: width * 0.7,
     justifyContent: 'center',
     textAlignVertical: 'center',
     fontSize: 13,

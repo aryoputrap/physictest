@@ -101,7 +101,7 @@ export default class App extends Component {
   soal = () => {
     const page = this.state;
     const {checked} = this.state;
-    if (page.currentPage === 1) {
+    if (page.currentPage === 0) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -275,7 +275,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 0) {
+    } else if (page.currentPage === 1) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -291,75 +291,29 @@ export default class App extends Component {
                   <View style={style.itmBody}>
                     <HTML html={item.body1} />
                   </View>
-                  <View>
-                    <YouTube
-                      videoId="EP3AMzadA_o"
-                      apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
-                      play={this.state.isPlaying}
-                      loop={this.state.isLooping}
-                      // onReady={true}
-                      // onChangeState={e => this.setState({status: e.state})}
-                      // onChangeQuality={e => this.setState({quality: e.quality})}
-                      // onError={e => this.setState({error: e.error})}
-                      fullscreen={this.state.fullscreen}
-                      // eslint-disable-next-line react-native/no-inline-styles
-                      style={{alignSelf: 'stretch', height: 300, width: 300}}
-                    />
+                  <View style={style.image}>
+                    <Image source={require('../../../asset/IMG2/img21.png')} />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.body2} />
                   </View>
-                </View>
-                <View style={style.image}>
-                  <Image source={require('../../../asset/img11.png')} />
-                </View>
-                <View style={style.itmBody}>
-                  <HTML html={item.body3} />
-                </View>
-                <Text>
-                  Untuk dapat memahami hal tersebut, amatilah terlebih dahulu
-                  Video
-                </Text>
-                <View>
-                  <YouTube
-                    videoId="0EdWEQjFr-M"
-                    apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
-                    play={this.state.isPlaying}
-                    loop={this.state.isLooping}
-                    // onReady={true}
-                    // onChangeState={e => this.setState({status: e.state})}
-                    // onChangeQuality={e => this.setState({quality: e.quality})}
-                    // onError={e => this.setState({error: e.error})}
-                    fullscreen={this.state.fullscreen}
-                    // eslint-disable-next-line react-native/no-inline-styles
-                    style={{alignSelf: 'stretch', height: 300, width: 300}}
-                  />
-                </View>
-                <View style={style.itmBody}>
-                  <HTML html={item.body4} />
-                </View>
-                <View style={style.image}>
-                  <Image source={require('../../../asset/img12.png')} />
-                </View>
-                <View style={style.itmBody}>
+                  <View style={style.itmBody}>
+                    <HTML html={item.body3} />
+                  </View>
+                  <View style={style.itmBody}>
+                    <HTML html={item.body4} />
+                  </View>
                   <HTML html={item.body5} />
-                  <HTML html={item.body6} />
-                </View>
-                <View style={style.itmBody}>
-                  <HTML html={item.body7} />
-                </View>
-                <View style={style.itmBody}>
-                  <HTML html={item.body8} />
-                </View>
-                <View style={style.image}>
-                  <Image source={require('../../../asset/img13.png')} />
-                </View>
-                <View style={style.itmBody}>
+                  <View style={style.rmsBody}>
+                    <HTML html={item.body6} />
+                    <HTML html={item.body7} />
+                    <HTML html={item.body8} />
+                  </View>
                   <HTML html={item.body9} />
                 </View>
                 <View>
                   <YouTube
-                    videoId="qxzgDw1rZZA"
+                    videoId="tWWuYBdi2eA"
                     apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
                     play={this.state.isPlaying}
                     loop={this.state.isLooping}
@@ -373,39 +327,27 @@ export default class App extends Component {
                   />
                 </View>
                 <View style={style.itmBody}>
-                  <HTML html={item.body10} />
-                </View>
-                <View style={style.itmBody}>
                   <HTML html={item.body11} />
-                </View>
-                <View style={style.image}>
-                  <Image source={require('../../../asset/img14.png')} />
-                </View>
-                <View style={style.itmBody}>
                   <HTML html={item.body12} />
-                </View>
-                <View style={style.itmBody}>
                   <HTML html={item.body13} />
+                  <HTML html={item.body5} />
                 </View>
-                <View style={style.itmBody}>
+                <View style={style.rmsBody}>
                   <HTML html={item.body14} />
-                </View>
-                <View style={style.image}>
-                  <Image source={require('../../../asset/img15.png')} />
-                </View>
-                <View style={style.itmBody}>
                   <HTML html={item.body15} />
-                </View>
-                <View style={style.itmBody}>
                   <HTML html={item.body16} />
+                  <HTML html={item.body17} />
+                  <HTML html={item.body18} />
                 </View>
                 <View style={style.itmBody}>
-                  <HTML html={item.body17} />
+                  <HTML html={item.body19} />
                 </View>
-                <TextInput
-                  style={style.input}
-                  placeholder={'Isi Simpulan Anda Disini'}
-                />
+                <View style={style.itmBody}>
+                  <HTML html={item.soal} />
+                </View>
+                <View style={style.input}>
+                  <TextInput placeholder={'Isi Simpulan Anda Disini'} />
+                </View>
                 <TouchableOpacity style={style.button}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
@@ -429,12 +371,13 @@ export default class App extends Component {
                   <Text style={style.itmtitle}>{item.title}</Text>
                 </View>
                 <View style={style.soal}>
+                  <HTML html={item.pengantar} />
                   <Text style={style.tier}>Tier 1:</Text>
                   <View style={style.itmBody}>
                     <HTML html={item.tier1.soal1} />
                   </View>
                   <View style={style.image}>
-                    <Image source={require('../../../asset/img31.png')} />
+                    <Image source={require('../../../asset/IMG2/img31.png')} />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.tier1.soal12} />
@@ -602,17 +545,26 @@ export default class App extends Component {
                 <View style={style.itmBody}>
                   <HTML html={item.body1} />
                 </View>
-                <View style={style.image}>
-                  <Image source={require('../../../asset/img41.png')} />
+                <View>
+                  <YouTube
+                    videoId="i9qtJ-4RUyk"
+                    apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
+                    play={this.state.isPlaying}
+                    loop={this.state.isLooping}
+                    // onReady={true}
+                    // onChangeState={e => this.setState({status: e.state})}
+                    // onChangeQuality={e => this.setState({quality: e.quality})}
+                    // onError={e => this.setState({error: e.error})}
+                    fullscreen={this.state.fullscreen}
+                    // eslint-disable-next-line react-native/no-inline-styles
+                    style={{alignSelf: 'stretch', height: 300, width: 300}}
+                  />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body2} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body3} />
-                </View>
-                <View style={style.image}>
-                  <Image source={require('../../../asset/img42.png')} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body4} />
@@ -646,6 +598,13 @@ export default class App extends Component {
                       placeholder={'4. Jawab Disini'}
                     />
                   </View>
+                  <View style={style.itmBody}>
+                    <HTML html={item.soal5} />
+                    <TextInput
+                      style={style.inputessay}
+                      placeholder={'5. Jawab Disini'}
+                    />
+                  </View>
                 </View>
                 <TouchableOpacity style={style.button}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
@@ -676,40 +635,67 @@ export default class App extends Component {
                   <HTML html={item.body2} />
                 </View>
                 <View style={style.image}>
-                  <Image source={require('../../../asset/img51.png')} />
+                  <Image source={require('../../../asset/IMG2/img51.png')} />
+                </View>
+                <HTML html={item.body3} />
+                <View style={style.image}>
+                  <Image source={require('../../../asset/IMG2/img52.png')} />
+                </View>
+                <HTML html={item.body4} />
+                <View style={style.image}>
+                  <Image source={require('../../../asset/IMG2/img53.png')} />
+                </View>
+                <HTML html={item.body5} />
+                <View style={style.image}>
+                  <Image source={require('../../../asset/IMG2/img54.png')} />
                 </View>
                 <View style={style.itmBody}>
-                  <HTML html={item.body3} />
+                  <HTML html={item.body6} />
                 </View>
                 <View style={style.itmBody}>
-                  <HTML html={item.body4} />
+                  <HTML html={item.body7} />
                 </View>
-                <View style={style.soal}>
-                  <View style={style.itmBody}>
-                    <HTML html={item.soal1} />
-                    <TextInput
-                      style={style.inputessay}
-                      placeholder={'1. Jawab Disini'}
-                    />
-                  </View>
-                  <View style={style.itmBody}>
-                    <HTML html={item.soal2} />
-                    <TextInput
-                      style={style.inputessay}
-                      placeholder={'2. Jawab Disini'}
-                    />
-                  </View>
-                  <View style={style.itmBody}>
-                    <HTML html={item.soal3} />
-                    <TextInput
-                      style={style.inputessay}
-                      placeholder={'3. Jawab Disini'}
-                    />
-                  </View>
+                <View style={style.itmBody}>
+                  <HTML html={item.body8} />
                 </View>
-                <TouchableOpacity style={style.button}>
-                  <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
-                </TouchableOpacity>
+                <View style={style.itmBody}>
+                  <HTML html={item.body9} />
+                </View>
+                <HTML html={item.body10} />
+                <View style={style.image}>
+                  <Image source={require('../../../asset/IMG2/img55.png')} />
+                </View>
+                <HTML html={item.body16} />
+                <View>
+                  <YouTube
+                    videoId="AW_iTEymu2A"
+                    apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
+                    play={this.state.isPlaying}
+                    loop={this.state.isLooping}
+                    // onReady={true}
+                    // onChangeState={e => this.setState({status: e.state})}
+                    // onChangeQuality={e => this.setState({quality: e.quality})}
+                    // onError={e => this.setState({error: e.error})}
+                    fullscreen={this.state.fullscreen}
+                    // eslint-disable-next-line react-native/no-inline-styles
+                    style={{
+                      alignSelf: 'stretch',
+                      height: 300,
+                      width: 300,
+                      marginTop: 10,
+                    }}
+                  />
+                </View>
+                <Text>Berdasarkan video 2.3, maka dapat diketahui bahwa: </Text>
+                <View style={style.itmBody}>
+                  <HTML html={item.body17} />
+                </View>
+                <View style={style.itmBody}>
+                  <HTML html={item.body18} />
+                </View>
+                <View style={style.itmBody}>
+                  <HTML html={item.body19} />
+                </View>
               </View>
             )}
           />
@@ -760,13 +746,16 @@ export default class App extends Component {
                   <Text style={style.itmtitle}>{item.bab}</Text>
                   <Text style={style.itmtitle}>{item.title}</Text>
                 </View>
+                <View style={style.itmBody}>
+                  <HTML html={item.body1} />
+                </View>
                 <View style={style.soal}>
                   <Text style={style.tier}>Tier 1:</Text>
                   <View style={style.itmBody}>
                     <HTML html={item.tier1.soal1} />
                   </View>
                   <View style={style.image}>
-                    <Image source={require('../../../asset/img71.png')} />
+                    <Image source={require('../../../asset/IMG2/img71.png')} />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.tier1.soal12} />

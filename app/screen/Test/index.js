@@ -9,7 +9,7 @@ export default class Test extends Component {
         <TouchableOpacity
           style={styles.btnTest}
           onPress={() => this.props.navigation.navigate('Ctt1Screen')}>
-          <Text style={styles.textBtn}>TEKANAN HIDROSTATIS</Text>
+          <Text style={styles.textBtn}>Tekanan Hidrostatis</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.btnTest}
@@ -17,16 +17,18 @@ export default class Test extends Component {
           <Text style={styles.textBtn}>Gaya Apung</Text>
         </TouchableOpacity>
         <TouchableOpacity
+          style={styles.btnTest}
           onPress={() => this.props.navigation.navigate('Ctt1Screen')}>
-          <Text>GAYA APUNG</Text>
+          <Text style={styles.textBtn}>
+            Konsep Terapung, Melayang, dan Tenggelam (1)
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
+          style={styles.btnTest}
           onPress={() => this.props.navigation.navigate('Ctt1Screen')}>
-          <Text>Konsep Terapung, Melayang, dan Tenggelam (1)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('Ctt1Screen')}>
-          <Text>Terapung, Melayang, dan Tenggelam (2)</Text>
+          <Text style={styles.textBtn}>
+            Terapung, Melayang, dan Tenggelam (2)
+          </Text>
         </TouchableOpacity>
       </View>
     );

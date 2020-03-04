@@ -8,9 +8,11 @@ export default StyleSheet.create({
     width: width,
     height: height,
     marginTop: 10,
+    alignSelf: 'center',
+    justifyContent: 'center',
   },
   btnTest: {
-    backgroundColor: Color.main.blueAkun,
+    backgroundColor: Color.main.primaryorange,
     borderRadius: 10,
     width: width * 0.8,
     height: height * 0.1,
@@ -22,7 +24,7 @@ export default StyleSheet.create({
   textBtn: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: Color.main.white,
+    color: Color.main.baseBlack,
     alignContent: 'center',
     textAlign: 'center',
     // textAlignVertical: 'center',
