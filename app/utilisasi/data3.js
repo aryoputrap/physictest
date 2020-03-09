@@ -23,11 +23,11 @@ export default {
         soal:
           '<p1 style="textAlign: justify;">Penjelasan yang tepat untuk pilihan jawaban Anda pada Tier 1 adalah....</p1>',
         jwb_a:
-          '<p1 style="textAlign: justify;">A. benda akan terapung atau tenggelam dalam air tergantung dari perbandingan massa jenis benda dan massa jenis air. Jika massa jenis benda yang terbuat dari bahan kaca lebih besar dari massa jenis air, maka benda dari bahan kaca tersebut akan selalu tenggelam ketika dicelupkan ke dalam air.</p1>',
+          '<p1 style="textAlign: justify;">A.benda akan terapung atau tenggelam dalam air tergantung dari perbandingan massa jenis benda dan massa jenis air. Jika massa jenis benda yang terbuat dari bahan kaca lebih besar dari massa jenis air, maka benda dari bahan kaca tersebut akan selalu tenggelam ketika dicelupkan ke dalam air.</p1>',
         jwb_b:
-          '<p1 style="textAlign: justify;">B. bahan kaca adalah bahan yang kedap air sehingga akan mendapatkan gaya apung yang besar dari air maka benda yang terbuat dari bahan kaca akan selalu terapung saat dicelupkan ke dalam air.</p1>',
+          '<p1 style="textAlign: justify;">B.bahan kaca adalah bahan yang kedap air sehingga akan mendapatkan gaya apung yang besar dari air maka benda yang terbuat dari bahan kaca akan selalu terapung saat dicelupkan ke dalam air.</p1>',
         jwb_c:
-          '<p1 style="textAlign: justify;">benda akan terapung atau tenggelam dalam air tergantung dari perbandingan berat benda dan gaya apung yang bekerja pada benda oleh air. Jika berat benda dari kaca lebih besar dari gaya apung yang bekerja maka benda akan tenggelam, dan sebaliknya.</p1>',
+          '<p1 style="textAlign: justify;">C.benda akan terapung atau tenggelam dalam air tergantung dari perbandingan berat benda dan gaya apung yang bekerja pada benda oleh air. Jika berat benda dari kaca lebih besar dari gaya apung yang bekerja maka benda akan tenggelam, dan sebaliknya.</p1>',
       },
       tier4: {
         soal: 'Apakah Anda yakin dengan jawaban yang Anda berikan pada Tier 3?',
@@ -83,7 +83,7 @@ export default {
         jwb_a:
           '<p1 style="textAlign: justify;">A. plastisin akan terapung atau tenggelam dalam air tergantung dari perbandingan massa jenis benda dan massa jenis air, karena massa jenis plastisin lebih besar dari massa jenis air, maka plastisin tersebut akan selalu tenggelam ketika dicelupkan ke dalam air.</p1>',
         jwb_b:
-          '<p1 style="textAlign: justify;">plastisin akan terapung atau tenggelam dalam air tergantung dari perbandingan berat plastisin dan gaya apung yang bekerja pada plastisin oleh air. Jika berat plastisin lebih besar dari gaya apung yang bekerja maka plastisin akan tenggelam, dan sebaliknya.</p1>',
+          '<p1 style="textAlign: justify;">B. plastisin akan terapung atau tenggelam dalam air tergantung dari perbandingan berat plastisin dan gaya apung yang bekerja pada plastisin oleh air. Jika berat plastisin lebih besar dari gaya apung yang bekerja maka plastisin akan tenggelam, dan sebaliknya.</p1>',
         jwb_c:
           '<p1 style="textAlign: justify;">C. plastisin adalah bahan yang kedap air sehingga akan mendapatkan gaya apung yang besar dari air maka plastisin akan selalu terapung saat dicelupkan ke dalam air.</p1>',
       },
@@ -107,7 +107,7 @@ export default {
       soal2:
         '<p1 style="textAlign: justify;">2. Ketika piring yang sama dengan video sebelumnya dimasukkan ke dalam wadah yang berisi air dalam posisi vertikal, bagaimana keadaan piring tersebut di dalam air (terapung atau tenggelam)?</p1>',
       soal3:
-        '<p1 style="textAlign: justify;">Berdasarkan video diatas apakah piring yang memiliki massa jenis yang lebih besar di banding dengan massa jenis air selalu tenggelam? </p1>',
+        '<p1 style="textAlign: justify;">3. Berdasarkan video diatas apakah piring yang memiliki massa jenis yang lebih besar di banding dengan massa jenis air selalu tenggelam? </p1>',
       soal4:
         '<p1 style="textAlign: justify;">4. Apakah yang Anda amati dalam video percobaan tersebut sama atau berbeda dengan konsepsi atau pemikiran yang Anda miliki selama ini tentang benda yang massa jenisnya lebih besar dari zat cair akan selalu tenggelam ketika dicelupkan ke dalam zat cair? </p1>',
       soal5:
@@ -123,9 +123,9 @@ export default {
       body2:
         '<p1 style="textAlign: justify;">Pernahkah Anda melihat kapal laut yang terbuat dari baja yang terapung, sedangkan bongkahan baja yang dicelupkan ke dalam air menjadi tenggelam? Padahal baja terbut memiliki bahan yang sama yaitu baja dan memiliki massa jenis yang lebih besar dibandingkan dengan air. </p1>',
       body3:
-        '<p1 style="textAlign: justify;">Kapal laut memindahkan lebih banyak air dibandingkan dengan bongkahan baja, hal ini menyebabkan gaya apung yang dimiliki lebih besar dibandingkan  dengan gaya berat maka kapal laut dapat mengapung. Menurut Archimedes gaya apung dipengaruhi oleh volume benda tercelup. Berdasarkan Hukum Archimedes sebenarnya volume benda yang tercelup sama dengan besar fluida yang dipindahkan, maka ketika sebuah piring diletakkan ke dalam wadah yang berisi air dengan posisi horizontal maka piring tersebut memindahkan lebih banyak fluida dibandingkan piring yang diletakkan dalam posisi vertikal, sehingga dapat disimpulkan bahwa gaya apung yang di alami kedua piring tersebut akan berbeda. Gaya apung yang dialami piring pada posisi horizontal akan lebih besar dibandingkan gaya apung piring dengan posisi vertikal dalam kasus tersebut. Oleh karena itu pada piring dengan posisi horizontal, gaya apung yang bekerja lebih besar dibandingkan dengan gaya berat piring (FA>w) sehingga piring akan terapung, sedangkan pada posisi piring yang vertikal, gaya apung piring yang bekerja lebih kecil dibandingkan gaya apung nya (FA<w) sehingga piring akan tenggelam</p1>',
+        '<p1 style="textAlign: justify;">Kapal laut memindahkan lebih banyak air dibandingkan dengan bongkahan baja, hal ini menyebabkan gaya apung yang dimiliki lebih besar dibandingkan  dengan gaya berat maka kapal laut dapat mengapung. Menurut Archimedes gaya apung dipengaruhi oleh volume benda tercelup. Berdasarkan Hukum Archimedes sebenarnya volume benda yang tercelup sama dengan besar fluida yang dipindahkan, maka ketika sebuah piring diletakkan ke dalam wadah yang berisi air dengan posisi horizontal maka piring tersebut memindahkan lebih banyak fluida dibandingkan piring yang diletakkan dalam posisi vertikal, sehingga dapat disimpulkan bahwa gaya apung yang di alami kedua piring tersebut akan berbeda. Gaya apung yang dialami piring pada posisi horizontal akan lebih besar dibandingkan gaya apung piring dengan posisi vertikal dalam kasus tersebut. Oleh karena itu pada piring dengan posisi horizontal, gaya apung yang bekerja lebih besar dibandingkan dengan gaya berat piring (FA>w) sehingga piring akan terapung, sedangkan pada posisi piring yang vertikal, gaya apung piring yang bekerja lebih kecil dibandingkan gaya apung nya (FA < w) sehingga piring akan tenggelam </p1>',
       body4:
-        '<p1 style="textAlign: justify;">Berdasarkan kasus diatas dapat disimpulkan bahwa benda dapat mengapung karena gaya apung yang dimiliki benda lebih besar dibandingkan dengan gaya berat benda dan benda dapat tenggelam apabila gaya apung yang dimiliki benda lebih kecil dibandingkan gaya berat benda. Massa jenis benda tidak mempengaruhi gaya apung, namun gaya apung dipengaruhi oleh volume benda tercelup/ fluida yang dipindahkan dan massa jenis fluida.</p1>',
+        '<p1 style="textAlign: justify;">Berdasarkan kasus diatas dapat disimpulkan bahwa benda dapat mengapung karena gaya apung yang dimiliki benda lebih besar dibandingkan dengan gaya berat benda dan benda dapat tenggelam apabila gaya apung yang dimiliki benda lebih kecil dibandingkan gaya berat benda. <i>Massa jenis benda tidak mempengaruhi gaya apung, namun gaya apung dipengaruhi oleh volume benda tercelup/ fluida yang dipindahkan dan massa jenis fluida.</i></p1>',
       body5:
         '<p1 style="textAlign: justify;">Berdasarkan video percobaan tersebut dapat diketahui bahwa plastisin tersebut memiliki massa jenis yang sama dan berat yang sama, namun ketika dibentuk menjadi bulat maka plastisin tersebut akan tenggelam, sedangkan saat dibentuk menjadi piring, plastisin akan terapung. Apabila kita perhatikan, skala yang terbaca pada saat plastisin yang tenggelam dan terapung berbeda, selain berbeda setelah dilakukan perhitungan gaya apung yang dialami plastisin yang di bentuk menjadi piring lebih besar dibandingkan dengan plastisin yang tidak dibentuk, sehingga dapat disimpulkan bahwa massa jenis plastisin yang lebih besar dibandingkan dengan massa jenis air tidak membuat plastisin menjadi tenggelam, namun yang menyebabkan plastisin tenggelam maupun terapung adalah perbedaan gaya apung yang dialami. Gaya apung yang dialami plastisin yang berbentuk piring lebih besar dibandingkan gaya apung yang dialami plastisin bulat.   </p1>',
       bodyx: '<p1 style="textAlign: justify;"></p1>',
@@ -147,7 +147,7 @@ export default {
         '<p1 style="textAlign: justify;">Silahkan Anda baca secara seksama soal tes konsepsi berikut ini, jawablah soal berikut ini sesuai konsepsi yang Anda miliki!</p1>',
       tier1: {
         soal:
-          '<p1 style="textAlign: left;">Sebuah piring yang terbuat dari keramik memiliki massa jenis yang lebih besar dibandingkan air. Piring tersebut kemudian dicelupkan ke dalam wadah yang berisi air maka kondisi piring tersebut akan… . </p1>',
+          '<p1 style="textAlign: justify;">Sebuah piring yang terbuat dari keramik memiliki massa jenis yang lebih besar dibandingkan air. Piring tersebut kemudian dicelupkan ke dalam wadah yang berisi air maka kondisi piring tersebut akan… . </p1>',
         jwb_a: '<p1 style="textAlign: left;">A. selalu tenggelam. </p1>',
         jwb_b: '<p1 style="textAlign: left;">B. selalu terapung.</p1>',
         jwb_c:
@@ -163,11 +163,11 @@ export default {
         soal:
           'Penjelasan yang tepat untuk pilihan jawaban Anda pada Tier 1 adalah… .',
         jwb_a:
-          '<p1 style="textAlign: left;">A. benda akan terapung atau tenggelam dalam air tergantung dari perbandingan massa jenis benda dan massa jenis air. Jika massa jenis piring lebih besar dari massa jenis air, maka piring tersebut akan selalu tenggelam ketika dicelupkan ke dalam air. </p1>',
+          '<p1 style="textAlign:justify;">A. benda akan terapung atau tenggelam dalam air tergantung dari perbandingan massa jenis benda dan massa jenis air. Jika massa jenis piring lebih besar dari massa jenis air, maka piring tersebut akan selalu tenggelam ketika dicelupkan ke dalam air. </p1>',
         jwb_b:
-          '<p1 style="textAlign: left;">B. benda akan selalu terapung jika dicelupkan secara horizontal pada air dan benda akan selalu tenggelam jika dicelupkan secara vertikal pada air. </p1>',
+          '<p1 style="textAlign:justify;">B. benda akan selalu terapung jika dicelupkan secara horizontal pada air dan benda akan selalu tenggelam jika dicelupkan secara vertikal pada air. </p1>',
         jwb_c:
-          '<p1 style="textAlign: left;">C. benda akan terapung atau tenggelam dalam air tergantung dari perbandingan berat benda dan gaya apung yang bekerja pada benda oleh air. Jika berat benda dari kaca lebih besar dari gaya apung yang bekerja maka benda akan tenggelam, dan sebaliknya. </p1>',
+          '<p1 style="textAlign:justify;">C. benda akan terapung atau tenggelam dalam air tergantung dari perbandingan berat benda dan gaya apung yang bekerja pada benda oleh air. Jika berat benda dari kaca lebih besar dari gaya apung yang bekerja maka benda akan tenggelam, dan sebaliknya. </p1>',
       },
       tier4: {
         soal:

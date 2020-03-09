@@ -17,6 +17,8 @@ import AkunScreen from '../screen/Akun';
 import TestScreen from '../screen/Test';
 import Ctt1Screen from '../screen/Test/CTT1';
 import Ctt2Screen from '../screen/Test/CTT2';
+import Ctt3Screen from '../screen/Test/CTT3';
+import Ctt4Screen from '../screen/Test/CTT';
 // import ChatScreen from '../screen/Chat';
 
 const ROUTES = {
@@ -119,12 +121,14 @@ const PublicStack = createStackNavigator(
     },
     Ctt1Screen: Ctt1Screen,
     Ctt2Screen: Ctt2Screen,
+    Ctt3Screen: Ctt3Screen,
+    Ctt4Screen: Ctt4Screen,
     // Absensi: Absensi,
     // InputData: InputData,
   },
   {
     headerMode: 'screen',
-    initialRouteName: 'Ctt2Screen',
+    initialRouteName: 'Ctt4Screen',
     // initialRouteName: 'Login',
     // initialRouteName: 'StackPublic',
     // initialRouteName: 'Register',

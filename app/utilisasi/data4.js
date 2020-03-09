@@ -158,11 +158,11 @@ export default {
         soal:
           'Penjelasan yang tepat untuk pilihan jawaban Anda pada Tier 1 adalah… .',
         jwb_a:
-          '<p1 style="textAlign: left;">A. benda akan terapung atau tenggelam dalam air tergantung dari perbandingan massa jenis benda dan massa jenis air. Jika massa jenis piring lebih besar dari massa jenis air, maka piring tersebut akan selalu tenggelam ketika dicelupkan ke dalam air. </p1>',
+          '<p1 style="textAlign: justify;">A. berat potongan balok berkurang seiring dengan gaya apung potongan balok akibatnya balok M dan N akan tetap mengapung.</p1>',
         jwb_b:
-          '<p1 style="textAlign: left;">B. benda akan selalu terapung jika dicelupkan secara horizontal pada air dan benda akan selalu tenggelam jika dicelupkan secara vertikal pada air. </p1>',
+          '<p1 style="textAlign: justify;">B. ukuran balok M lebih kecil daripada N sehingga berat balok N akan mampu mengimbangi gaya apungnya akibatnya balok N akan melayang, sedangkan balok M tetap mengapung.</p1>',
         jwb_c:
-          '<p1 style="textAlign: left;">C. benda akan terapung atau tenggelam dalam air tergantung dari perbandingan berat benda dan gaya apung yang bekerja pada benda oleh air. Jika berat benda dari kaca lebih besar dari gaya apung yang bekerja maka benda akan tenggelam, dan sebaliknya. </p1>',
+          '<p1 style="textAlign: justify;">C. ukuran balok N lebih besar dibandingan balok M sehingga balok N lebih berat daripada balok M akibatnya balok N akan tenggalam sedangkan balok M akan tetap mengapung. </p1>',
       },
       tier4: {
         soal:
