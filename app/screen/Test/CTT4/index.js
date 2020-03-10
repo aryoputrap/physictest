@@ -16,7 +16,7 @@ import StepIndicator from 'react-native-step-indicator';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import {RadioButton} from 'react-native-paper';
 import YouTube from 'react-native-youtube';
-import data3 from '../../../utilisasi/data3';
+import data4 from '../../../utilisasi/data4';
 import style from './style';
 
 const secondIndicatorStyles = {
@@ -101,13 +101,13 @@ export default class App extends Component {
   soal = () => {
     const page = this.state;
     const {checked} = this.state;
-    if (page.currentPage === 0) {
+    if (page.currentPage === 1) {
       return (
         <View style={style.containdata}>
           <FlatList
             key="flatList"
             style={style.flatlist}
-            data={data3.databagian1}
+            data={data4.databagian1}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
               <View>
@@ -122,6 +122,9 @@ export default class App extends Component {
                   <Text style={style.tier}>Tier 1:</Text>
                   <View style={style.itmBody}>
                     <HTML html={item.tier1.soal} />
+                  </View>
+                  <View style={style.image}>
+                    <Image source={require('../../../asset/IMG4/img11.png')} />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.tier1.soal2} />
@@ -274,13 +277,13 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 1) {
+    } else if (page.currentPage === 2) {
       return (
         <View style={style.containdata}>
           <FlatList
             key="flatList"
             style={style.flatlist}
-            data={data3.databagian2}
+            data={data4.databagian2}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
               <View>
@@ -309,10 +312,11 @@ export default class App extends Component {
                     <HTML html={item.body2} />
                   </View>
                   <View style={style.image}>
-                    <Image source={require('../../../asset/IMG3/img31.png')} />
+                    <Image source={require('../../../asset/IMG4/img12.png')} />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.body3} />
+                    <Text>Amatilah Video 4.2 berikut ini dengan seksama!</Text>
                   </View>
                   <View>
                     <YouTube
@@ -333,30 +337,11 @@ export default class App extends Component {
                     <HTML html={item.body4} />
                   </View>
                   <View style={style.image}>
-                    <Image source={require('../../../asset/IMG3/img32.png')} />
-                  </View>
-                  <Text> Selanjutnya amatilah Video3.3 berikut ini: </Text>
-                  <View>
-                    <YouTube
-                      videoId="tWWuYBdi2eA"
-                      apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
-                      play={this.state.isPlaying}
-                      loop={this.state.isLooping}
-                      // onReady={true}
-                      // onChangeState={e => this.setState({status: e.state})}
-                      // onChangeQuality={e => this.setState({quality: e.quality})}
-                      // onError={e => this.setState({error: e.error})}
-                      fullscreen={this.state.fullscreen}
-                      // eslint-disable-next-line react-native/no-inline-styles
-                      style={{alignSelf: 'stretch', height: 300, width: 300}}
-                    />
+                    <Image source={require('../../../asset/IMG4/img13.png')} />
                   </View>
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body5} />
-                </View>
-                <View style={style.itmBody}>
-                  <HTML html={item.body6} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.soal} />
@@ -372,13 +357,13 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 2) {
+    } else if (page.currentPage === 3) {
       return (
         <View style={style.containdata}>
           <FlatList
             key="flatList"
             style={style.flatlist}
-            data={data3.databagian3}
+            data={data4.databagian3}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
               <View>
@@ -389,6 +374,9 @@ export default class App extends Component {
                 <View style={style.soal}>
                   <HTML html={item.pengantar} />
                   <Text style={style.tier}>Tier 1:</Text>
+                  <View style={style.image}>
+                    <Image source={require('../../../asset/IMG4/img31.png')} />
+                  </View>
                   <View style={style.itmBody}>
                     <HTML html={item.tier1.soal} />
                   </View>
@@ -538,13 +526,13 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 3) {
+    } else if (page.currentPage === 4) {
       return (
         <View style={style.containdata}>
           <FlatList
             key="flatList"
             style={style.flatlist}
-            data={data3.databagian4}
+            data={data4.databagian4}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
               <View>
@@ -554,6 +542,7 @@ export default class App extends Component {
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body1} />
+                  <HTML html={item.body2} />
                 </View>
                 <Text style={style.itmtitle}>
                   Amatilah video percobaan berikut ini
@@ -572,9 +561,6 @@ export default class App extends Component {
                     // eslint-disable-next-line react-native/no-inline-styles
                     style={{alignSelf: 'stretch', height: 300, width: 300}}
                   />
-                </View>
-                <View style={style.itmBody}>
-                  <HTML html={item.body2} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body3} />
@@ -627,13 +613,13 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 4) {
+    } else if (page.currentPage === 5) {
       return (
         <View style={style.containdata}>
           <FlatList
             key="flatList"
             style={style.flatlist}
-            data={data3.databagian5}
+            data={data4.databagian5}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
               <View>
@@ -647,38 +633,19 @@ export default class App extends Component {
                 <View style={style.itmBody}>
                   <HTML html={item.body2} />
                   <HTML html={item.body3} />
-                  <HTML html={item.body4} />
-                </View>
-                <View>
-                  <YouTube
-                    videoId="i9qtJ-4RUyk"
-                    apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
-                    play={this.state.isPlaying}
-                    loop={this.state.isLooping}
-                    // onReady={true}
-                    // onChangeState={e => this.setState({status: e.state})}
-                    // onChangeQuality={e => this.setState({quality: e.quality})}
-                    // onError={e => this.setState({error: e.error})}
-                    fullscreen={this.state.fullscreen}
-                    // eslint-disable-next-line react-native/no-inline-styles
-                    style={{alignSelf: 'stretch', height: 300, width: 300}}
-                  />
-                </View>
-                <View style={style.itmBody}>
-                  <HTML html={item.body5} />
                 </View>
               </View>
             )}
           />
         </View>
       );
-    } else if (page.currentPage === 5) {
+    } else if (page.currentPage === 6) {
       return (
         <View style={style.containdata}>
           <FlatList
             key="flatList"
             style={style.flatlist}
-            data={data3.databagian6}
+            data={data4.databagian6}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
               <View>
@@ -703,13 +670,13 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 6) {
+    } else if (page.currentPage === 0) {
       return (
         <View style={style.containdata}>
           <FlatList
             key="flatList"
             style={style.flatlist}
-            data={data3.databagian7}
+            data={data4.databagian7}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
               <View>

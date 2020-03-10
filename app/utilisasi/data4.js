@@ -27,11 +27,11 @@ export default {
         soal:
           '<p1 style="textAlign: justify;">Penjelasan yang tepat untuk  pilihan jawaban Anda pada Tier 1 adalah…</p1>',
         jwb_a:
-          '<p1 style="textAlign: justify;">A. berat gabungan balok bertambah sehingga gaya apung yang dialami balok semakin kecil akibatnya balok gabungan akan tenggelam.</p1>',
+          '<p1 style="textAlign: justify;">A. Berat gabungan balok bertambah sehingga gaya apung yang dialami balok semakin kecil akibatnya balok gabungan akan tenggelam.</p1>',
         jwb_b:
-          '<p1 style="textAlign: justify;">B. ukuran balok gabungan semakin besar sehingga berat balok gabungan akan mengimbangi gaya apungnya akibatnya balok gabungan akan melayang.</p1>',
+          '<p1 style="textAlign: justify;">B. Ukuran balok gabungan semakin besar sehingga berat balok gabungan akan mengimbangi gaya apungnya akibatnya balok gabungan akan melayang.</p1>',
         jwb_c:
-          '<p1 style="textAlign: justify;">C. berat balok gabungan bertambah seiring dengan gaya apung balok gabungan akibatnya balok gabungan akan tetap mengapung.</p1>',
+          '<p1 style="textAlign: justify;">C. Berat balok gabungan bertambah seiring dengan gaya apung balok gabungan akibatnya balok gabungan akan tetap mengapung.</p1>',
       },
       tier4: {
         soal: 'Apakah Anda yakin dengan jawaban yang Anda berikan pada Tier 3?',
@@ -127,7 +127,7 @@ export default {
       body2:
         '<p1 style="textAlign: justify;">Seperti yang telah Anda pelajari sebelumnya bahwa ketika sebuah benda dicelupkan ke dalam fluida maka benda akan mengalami gaya apung. Gaya apung merupakan gaya yang diberikan oleh fluida pada benda-benda yang ada didalamnya yang mendorong benda-benda tersebut ke atas. Berdasarkan hukum Archimedes, sebuah benda yang tenggelam seluruhnya atau sebagian dalam fluida yang dipindahkan, lalu apakah yang mempengaruhi gaya apung tersebut, mengapa balok plastisin dan potongan plastisin tersebut dapat tenggelam padahal memiliki massa yang berbeda? </p1>',
       body3:
-        '<p1 style="textAlign: justify;">Suatu benda dapat tenggelam karena gaya apung lebih kecil dibandingkan dengan gaya berat yang bekerja pada benda (FA<w), sedangkan benda terapung karena gaya apung lebih besar dibandingkan dengan gaya berat yang bekerja pada benda (FA>w), dan sebuah benda dapat melayang jika gaya apung yang dialami benda sama dengan gaya beratnya (FA=w).</p1>',
+        '<p1 style="textAlign: justify;">Suatu benda dapat tenggelam karena gaya apung lebih kecil dibandingkan dengan gaya berat yang bekerja pada benda (FA < w), sedangkan benda terapung karena gaya apung lebih besar dibandingkan dengan gaya berat yang bekerja pada benda (FA>w), dan sebuah benda dapat melayang jika gaya apung yang dialami benda sama dengan gaya beratnya (FA=w).</p1>',
     },
   ],
   databagian6: [

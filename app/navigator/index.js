@@ -18,7 +18,7 @@ import TestScreen from '../screen/Test';
 import Ctt1Screen from '../screen/Test/CTT1';
 import Ctt2Screen from '../screen/Test/CTT2';
 import Ctt3Screen from '../screen/Test/CTT3';
-import Ctt4Screen from '../screen/Test/CTT';
+import Ctt4Screen from '../screen/Test/CTT4';
 // import ChatScreen from '../screen/Chat';
 
 const ROUTES = {
