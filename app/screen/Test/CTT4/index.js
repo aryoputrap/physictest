@@ -14,6 +14,7 @@ import HTML from 'react-native-render-html';
 // import {IndicatorViewPager} from 'react-native-best-viewpager';
 import StepIndicator from 'react-native-step-indicator';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
+import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
 import {RadioButton} from 'react-native-paper';
 import YouTube from 'react-native-youtube';
 import data4 from '../../../utilisasi/data4';
@@ -101,7 +102,7 @@ export default class App extends Component {
   soal = () => {
     const page = this.state;
     const {checked} = this.state;
-    if (page.currentPage === 1) {
+    if (page.currentPage === 0) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -277,7 +278,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 2) {
+    } else if (page.currentPage === 1) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -357,7 +358,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 3) {
+    } else if (page.currentPage === 2) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -526,7 +527,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 4) {
+    } else if (page.currentPage === 3) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -613,7 +614,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 5) {
+    } else if (page.currentPage === 4) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -639,7 +640,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 6) {
+    } else if (page.currentPage === 5) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -670,7 +671,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 0) {
+    } else if (page.currentPage === 6) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -703,8 +704,10 @@ export default class App extends Component {
                         this.setState({checked: 'a'});
                       }}
                     />
-                    <View style={style.itmBody}>
-                      <HTML html={item.tier1.jwb_a} />
+                    <View style={style.image}>
+                      <Image
+                        source={require('../../../asset/IMG4/img7a.png')}
+                      />
                     </View>
                   </View>
                   <View style={style.answer}>
@@ -715,8 +718,10 @@ export default class App extends Component {
                         this.setState({checked: 'a'});
                       }}
                     />
-                    <View style={style.itmBody}>
-                      <HTML html={item.tier1.jwb_b} />
+                    <View style={style.image}>
+                      <Image
+                        source={require('../../../asset/IMG4/img7b.png')}
+                      />
                     </View>
                   </View>
                   <View style={style.answer}>
@@ -727,8 +732,10 @@ export default class App extends Component {
                         this.setState({checked: 'a'});
                       }}
                     />
-                    <View style={style.itmBody}>
-                      <HTML html={item.tier1.jwb_c} />
+                    <View style={style.image}>
+                      <Image
+                        source={require('../../../asset/IMG4/img7c.png')}
+                      />
                     </View>
                   </View>
                 </View>
@@ -803,7 +810,7 @@ export default class App extends Component {
                         this.setState({checked: 'c'});
                       }}
                     />
-                    <TextInput
+                    <AutoGrowingTextInput
                       style={style.input}
                       placeholder={'D. Jawaban Lain'}
                     />

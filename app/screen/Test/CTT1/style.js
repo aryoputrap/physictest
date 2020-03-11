@@ -60,8 +60,8 @@ export default StyleSheet.create({
     marginBottom: height * 0.2,
   },
   viewindicator: {
-    marginLeft: width * 0.024,
-    height,
+    marginLeft: width * 0.03,
+    height: height * 0.65,
     marginBottom: height * 0.25,
   },
   containerscrol: {
@@ -195,15 +195,16 @@ export default StyleSheet.create({
   },
   button: {
     justifyContent: 'center',
-    backgroundColor: 'lightgrey',
+    backgroundColor: Color.main.orange,
     borderRadius: 10,
-    width: width * 0.6,
+    width: width * 0.7,
     height: height * 0.08,
     alignSelf: 'center',
     margin: 20,
     marginBottom: height * 0.1,
   },
   textbtn: {
+    color: Color.white,
     justifyContent: 'center',
     alignSelf: 'center',
     fontWeight: 'bold',

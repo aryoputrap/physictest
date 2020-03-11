@@ -14,19 +14,20 @@ import HTML from 'react-native-render-html';
 // import {IndicatorViewPager} from 'react-native-best-viewpager';
 import StepIndicator from 'react-native-step-indicator';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
+import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
 import {RadioButton} from 'react-native-paper';
 import YouTube from 'react-native-youtube';
 import data1 from '../../../utilisasi/data1';
 import style from './style';
 
 const secondIndicatorStyles = {
-  stepIndicatorSize: 37,
-  currentStepIndicatorSize: 45,
-  separatorStrokeWidth: 3,
-  currentStepStrokeWidth: 6,
+  stepIndicatorSize: 34, //ukurang lingkaran
+  currentStepIndicatorSize: 45, //ukuran lingkaran sesudah
+  separatorStrokeWidth: 3, //lebar-garis
+  currentStepStrokeWidth: 5, //lingkaran
   stepStrokeCurrentColor: '#fe7013',
   stepStrokeWidth: 4,
-  separatorStrokeFinishedWidth: 5,
+  separatorStrokeFinishedWidth: 5, //lebar_garis
   stepStrokeFinishedColor: '#fe7013',
   stepStrokeUnFinishedColor: '#aaaaaa',
   separatorFinishedColor: '#fe7013',
@@ -48,7 +49,7 @@ const getStepIndicatorIconConfig = ({position, stepStatus}) => {
   const iconConfig = {
     name: 'feed',
     color: stepStatus === 'finished' ? '#ffffff' : '#fe7013',
-    size: 20,
+    size: 17,
   };
   switch (position) {
     case 0: {
@@ -117,6 +118,8 @@ export default class App extends Component {
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body} />
+                  <Text style={style.tier}>Tier 1:</Text>
+                  <Text>Perhatikan gambar dibawah ini! :</Text>
                 </View>
                 <View style={style.image}>
                   <Image source={require('../../../asset/snip.png')} />
@@ -125,10 +128,10 @@ export default class App extends Component {
                   <HTML html={item.tier1.soal} />
                 </View>
                 <View style={style.soal}>
-                  <Text style={style.tier}>Tier 1:</Text>
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
+                      color="#fe7013"
                       status={checked === 'a' ? 'checked' : 'unchecked'}
                       onPress={() => {
                         this.setState({checked: 'a'});
@@ -139,6 +142,7 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="b"
+                      color="#fe7013"
                       status={checked === 'b' ? 'checked' : 'unchecked'}
                       onPress={() => {
                         this.setState({checked: 'b'});
@@ -149,6 +153,7 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="c"
+                      color="#fe7013"
                       status={checked === 'c' ? 'checked' : 'unchecked'}
                       onPress={() => {
                         this.setState({checked: 'c'});
@@ -228,7 +233,7 @@ export default class App extends Component {
                         this.setState({checked: 'c'});
                       }}
                     />
-                    <TextInput
+                    <AutoGrowingTextInput
                       style={style.input}
                       placeholder={'D. Jawaban Lain'}
                     />

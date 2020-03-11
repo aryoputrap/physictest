@@ -146,7 +146,7 @@ export default {
         '<p1 style="textAlign: justify;">Silahkan Anda baca secara seksama soal tes konsepsi berikut ini, jawablah soal berikut ini sesuai konsepsi yang Anda miliki!</p1>',
       tier1: {
         soal:
-          '<p1 style="textAlign: left;">Posisi balok L dalam suatu wadah berisi air adalah terapung seperti yang ditunjukkan pada Gambar 1. Jika balok L tersebut di bagi menjadi dua bagian yaitu M dan N dengan ukuran yang berbeda seperti yang ditunjukkan oleh Gambar 2, maka ketika potongan balok M dan N dimasukkan ke dalam wadah berisi air posisinya akan…</p1>',
+          '<p1 style="textAlign: justify;">Posisi balok L dalam suatu wadah berisi air adalah terapung seperti yang ditunjukkan pada Gambar 1. Jika balok L tersebut di bagi menjadi dua bagian yaitu M dan N dengan ukuran yang berbeda seperti yang ditunjukkan oleh Gambar 2, maka ketika potongan balok M dan N dimasukkan ke dalam wadah berisi air posisinya akan…</p1>',
       },
       tier2: {
         soal:
