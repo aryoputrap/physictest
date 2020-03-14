@@ -2,17 +2,17 @@ export default {
   databagian1: [
     {
       bab: 'BAGIAN 1',
-      title: 'Teks Pengantar dan Identifikasi Keadaan Konsepsi Awal Siswa',
+      title: 'Teks Pengantar dan Identifikasi Keadaan Konsepsi Awal',
       body:
-        '<p1 style="textAlign: justify;">Fluida merupakan zat yang dapat mengalir. Ketika terdapat suatu benda di dalam suatu fluida yang diam, maka tekanan yang dirasakan benda dalam fluida tersebut dinamakan dengan tekanan hidrostatis. Konsep tekanan hidrostatis seringkali dipahami secara keliru oleh peserta didik sehingga perlu bahan belajar yang dapat memberi penjelasan yang komprehensif untuk membentuk dan merevisi konsep tersebut di benak peserta didik. Dengan demikian, teks ini dibuat untuk keperluan tersebut. Silahkan Anda baca dengan seksama setiap bagian teks dan lakukan aktivitas sesuai yang diminta pada setiap bagian teks dengan sebaik baiknya sesuai pemikiran yang Anda miliki. Tapi sebelum Anda membaca setiap bagian teks silahkan jawab pertanyaan-pertanyaan berikut :</p1>',
+        '<p1 style="textAlign: justify;">Fluida merupakan zat yang dapat mengalir. Ketika terdapat suatu benda di dalam suatu fluida yang diam, maka tekanan yang dirasakan benda dalam fluida tersebut dinamakan dengan tekanan hidrostatis. Konsep tekanan hidrostatis seringkali dipahami secara keliru oleh peserta didik sehingga perlu bahan belajar yang dapat memberi penjelasan yang komprehensif untuk membentuk dan merevisi konsep tersebut di benak peserta didik. Dengan demikian, teks ini dibuat untuk keperluan tersebut. Silahkan Anda baca dengan seksama setiap bagian teks dan lakukan aktivitas sesuai yang diminta pada setiap bagian teks dengan sebaik baiknya sesuai pemikiran yang Anda miliki. Tapi sebelum Anda membaca setiap bagian teks silahkan jawab pertanyaan-pertanyaan berikut.</p1>',
       tier1: {
         soal:
           '<p1 style="textAlign: justify;">Gambar tersebut menunjukkan ilustrasi dua ekor ikan yang sedang berada di dalam akuarium. Ikan A berada dalam tumpukan batu di dalam akuarium sedangkan ikan B berada di luar tumpukan batu.  Menurut Anda  bagaimana tekanan hidrostatis yang di alami kedua ikan tersebut?</p1>',
         jwb_a:
-          'A. Ikan A mengalami tekanan hidrostatis lebih besar dari ikan B',
+          'A. Ikan A mengalami tekanan hidrostatis lebih besar dari ikan B.',
         jwb_b:
-          'B. Ikan B mengalami tekanan hidrostatis lebih besar dari ikan A',
-        jwb_c: 'C. Ikan A dan ikan B mengalami tekanan hidrostatis sama besar',
+          'B. Ikan B mengalami tekanan hidrostatis lebih besar dari ikan A.',
+        jwb_c: 'C. Ikan A dan ikan B mengalami tekanan hidrostatis sama besar.',
       },
       tier2: {
         soal:
@@ -24,7 +24,7 @@ export default {
         soal:
           'Penjelasan yang tepat untuk pilihan jawaban Anda pada Tier 1 adalah....?',
         jwb_a:
-          '<p1 style="textAlign: justify;">A. karena adanya tumpukan batu maka tekanan di dalam ruang tumpukan batu berisi air akan sangat besar, sehingga ikan A mengalami tekanan hidrostatis yang lebih besar dari ikan B</p1>',
+          '<p1 style="textAlign: justify;">A. karena adanya tumpukan batu maka tekanan di dalam ruang tumpukan batu berisi air akan sangat besar, sehingga ikan A mengalami tekanan hidrostatis yang lebih besar dari ikan B.</p1>',
         jwb_b:
           '<p1 style="textAlign: justify;">B. tekanan hidrostatis yang dialami benda dalam suatu zat cair sebanding dengan kedalaman dalam zat cair, karena air di atas ikan B lebih tinggi dari air di atas ikan A, maka ikan B mengalami tekanan hidrostatis yang lebih besar dari ikan A.</p1>',
         jwb_c:
@@ -41,8 +41,26 @@ export default {
     {
       bab: 'BAGIAN II',
       title: 'Teks Pembentukan Konsepsi (Conceptual Development)',
+      titlevideo1:
+        '<p1 style="textAlign: center;"><b>Video 1.1 Benda dalam suatu fluida</b></p1>',
+      titlevideo2:
+        '<p1 style="textAlign: center;"><b>Video 1.2 Fenomena tekanan hidrostatis</b></p1>',
+      titlevideo3:
+        '<p1 style="textAlign: center;"><b>Video 1.3 Pengukuran tekanan pada suatu bejana berisi air</b></p1>',
+      titlegambar1:
+        '<p1 style="textAlign: center;"><b>Gambar 1.1 Benda dalam suatu fluida</b></p1>',
+      titlegambar2:
+        '<p1 style="textAlign: center;"><b>Gambar 1.2 Zat cair dapat diasumsikan terdiri atas lapisan-lapisan</b></p1>',
+      titlegambar3:
+        '<p1 style="textAlign: center;"><b>Gambar 1.3 Tekanan pada kedalaman h di dalam suatu fluida</b></p1>',
+      titlegambar4:
+        '<p1 style="textAlign: center;"><b>Gambar 1.4 Tekanan pada suatu bejana</b></p1>',
+      titlegambar5:
+        '<p1 style="textAlign: center;"><b>Gambar 1.5 Tekanan pada pipa U</b></p1>',
+      bodyr1:
+        '<p1 style="textAlign: justity;">Untuk dapat memahami hal tersebut, amatilah terlebih dahulu Video 1.2 terkait fenomena tekanan hidrostis berikut ini.</p1>',
       body1:
-        '<p1 style="textAlign: justify;">Tekanan hidrostatis adalah tekanan yang disebabkan oleh berat zat cair yang dalam keadaan diam. Untuk membuktikan adanya tekanan hidrostatis ini mari kita amati tayangan Video 1.1. berikut.</p1>',
+        '<p1 style="textAlign: justify;">Tekanan hidrostatis adalah tekanan yang disebabkan oleh berat zat cair yang dalam keadaan diam. Untuk membuktikan adanya tekanan hidrostatis ini mari kita amati tayangan Video 1.1 berikut.</p1>',
       body2:
         '<p1 style="textAlign: justify;">Berdasarkan tayangan Video 1.1 diatas menampilkan fenomena dari percobaan sederhana yang dilakukan pada sebuah kartu untuk menunjukkan adanya tekanan hidrostatis. Maka dilakukan dua perlakuan berbeda terhadap kartu, yakni pada saat kartu diberdirikan secara vertikal di atas meja dan kartu dicelupkan secara vertikal dalam air.</p1>',
       body3:

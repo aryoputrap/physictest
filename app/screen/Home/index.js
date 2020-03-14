@@ -58,7 +58,7 @@ export default class Home extends Component {
               style={styles.MenuImage}
               source={require('../../asset/i.png')}
             />
-            <Text style={styles.TeksMenu}>Indikator</Text>
+            <Text style={styles.TeksMenu}>Angket</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('Bantuan')}
@@ -86,14 +86,14 @@ export default class Home extends Component {
             />
             <Text style={styles.TeksMenu}>Tentang</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.TouchMenu}>
+          {/* <TouchableOpacity style={styles.TouchMenu}>
             <Image
               resizeMode="contain"
               style={styles.MenuImage}
               source={require('../../asset/Games.gif')}
             />
             <Text style={styles.TeksMenu}>Games</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
     );

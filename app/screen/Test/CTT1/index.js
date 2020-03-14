@@ -6,8 +6,10 @@ import {
   ScrollView,
   FlatList,
   Image,
-  TextInput,
   TouchableOpacity,
+  Animated,
+  Keyboard,
+  SafeAreaView,
 } from 'react-native';
 import HTML from 'react-native-render-html';
 // import ViewPager from '@react-native-community/viewpager';
@@ -16,9 +18,11 @@ import StepIndicator from 'react-native-step-indicator';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
 import {RadioButton} from 'react-native-paper';
+import AsyncStorage from '@react-native-community/async-storage';
+import axios from 'axios';
 import YouTube from 'react-native-youtube';
 import data1 from '../../../utilisasi/data1';
-import style from './style';
+import style from '../style_ctt';
 
 const secondIndicatorStyles = {
   stepIndicatorSize: 34, //ukurang lingkaran
@@ -88,6 +92,12 @@ const getStepIndicatorIconConfig = ({position, stepStatus}) => {
 };
 
 export default class App extends Component {
+  static navigationOptions = () => ({
+    title: 'HOME',
+    headerTransparent: false,
+    headerTitleStyle: style.headerTitleStyle,
+    headerStyle: style.headerStyle,
+  });
   constructor() {
     super();
     this.state = {
@@ -96,13 +106,137 @@ export default class App extends Component {
       isPlaying: true,
       isLooping: true,
       fullscreen: false,
+      shift: new Animated.Value(0),
+      tier11: '',
+      tier12: '',
+      tier13: '',
+      tier13_e: '',
+      tier14: '',
+      tier21: '',
+      tier31: '',
+      tier32: '',
+      tier33: '',
+      tier33_e: '',
+      tier34: '',
+      tier41: '',
+      tier42: '',
+      tier43: '',
+      tier44: '',
+      tier51: '',
+      tier52: '',
+      tier53: '',
+      tier61: '',
+      tier71: '',
+      tier72: '',
+      tier73: '',
+      tier73_e: '',
+      tier74: '',
     };
+  }
+
+  kirimJawaban = async () => {
+    const jwb = this.state;
+    const user = {
+      tier11: jwb.tier11,
+      tier12: jwb.tier12,
+      tier13: jwb.tier13,
+      tier13_e: jwb.tier13_e,
+      tier14: jwb.tier14,
+      tier21: jwb.tier21,
+      tier31: jwb.tier31,
+      tier32: jwb.tier32,
+      tier33: jwb.tier33,
+      tier33_e: jwb.tier33_e,
+      tier34: jwb.tier34,
+      tier41: jwb.tier41,
+      tier42: jwb.tier42,
+      tier43: jwb.tier43,
+      tier44: jwb.tier44,
+      tier45: jwb.tier45,
+      tier46: jwb.tier46,
+      tier51: jwb.tier51,
+      tier52: jwb.tier52,
+      tier53: jwb.tier53,
+      tier61: jwb.tier61,
+      tier71: jwb.tier71,
+      tier72: jwb.tier72,
+      tier73: jwb.tier73,
+      tier73_e: jwb.tier73_e,
+      tier74: jwb.tier74,
+    };
+    console.log(user);
+    const tokenx = await AsyncStorage.getItem('token');
+    const header = {
+      Authorization: 'Bearer ' + tokenx,
+      'Content-Type': 'application/json',
+      'x-api-key':
+        '$2a$10$QNB/3KKnXvzSRQMd/stp1eDEHbtZHlAaKfeTKKJ9R5.OtUnEgnrA6',
+    };
+    axios({
+      method: 'POST',
+      url: 'http://support.tokopandai.id:3003/Api/isiSaldo/validasi',
+      headers: header,
+      data: user,
+    })
+      .then(response => {
+        this.response = response.data;
+        this.dropDownAlertRef.alertWithType(
+          'success',
+          'Mohon diperiksa kembali !',
+          response.data.message,
+        );
+        console.log(response);
+        this.onSuccessUpdate();
+      })
+      .catch(error => {
+        console.log(error.response.data.message);
+        this.dropDownAlertRef.alertWithType(
+          'warn',
+          'Mohon diperiksa kembali !',
+          error.response.data.message,
+        );
+      });
+  };
+
+  sumbmitInc = () => {
+    this.setState(prevState => ({currentPage: prevState.currentPage + 1}));
+  };
+
+  UNSAFE_componentWillMount() {
+    this.keyboardDidShowSub = Keyboard.addListener(
+      'keyboardDidShow',
+      this.handleKeyboardDidShow,
+    );
+    this.keyboardDidHideSub = Keyboard.addListener(
+      'keyboardDidHide',
+      this.handleKeyboardDidHide,
+    );
+  }
+
+  unsafe_componentWillUnmount() {
+    this.keyboardDidShowSub.remove();
+    this.keyboardDidHideSub.remove();
+  }
+
+  jawabanpage1(payload) {
+    const {name, val} = payload;
+    const innerFormDataupdate = {...this.state.page1};
+    innerFormDataupdate[name] = val;
+    // console.log(innerFormDataupdate);
+    this.setState({page1: innerFormDataupdate});
+    // const isCompleteFormupdate = Object.values(
+    //   this.state.sendDataupdate4,
+    // ).every(e => e !== '');
+    // this.setState({isCompleteFormupdate});
   }
 
   soal = () => {
     const page = this.state;
-    const {checked} = this.state;
-    if (page.currentPage === 0) {
+    const {shift} = this.state;
+    // const {checked} = this.state;
+    // const {navigate} = this.props.navigation;
+    const jwb = this.state;
+    if (page.currentPage === 1) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -118,8 +252,8 @@ export default class App extends Component {
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body} />
-                  <Text style={style.tier}>Tier 1:</Text>
-                  <Text>Perhatikan gambar dibawah ini! :</Text>
+                  <Text style={style.tier}>Tier 1</Text>
+                  <Text>Perhatikan gambar dibawah ini!</Text>
                 </View>
                 <View style={style.image}>
                   <Image source={require('../../../asset/snip.png')} />
@@ -132,9 +266,9 @@ export default class App extends Component {
                     <RadioButton
                       value="a"
                       color="#fe7013"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      status={jwb.tier11 === 'a' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier11: 'a'});
                       }}
                     />
                     <Text>{item.tier1.jwb_a}</Text>
@@ -143,9 +277,9 @@ export default class App extends Component {
                     <RadioButton
                       value="b"
                       color="#fe7013"
-                      status={checked === 'b' ? 'checked' : 'unchecked'}
+                      status={jwb.tier11 === 'b' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'b'});
+                        this.setState({tier11: 'b'});
                       }}
                     />
                     <Text>{item.tier1.jwb_b}</Text>
@@ -154,23 +288,24 @@ export default class App extends Component {
                     <RadioButton
                       value="c"
                       color="#fe7013"
-                      status={checked === 'c' ? 'checked' : 'unchecked'}
+                      status={jwb.tier11 === 'c' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'c'});
+                        this.setState({tier11: 'c'});
                       }}
                     />
                     <Text>{item.tier1.jwb_c}</Text>
                   </View>
                 </View>
                 <View style={style.soal}>
+                  <Text style={style.tier}>Tier 2</Text>
                   <Text>{item.tier2.soal}</Text>
-                  <Text style={style.tier}>Tier 2:</Text>
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier12 === 'a' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier12: 'a'});
                       }}
                     />
                     <Text style={style.jawaban}>{item.tier2.jwb_a}</Text>
@@ -178,23 +313,25 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="b"
-                      status={checked === 'b' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier12 === 'b' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'b'});
+                        this.setState({tier12: 'b'});
                       }}
                     />
                     <Text style={style.jawaban}>{item.tier2.jwb_b}</Text>
                   </View>
                 </View>
                 <View style={style.soal}>
+                  <Text style={style.tier}>Tier 3</Text>
                   <Text>{item.tier3.soal}</Text>
-                  <Text style={style.tier}>Tier 3:</Text>
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier13 === 'a' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier13: 'a'});
                       }}
                     />
                     <View style={style.itmSoal}>
@@ -204,9 +341,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="b"
-                      status={checked === 'b' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier13 === 'b' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'b'});
+                        this.setState({tier13: 'b'});
                       }}
                     />
                     <View style={style.itmSoal}>
@@ -216,9 +354,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="b"
-                      status={checked === 'c' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier13 === 'c' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'c'});
+                        this.setState({tier13: 'c'});
                       }}
                     />
                     <View style={style.itmSoal}>
@@ -227,14 +366,17 @@ export default class App extends Component {
                   </View>
                   <View style={style.answer}>
                     <RadioButton
-                      value="b"
-                      status={checked === 'c' ? 'checked' : 'unchecked'}
+                      value="d"
+                      color="#fe7013"
+                      status={jwb.tier13 === 'd' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'c'});
+                        this.setState({tier13: 'd'});
                       }}
                     />
                     <AutoGrowingTextInput
                       style={style.input}
+                      value={jwb.tier13_e}
+                      onChangeText={txt => this.setState({tier13_e: txt})}
                       placeholder={'D. Jawaban Lain'}
                     />
                   </View>
@@ -245,9 +387,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier14 === 'a' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier14: 'a'});
                       }}
                     />
                     <Text style={style.jawaban}>{item.tier4.jwb_a}</Text>
@@ -255,15 +398,18 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="b"
-                      status={checked === 'b' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier14 === 'b' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'b'});
+                        this.setState({tier14: 'b'});
                       }}
                     />
                     <Text style={style.jawaban}>{item.tier4.jwb_b}</Text>
                   </View>
                 </View>
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity
+                  style={style.button}
+                  onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
               </View>
@@ -271,16 +417,21 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 1) {
+    } else if (page.currentPage === 0) {
       return (
-        <View style={style.containdata}>
+        <Animated.View
+          style={[styles.containdata, {transform: [{translateY: shift}]}]}>
           <FlatList
             key="flatList"
             style={style.flatlist}
             data={data1.databagian2}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
-              <View>
+              <Animated.View
+                style={[
+                  styles.containdata,
+                  {transform: [{translateY: shift}]},
+                ]}>
                 <View>
                   <Text style={style.itmtitle}>{item.bab}</Text>
                   <Text style={style.itmtitle}>{item.title}</Text>
@@ -301,6 +452,7 @@ export default class App extends Component {
                       // eslint-disable-next-line react-native/no-inline-styles
                       style={{alignSelf: 'stretch', height: 300, width: 300}}
                     />
+                    <HTML html={item.titlevideo1} />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.body2} />
@@ -308,14 +460,12 @@ export default class App extends Component {
                 </View>
                 <View style={style.image}>
                   <Image source={require('../../../asset/img11.png')} />
+                  <HTML html={item.titlegambar1} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body3} />
                 </View>
-                <Text>
-                  Untuk dapat memahami hal tersebut, amatilah terlebih dahulu
-                  Video
-                </Text>
+                <HTML html={item.bodyr1} />
                 <View>
                   <YouTube
                     videoId="0EdWEQjFr-M"
@@ -330,12 +480,14 @@ export default class App extends Component {
                     // eslint-disable-next-line react-native/no-inline-styles
                     style={{alignSelf: 'stretch', height: 300, width: 300}}
                   />
+                  <HTML html={item.titlevideo2} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body4} />
                 </View>
                 <View style={style.image}>
                   <Image source={require('../../../asset/img12.png')} />
+                  <HTML html={item.titlegambar2} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body5} />
@@ -349,6 +501,7 @@ export default class App extends Component {
                 </View>
                 <View style={style.image}>
                   <Image source={require('../../../asset/img13.png')} />
+                  <HTML html={item.titlegambar3} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body9} />
@@ -367,6 +520,7 @@ export default class App extends Component {
                     // eslint-disable-next-line react-native/no-inline-styles
                     style={{alignSelf: 'stretch', height: 300, width: 300}}
                   />
+                  <HTML html={item.titlevideo3} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body10} />
@@ -376,6 +530,7 @@ export default class App extends Component {
                 </View>
                 <View style={style.image}>
                   <Image source={require('../../../asset/img14.png')} />
+                  <HTML html={item.titlegambar4} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body12} />
@@ -388,6 +543,7 @@ export default class App extends Component {
                 </View>
                 <View style={style.image}>
                   <Image source={require('../../../asset/img15.png')} />
+                  <HTML html={item.titlegambar5} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body15} />
@@ -398,17 +554,21 @@ export default class App extends Component {
                 <View style={style.itmBody}>
                   <HTML html={item.body17} />
                 </View>
-                <TextInput
-                  style={style.input}
+                <AutoGrowingTextInput
+                  autoFocus={true}
+                  onChangeText={txt => this.setState({tier21: txt})}
+                  style={style.inputcct}
                   placeholder={'Isi Simpulan Anda Disini'}
                 />
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity
+                  style={style.button}
+                  onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
-              </View>
+              </Animated.View>
             )}
           />
-        </View>
+        </Animated.View>
       );
     } else if (page.currentPage === 2) {
       return (
@@ -438,9 +598,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier31 === 'a' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier31: 'a'});
                       }}
                     />
                     <View style={style.itmBody}>
@@ -450,9 +611,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier31 === 'b' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier31: 'b'});
                       }}
                     />
                     <View style={style.itmBody}>
@@ -462,9 +624,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier31 === 'c' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier31: 'c'});
                       }}
                     />
                     <View style={style.itmBody}>
@@ -478,9 +641,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier32 === 'a' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier32: 'a'});
                       }}
                     />
                     <Text style={style.jawaban}>{item.tier2.jwb_a}</Text>
@@ -488,9 +652,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="b"
-                      status={checked === 'b' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier32 === 'b' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'b'});
+                        this.setState({tier32: 'b'});
                       }}
                     />
                     <Text style={style.jawaban}>{item.tier2.jwb_b}</Text>
@@ -502,9 +667,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier33 === 'a' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier33: 'a'});
                       }}
                     />
                     <View style={style.itmBody}>
@@ -514,9 +680,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="b"
-                      status={checked === 'b' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier33 === 'b' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'b'});
+                        this.setState({tier33: 'b'});
                       }}
                     />
                     <View style={style.itmBody}>
@@ -525,10 +692,10 @@ export default class App extends Component {
                   </View>
                   <View style={style.answer}>
                     <RadioButton
-                      value="b"
-                      status={checked === 'b' ? 'checked' : 'unchecked'}
+                      value="c"
+                      status={jwb.tier33 === 'c' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'b'});
+                        this.setState({tier33: 'c'});
                       }}
                     />
                     <View style={style.itmBody}>
@@ -537,15 +704,18 @@ export default class App extends Component {
                   </View>
                   <View style={style.answer}>
                     <RadioButton
-                      value="b"
-                      status={checked === 'c' ? 'checked' : 'unchecked'}
+                      value="d"
+                      color="#fe7013"
+                      status={jwb.tier33 === 'd' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'c'});
+                        this.setState({tier33: 'd'});
                       }}
                     />
-                    <TextInput
+                    <AutoGrowingTextInput
                       style={style.input}
                       placeholder={'D. Jawaban Lain'}
+                      value={jwb.tier13_e}
+                      onChangeText={txt => this.setState({tier33_e: txt})}
                     />
                   </View>
                 </View>
@@ -555,9 +725,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier34 === 'a' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier34: 'a'});
                       }}
                     />
                     <Text style={style.jawaban}>{item.tier4.jwb_a}</Text>
@@ -565,15 +736,18 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="b"
-                      status={checked === 'b' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier34 === 'b' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'b'});
+                        this.setState({tier34: 'b'});
                       }}
                     />
                     <Text style={style.jawaban}>{item.tier4.jwb_b}</Text>
                   </View>
                 </View>
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity
+                  style={style.button}
+                  onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
               </View>
@@ -616,34 +790,40 @@ export default class App extends Component {
                 <View style={style.soal}>
                   <View style={style.itmBody}>
                     <HTML html={item.soal1} />
-                    <TextInput
+                    <AutoGrowingTextInput
                       style={style.inputessay}
+                      onChangeText={txt => this.setState({tier41: txt})}
                       placeholder={'1. Jawab Disini'}
                     />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.soal2} />
-                    <TextInput
+                    <AutoGrowingTextInput
                       style={style.inputessay}
+                      onChangeText={txt => this.setState({tier42: txt})}
                       placeholder={'2. Jawab Disini'}
                     />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.soal3} />
-                    <TextInput
+                    <AutoGrowingTextInput
                       style={style.inputessay}
+                      onChangeText={txt => this.setState({tier43: txt})}
                       placeholder={'3. Jawab Disini'}
                     />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.soal4} />
-                    <TextInput
+                    <AutoGrowingTextInput
                       style={style.inputessay}
+                      onChangeText={txt => this.setState({tier44: txt})}
                       placeholder={'4. Jawab Disini'}
                     />
                   </View>
                 </View>
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity
+                  style={style.button}
+                  onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
               </View>
@@ -683,27 +863,32 @@ export default class App extends Component {
                 <View style={style.soal}>
                   <View style={style.itmBody}>
                     <HTML html={item.soal1} />
-                    <TextInput
+                    <AutoGrowingTextInput
                       style={style.inputessay}
                       placeholder={'1. Jawab Disini'}
+                      onChangeText={txt => this.setState({tier51: txt})}
                     />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.soal2} />
-                    <TextInput
+                    <AutoGrowingTextInput
                       style={style.inputessay}
                       placeholder={'2. Jawab Disini'}
+                      onChangeText={txt => this.setState({tier52: txt})}
                     />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.soal3} />
-                    <TextInput
+                    <AutoGrowingTextInput
                       style={style.inputessay}
                       placeholder={'3. Jawab Disini'}
+                      onChangeText={txt => this.setState({tier53: txt})}
                     />
                   </View>
                 </View>
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity
+                  style={style.button}
+                  onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
               </View>
@@ -728,13 +913,16 @@ export default class App extends Component {
                 <View style={style.soal}>
                   <View style={style.itmBody}>
                     <HTML html={item.soal1} />
-                    <TextInput
+                    <AutoGrowingTextInput
                       style={style.inputessay}
                       placeholder={'1. Jawab Disini'}
+                      onChangeText={txt => this.setState({tier61: txt})}
                     />
                   </View>
                 </View>
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity
+                  style={style.button}
+                  onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
               </View>
@@ -770,9 +958,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier71 === 'a' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier71: 'a'});
                       }}
                     />
                     <View style={style.itmBody}>
@@ -781,10 +970,11 @@ export default class App extends Component {
                   </View>
                   <View style={style.answer}>
                     <RadioButton
-                      value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      value="b"
+                      color="#fe7013"
+                      status={jwb.tier71 === 'b' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier71: 'b'});
                       }}
                     />
                     <View style={style.itmBody}>
@@ -793,10 +983,11 @@ export default class App extends Component {
                   </View>
                   <View style={style.answer}>
                     <RadioButton
-                      value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      value="c"
+                      color="#fe7013"
+                      status={jwb.tier71 === 'c' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier71: 'c'});
                       }}
                     />
                     <View style={style.itmBody}>
@@ -810,9 +1001,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier72 === 'a' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier72: 'a'});
                       }}
                     />
                     <Text style={style.jawaban}>{item.tier2.jwb_a}</Text>
@@ -820,9 +1012,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="b"
-                      status={checked === 'b' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier72 === 'b' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'b'});
+                        this.setState({tier72: 'b'});
                       }}
                     />
                     <Text style={style.jawaban}>{item.tier2.jwb_b}</Text>
@@ -834,9 +1027,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier73 === 'a' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier73: 'a'});
                       }}
                     />
                     <View style={style.itmBody}>
@@ -846,9 +1040,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="b"
-                      status={checked === 'b' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier73 === 'b' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'b'});
+                        this.setState({tier73: 'b'});
                       }}
                     />
                     <View style={style.itmBody}>
@@ -857,10 +1052,11 @@ export default class App extends Component {
                   </View>
                   <View style={style.answer}>
                     <RadioButton
-                      value="b"
-                      status={checked === 'b' ? 'checked' : 'unchecked'}
+                      value="c"
+                      color="#fe7013"
+                      status={jwb.tier73 === 'c' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'b'});
+                        this.setState({tier73: 'c'});
                       }}
                     />
                     <View style={style.itmBody}>
@@ -869,15 +1065,18 @@ export default class App extends Component {
                   </View>
                   <View style={style.answer}>
                     <RadioButton
-                      value="b"
-                      status={checked === 'c' ? 'checked' : 'unchecked'}
+                      value="d"
+                      color="#fe7013"
+                      status={jwb.tier73 === 'd' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'c'});
+                        this.setState({tier73: 'd'});
                       }}
                     />
-                    <TextInput
+                    <AutoGrowingTextInput
                       style={style.input}
                       placeholder={'D. Jawaban Lain'}
+                      value={jwb.tier73_e}
+                      onChangeText={txt => this.setState({tier73_e: txt})}
                     />
                   </View>
                 </View>
@@ -887,9 +1086,10 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
-                      status={checked === 'a' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier74 === 'a' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'a'});
+                        this.setState({tier74: 'a'});
                       }}
                     />
                     <Text style={style.jawaban}>{item.tier4.jwb_a}</Text>
@@ -897,15 +1097,18 @@ export default class App extends Component {
                   <View style={style.answer}>
                     <RadioButton
                       value="b"
-                      status={checked === 'b' ? 'checked' : 'unchecked'}
+                      color="#fe7013"
+                      status={jwb.tier74 === 'b' ? 'checked' : 'unchecked'}
                       onPress={() => {
-                        this.setState({checked: 'b'});
+                        this.setState({tier74: 'b'});
                       }}
                     />
                     <Text style={style.jawaban}>{item.tier4.jwb_b}</Text>
                   </View>
                 </View>
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity
+                  style={style.button}
+                  onPress={() => this.kirimJawaban()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
               </View>
@@ -922,7 +1125,7 @@ export default class App extends Component {
         <View style={style.header}>
           <Text style={style.titletest}>TEKANAN HIDROSTATIS</Text>
         </View>
-        <View style={style.mainbody}>
+        <SafeAreaView style={style.mainbody}>
           <ScrollView style={style.scrollview}>
             <View style={style.viewindicator}>
               <StepIndicator
@@ -945,7 +1148,7 @@ export default class App extends Component {
             </View>
           </ScrollView>
           {this.soal()}
-        </View>
+        </SafeAreaView>
       </View>
     );
   }

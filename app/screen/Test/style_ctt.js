@@ -1,5 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
-import Color from '../../../constant/Color';
+import Color from '../../constant/Color';
 
 const {width, height} = Dimensions.get('window');
 export default StyleSheet.create({
@@ -8,13 +8,23 @@ export default StyleSheet.create({
     width: width,
     height: height,
   },
+  headerTitleStyle: {
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 18,
+    alignSelf: 'center',
+    textAlign: 'center',
+    justifyContent: 'center',
+  },
+  headerStyle: {
+    height: height * 0.06,
+  },
   header: {
     backgroundColor: 'lightgrey',
     justifyContent: 'center',
     alignSelf: 'center',
     borderRadius: 10,
     width: width * 0.95,
-    height: height * 0.15,
+    height: height * 0.1,
     marginTop: height * 0.005,
   },
   containdata: {
@@ -60,8 +70,8 @@ export default StyleSheet.create({
     marginBottom: height * 0.2,
   },
   viewindicator: {
-    marginLeft: width * 0.024,
-    height,
+    marginLeft: width * 0.03,
+    height: height * 0.65,
     marginBottom: height * 0.25,
   },
   containerscrol: {
@@ -132,6 +142,7 @@ export default StyleSheet.create({
   },
   itmtitle: {
     textAlign: 'center',
+    fontWeight: 'bold',
   },
   itmSoal: {
     marginTop: 3,
@@ -142,12 +153,6 @@ export default StyleSheet.create({
   itmBody: {
     marginTop: 3,
     marginRight: 10,
-    justifyContent: 'center',
-    flex: 1,
-  },
-  rmsBody: {
-    marginTop: 3,
-    marginLeft: 20,
     justifyContent: 'center',
     flex: 1,
   },
@@ -167,8 +172,15 @@ export default StyleSheet.create({
     fontSize: 13,
   },
   input: {
-    marginTop: 10,
-    width: width * 0.6,
+    width: width * 0.58,
+    justifyContent: 'center',
+    textAlignVertical: 'center',
+    fontSize: 13,
+    borderWidth: 1,
+    borderRadius: 10,
+  },
+  inputcct: {
+    width: width * 0.7,
     justifyContent: 'center',
     textAlignVertical: 'center',
     fontSize: 13,
@@ -202,15 +214,16 @@ export default StyleSheet.create({
   },
   button: {
     justifyContent: 'center',
-    backgroundColor: 'lightgrey',
+    backgroundColor: Color.main.orange,
     borderRadius: 10,
-    width: width * 0.6,
+    width: width * 0.7,
     height: height * 0.08,
     alignSelf: 'center',
     margin: 20,
     marginBottom: height * 0.1,
   },
   textbtn: {
+    color: Color.white,
     justifyContent: 'center',
     alignSelf: 'center',
     fontWeight: 'bold',

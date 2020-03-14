@@ -13,19 +13,19 @@ export default class Test extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.btnTest}
-          onPress={() => this.props.navigation.navigate('Ctt1Screen')}>
+          onPress={() => this.props.navigation.navigate('Ctt2Screen')}>
           <Text style={styles.textBtn}>Gaya Apung</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.btnTest}
-          onPress={() => this.props.navigation.navigate('Ctt1Screen')}>
+          onPress={() => this.props.navigation.navigate('Ctt3Screen')}>
           <Text style={styles.textBtn}>
             Konsep Terapung, Melayang, dan Tenggelam (1)
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.btnTest}
-          onPress={() => this.props.navigation.navigate('Ctt1Screen')}>
+          onPress={() => this.props.navigation.navigate('Ctt4Screen')}>
           <Text style={styles.textBtn}>
             Terapung, Melayang, dan Tenggelam (2)
           </Text>

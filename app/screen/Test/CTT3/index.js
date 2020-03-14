@@ -17,7 +17,7 @@ import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import {RadioButton} from 'react-native-paper';
 import YouTube from 'react-native-youtube';
 import data3 from '../../../utilisasi/data3';
-import style from './style';
+import style from '../style_ctt';
 
 const secondIndicatorStyles = {
   stepIndicatorSize: 37,
@@ -87,6 +87,12 @@ const getStepIndicatorIconConfig = ({position, stepStatus}) => {
 };
 
 export default class App extends Component {
+  static navigationOptions = () => ({
+    title: 'HOME',
+    headerTransparent: false,
+    headerTitleStyle: style.headerTitleStyle,
+    headerStyle: style.headerStyle,
+  });
   constructor() {
     super();
     this.state = {
@@ -97,6 +103,10 @@ export default class App extends Component {
       fullscreen: false,
     };
   }
+
+  sumbmitInc = () => {
+    this.setState(prevState => ({currentPage: prevState.currentPage + 1}));
+  };
 
   soal = () => {
     const page = this.state;
@@ -266,7 +276,9 @@ export default class App extends Component {
                     <Text style={style.jawaban}>{item.tier4.jwb_b}</Text>
                   </View>
                 </View>
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity
+                  style={style.button}
+                  onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
               </View>
@@ -364,7 +376,9 @@ export default class App extends Component {
                 <View style={style.input}>
                   <TextInput placeholder={'Isi Simpulan Anda Disini'} />
                 </View>
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity
+                  style={style.button}
+                  onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
               </View>
@@ -530,7 +544,9 @@ export default class App extends Component {
                     <Text style={style.jawaban}>{item.tier4.jwb_b}</Text>
                   </View>
                 </View>
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity
+                  style={style.button}
+                  onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
               </View>
@@ -619,7 +635,9 @@ export default class App extends Component {
                     />
                   </View>
                 </View>
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity
+                  style={style.button}
+                  onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
               </View>
@@ -667,6 +685,11 @@ export default class App extends Component {
                 <View style={style.itmBody}>
                   <HTML html={item.body5} />
                 </View>
+                <TouchableOpacity
+                  style={style.button}
+                  onPress={() => this.sumbmitInc()}>
+                  <Text style={style.textbtn}>LANJUT</Text>
+                </TouchableOpacity>
               </View>
             )}
           />
@@ -695,7 +718,9 @@ export default class App extends Component {
                     />
                   </View>
                 </View>
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity
+                  style={style.button}
+                  onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
               </View>
@@ -866,7 +891,9 @@ export default class App extends Component {
                     <Text style={style.jawaban}>{item.tier4.jwb_b}</Text>
                   </View>
                 </View>
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity
+                  style={style.button}
+                  onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
               </View>

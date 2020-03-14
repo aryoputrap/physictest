@@ -128,9 +128,9 @@ const PublicStack = createStackNavigator(
   },
   {
     headerMode: 'screen',
-    initialRouteName: 'Ctt1Screen',
+    // initialRouteName: 'Ctt1Screen',
     // initialRouteName: 'Login',
-    // initialRouteName: 'StackPublic',
+    initialRouteName: 'StackPublic',
     // initialRouteName: 'Register',
     // initialRouteName: 'SplashScreen',
   },

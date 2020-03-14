@@ -13,6 +13,8 @@ export default StyleSheet.create({
   },
   btnTest: {
     backgroundColor: Color.main.primaryorange,
+    borderTopWidth: 10,
+    borderTopColor: Color.main.blueAkun,
     borderRadius: 10,
     width: width * 0.8,
     height: height * 0.1,
