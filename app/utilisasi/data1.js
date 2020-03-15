@@ -74,7 +74,7 @@ export default {
       body7:
         '<p1 style="textAlign: justify;">Secara matematis, tekanan didefinisikan sebagai gaya per satuan luas, dengan gaya F dipahami sebagai gaya yang bekerja pada arah tegak lurus terhadap bidang seluas A. Dengan demikian, tekanan dapat dituliskan sebagai berikut.</p1>',
       body8:
-        '<p style="textAlign: justify;">Satuan tekanan ini resmi diberi nama Pascal untuk menghormati Blaise Pascal, yaitu 1 Pa = 1 N/m <sup>2</sup>. Pada setiap titik di dalam fluida yang diam, tekanan akan bernilai sama ke segala arah pada kedalaman yang sama. Gaya akibat tekanan di dalam fluida yang diam selalu bekerja tegak-lurus terhadap permukaan kontak.</p>',
+        '<p style="textAlign: justify;">Satuan tekanan ini resmi diberi nama Pascal untuk menghormati Blaise Pascal, yaitu 1 Pa = 1 N/m<sup style="font-size:7%;vertical-align: super; position: relative; top: -0.5em;">2</sup>. Pada setiap titik di dalam fluida yang diam, tekanan akan bernilai sama ke segala arah pada kedalaman yang sama. Gaya akibat tekanan di dalam fluida yang diam selalu bekerja tegak-lurus terhadap permukaan kontak.</p>',
       body9:
         '<p1 style="textAlign: justify;">Berdasarkan Gambar 1.3, tekanan yang diberikan oleh cairan pada kedalaman h timbul akibat berat lapisan-lapisan cairan di atas titik tersebut. Sehingga gaya dari berat cairan yang bekerja pada bidang seluas A adalah F= m.g = (ρV)g =ρAhg, dengan Ah adalah volume lapisan-lapisan cairan diatas titik yang dimaksud, ρ adalah densitas cairan (diasumsikan bernilai konstan), dan g adalah percepatan gravitasi. Tekanan P akibat berat cairan adalah:</p1>',
       body9r:
@@ -84,13 +84,16 @@ export default {
       body11:
         '<p1 style="textAlign: center;"><i>“Tekanan hidrostatis di semua titik yang terletak pada satu bidang mendatar di dalam satu jenis zat cair besarnya sama.”</i></p1>',
       body12:
-        '<p1 style="textAlign: justify;">Gambar 1.4 menunjukan titik A, B, dan C berada pada kedalaman sama. Berdasarkan Hukum Pokok Hidrostatika, maka tekanan di titik A, B, dan C besarnya sama.</p1>',
-      body13: '<p1 style="textAlign: center;">P A = P B = P C = ρ.g.h</p1>',
+        '<p1 style="textAlign: justify;">Gambar 1.4 menunjukan titik A dan B berada pada kedalaman yang sama dari permukaan air. Berdasarkan Hukum Utama Hidrostatis, maka tekanan di titik A dan B besarnya sama</p1>',
+      body13:
+        '<p1 style="textAlign: center;">P<sub>A</sub> = P<sub>B</sub> = ρ.g.h</p1>',
       body14:
         '<p1 style="textAlign: justify;">Hukum Pokok Hidrostatika ini dapat digunakan untuk menentukan massa jenis zat cair dengan menggunakan pipa U, seperti yang terlihat pada gambar 1.5 berikut ini.</p1>',
       body15:
         '<p1 style="textAlign: justify;">Zat cair yang sudah diketahui massa jenisnya (ρ2) dimasukkan dalam pipa U, kemudian zat cair yang akan dicari massa jenisnya (ρ1) dituangkan pada kaki yang lain setinggi h1 . Adapun h2adalah tinggi zat cair mula-mula, diukur dari garis batas kedua zat cair. Berdasarkan Hukum Pokok Hidrostatika, maka:</p1>',
       body16: '<p1 style="textAlign: center;">P A = P B</p1>',
+      body16b: '<p1 style="textAlign: center;">𝜌1𝑔ℎ1 = 𝜌2𝑔ℎ2 </p1>',
+      body16c: '<p1 style="textAlign: center;">𝜌1ℎ1 = 𝜌2ℎ2 </p1>',
       body17:
         '<p1 style="textAlign: justify;">Dari visualisasi tersebut apakah yang dapat Anda simpulkan tentang definisi tekanan hidrostatis?</p1>',
       bodyx: '<p1 style="textAlign: justify;"></p1>',
@@ -132,7 +135,7 @@ export default {
         jwb_a:
           '<p1 style="textAlign: justify;">A. tekanan hidrostatis yang dialami benda dalam suatu zat cair sebanding dengan kedalaman dalam zat cair, karena air di atas ikan A lebih tinggi dari air di atas ikan B, maka ikan A mengalami tekanan hidrostatis yang lebih besar dari ikan B.</p1>',
         jwb_b:
-          '<p1 style="textAlign: justify;">B. karena adanya rongga yang tertutup maka tekanan di dalam batu berisi air akan sangat besar, sehingga ikan B mengalami tekanan hidrostatis yang lebih besar dari ikan B.</p1>',
+          '<p1 style="textAlign: justify;">B. karena adanya rongga yang tertutup maka tekanan di dalam batu berisi air akan sangat besar, sehingga ikan B mengalami tekanan hidrostatis yang lebih besar dari ikan A.</p1>',
         jwb_c:
           '<p1 style="textAlign: justify;">C. ikan A dan Ikan B berada pada kedalaman yang sama dari permukaan air, sehingga ikan A dan ikan B mengalami tekanan hidrostatis yang sama besar.</p1>',
       },
@@ -149,6 +152,10 @@ export default {
     {
       bab: 'BAGIAN IV',
       title: 'Teks Konfrontasi Keyakinan Konsepsi',
+      titlegambar1:
+        '<p1 style="textAlign: center;"><b>Gambar 1.4 Pesawat Hartl</b></p1>',
+      titlevideo1:
+        '<p1 style="textAlign: center;"><b>Video 1.4 Percobaan Pesawat Hartl</b></p1>',
       body1:
         '<p1 style="textAlign: justify;">Berikut merupakan gambar yang menunjukkan sebuah wadah, manometer, dan sebuah batu berbentuk U.</p1>',
       body2:
@@ -171,6 +178,8 @@ export default {
     {
       bab: 'BAGIAN V',
       title: 'Teks Pengubahan Konsepsi (Conceptual Change)',
+      titlegambar1:
+        '<p1 style="textAlign: center;"><b>Gambar 1.5 Ilustrasi tekanan hidrostatis di setiap titik</b></p1>',
       body1:
         '<p1 style="textAlign: justify;">Pada bagian sebelumnya Anda telah melihat bukti bahwa tekanan hidrostatis di dalam batu berongga sama dengan tekanan hidrostatis di luar batu berongga.</p1>',
       body2:
@@ -192,7 +201,7 @@ export default {
       bab: 'BAGIAN  VI',
       title: 'Teks Pernyataan Akomodasi Konsepsi',
       soal1:
-        '<p1 style="textAlign: justify;">Setelah melakukan pengkajian terhadap paparan dan penjelasan di atas, apakah sekarang Anda akan mengubah konsepsi yang selama ini Anda miliki tentang tekanan hidrostatis yaitu tekanan hidrostatis di dalam rongga diluar rongga memiliki besar tekanan hidrostatis yang berbeda dengan konsepsi baru bahwa tekanan hidrostatis di setiap titik pada kedalaman yang sama akan sama besar?</p1>',
+        '<p1 style="textAlign: justify;">Setelah melakukan pengkajian terhadap paparan dan penjelasan di atas, apakah sekarang Anda akan mengubah konsepsi yang selama ini Anda miliki tentang tekanan hidrostatis yaitu "tekanan hidrostatis di dalam rongga diluar rongga memiliki besar tekanan hidrostatis yang berbeda" dengan konsepsi baru bahwa "tekanan hidrostatis di setiap titik pada kedalaman yang sama akan sama besar"?</p1>',
     },
   ],
   databagian7: [
@@ -205,13 +214,13 @@ export default {
         soal1:
           '<p1 style="textAlign: left;">Perhatikan gambar dibawah ini!</p1>',
         soal12:
-          '<p1 style="textAlign: justify;">Gambar tersebut menunjukkan dua ekor ikan yang sedang berada di dalam akuarium. Ikan B berada di bawah tumpukan batu dalam akuarium sedangkan ikan A berada di luar tumpukan batu. Menurut Anda ikan bagaimana tekanan hidrostatis yang dirasakan ikan tersebut?</p1>',
+          '<p1 style="textAlign: justify;">Gambar tersebut menunjukkan dua ekor ikan yang sedang berada di dalam akuarium. Ikan A berada di bawah tumpukan batu dalam akuarium sedangkan ikan B berada di luar tumpukan batu. Menurut Anda ikan bagaimana tekanan hidrostatis yang dirasakan ikan tersebut?</p1>',
         jwb_a:
-          '<p1 style="textAlign: justify;">A. Ikan A mengalami tekanan hidrostatis lebih besar dari ikan B</p1>',
+          '<p1 style="textAlign: justify;">A. Ikan A mengalami tekanan hidrostatis lebih besar dari ikan B.</p1>',
         jwb_b:
-          '<p1 style="textAlign: justify;">B. Ikan B mengalami tekanan hidrostatis lebih besar dari ikan A</p1>',
+          '<p1 style="textAlign: justify;">B. Ikan B mengalami tekanan hidrostatis lebih besar dari ikan A.</p1>',
         jwb_c:
-          '<p1 style="textAlign: justify;">C. Ikan A dan ikan B mengalami tekanan hidrostatis sama besar</p1>',
+          '<p1 style="textAlign: justify;">C. Ikan A dan ikan B mengalami tekanan hidrostatis sama besar.</p1>',
       },
       tier2: {
         soal:

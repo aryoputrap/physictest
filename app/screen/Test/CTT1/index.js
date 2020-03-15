@@ -414,7 +414,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 0) {
+    } else if (page.currentPage === 2) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -480,8 +480,6 @@ export default class App extends Component {
                 <View style={style.itmBody}>
                   <HTML html={item.body5} />
                   <HTML html={item.body6} />
-                </View>
-                <View style={style.itmBody}>
                   <HTML html={item.body7} />
                 </View>
                 <View style={style.image}>
@@ -523,9 +521,10 @@ export default class App extends Component {
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body11} />
+                  <Text>Perhatikan Gambar 1.4 berikut ini!</Text>
                 </View>
                 <View style={style.image}>
-                  <Image source={require('../../../asset/img14.png')} />
+                  <Image source={require('../../../asset/IMG1/img14.png')} />
                   <HTML html={item.titlegambar4} />
                 </View>
                 <View style={style.itmBody}>
@@ -546,6 +545,8 @@ export default class App extends Component {
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body16} />
+                  <HTML html={item.body16b} />
+                  <HTML html={item.body16c} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body17} />
@@ -566,7 +567,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 2) {
+    } else if (page.currentPage === 3) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -751,7 +752,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 3) {
+    } else if (page.currentPage === 4) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -770,6 +771,7 @@ export default class App extends Component {
                 </View>
                 <View style={style.image}>
                   <Image source={require('../../../asset/img41.png')} />
+                  <HTML html={item.titlegambar1} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body2} />
@@ -779,6 +781,7 @@ export default class App extends Component {
                 </View>
                 <View style={style.image}>
                   <Image source={require('../../../asset/img42.png')} />
+                  <HTML html={item.titlevideo1} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body4} />
@@ -827,7 +830,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 4) {
+    } else if (page.currentPage === 0) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -849,11 +852,10 @@ export default class App extends Component {
                 </View>
                 <View style={style.image}>
                   <Image source={require('../../../asset/img51.png')} />
+                  <HTML html={item.titlegambar1} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body3} />
-                </View>
-                <View style={style.itmBody}>
                   <HTML html={item.body4} />
                 </View>
                 <View style={style.soal}>
@@ -941,7 +943,7 @@ export default class App extends Component {
                   <Text style={style.itmtitle}>{item.title}</Text>
                 </View>
                 <View style={style.soal}>
-                  <Text style={style.tier}>Tier 1:</Text>
+                  <Text style={style.tier}>Tier 1</Text>
                   <View style={style.itmBody}>
                     <HTML html={item.tier1.soal1} />
                   </View>
@@ -992,7 +994,7 @@ export default class App extends Component {
                   </View>
                 </View>
                 <View style={style.soal}>
-                  <Text style={style.tier}>Tier 2:</Text>
+                  <Text style={style.tier}>Tier 2</Text>
                   <Text>{item.tier2.soal}</Text>
                   <View style={style.answer}>
                     <RadioButton
@@ -1018,7 +1020,7 @@ export default class App extends Component {
                   </View>
                 </View>
                 <View style={style.soal}>
-                  <Text style={style.tier}>Tier 3:</Text>
+                  <Text style={style.tier}>Tier 3</Text>
                   <Text>{item.tier3.soal}</Text>
                   <View style={style.answer}>
                     <RadioButton
@@ -1077,7 +1079,7 @@ export default class App extends Component {
                   </View>
                 </View>
                 <View style={style.soal}>
-                  <Text style={style.tier}>Tier 4:</Text>
+                  <Text style={style.tier}>Tier 4</Text>
                   <Text>{item.tier4.soal}</Text>
                   <View style={style.answer}>
                     <RadioButton
