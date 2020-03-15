@@ -1,7 +1,7 @@
 export default {
   databagian1: [
     {
-      bab: 'BAGIAN 1',
+      bab: 'BAGIAN I',
       title: 'Teks Pengantar dan Identifikasi Keadaan Konsepsi Awal',
       body:
         '<p1 style="textAlign: justify;">Fluida merupakan zat yang dapat mengalir. Ketika terdapat suatu benda di dalam suatu fluida yang diam, maka tekanan yang dirasakan benda dalam fluida tersebut dinamakan dengan tekanan hidrostatis. Konsep tekanan hidrostatis seringkali dipahami secara keliru oleh peserta didik sehingga perlu bahan belajar yang dapat memberi penjelasan yang komprehensif untuk membentuk dan merevisi konsep tersebut di benak peserta didik. Dengan demikian, teks ini dibuat untuk keperluan tersebut. Silahkan Anda baca dengan seksama setiap bagian teks dan lakukan aktivitas sesuai yang diminta pada setiap bagian teks dengan sebaik baiknya sesuai pemikiran yang Anda miliki. Tapi sebelum Anda membaca setiap bagian teks silahkan jawab pertanyaan-pertanyaan berikut.</p1>',
@@ -58,13 +58,13 @@ export default {
       titlegambar5:
         '<p1 style="textAlign: center;"><b>Gambar 1.5 Tekanan pada pipa U</b></p1>',
       bodyr1:
-        '<p1 style="textAlign: justity;">Untuk dapat memahami hal tersebut, amatilah terlebih dahulu Video 1.2 terkait fenomena tekanan hidrostis berikut ini.</p1>',
+        '<p1 style="textAlign: justify;">Untuk dapat memahami hal tersebut, amatilah terlebih dahulu Video 1.2 terkait fenomena tekanan hidrostis berikut ini.</p1>',
       body1:
         '<p1 style="textAlign: justify;">Tekanan hidrostatis adalah tekanan yang disebabkan oleh berat zat cair yang dalam keadaan diam. Untuk membuktikan adanya tekanan hidrostatis ini mari kita amati tayangan Video 1.1 berikut.</p1>',
       body2:
         '<p1 style="textAlign: justify;">Berdasarkan tayangan Video 1.1 diatas menampilkan fenomena dari percobaan sederhana yang dilakukan pada sebuah kartu untuk menunjukkan adanya tekanan hidrostatis. Maka dilakukan dua perlakuan berbeda terhadap kartu, yakni pada saat kartu diberdirikan secara vertikal di atas meja dan kartu dicelupkan secara vertikal dalam air.</p1>',
       body3:
-        '<p1 style="textAlign: justify;">Zat cair atau fluida yang diam memberikan tekanan sama besar ke semua arah. Gambar 1.1 merupakan ilustrasi dari Video 1.1. yang kita amati sebelumnya, yakni kartu yang berada pada kedalaman tertentu dalam suatu fluida. Kartu ini mendapatkan tekanan yang besarnya sama dari segala arah. Apabila besar tekanan tidak sama, maka kartu akan bergerak. Tekanan yang dirasakan kartu atau suatu benda dalam fluida ini disebut Tekanan Hidrostatis.</p1>',
+        '<p1 style="textAlign: justify;">Zat cair atau fluida yang diam memberikan tekanan sama besar ke semua arah. Gambar 1.1 merupakan ilustrasi dari Video 1.1 yang kita amati sebelumnya, yakni kartu yang berada pada kedalaman tertentu dalam suatu fluida. Kartu ini mendapatkan tekanan yang besarnya sama dari segala arah. Apabila besar tekanan tidak sama, maka kartu akan bergerak. Tekanan yang dirasakan kartu atau suatu benda dalam fluida ini disebut <b>Tekanan Hidrostatis</b>.</p1>',
       body4:
         '<p1 style="textAlign: justify;">Berdasarkan video tersebut terlihat bahwa tekanan yang dirasakan sebuah botol terlihat semakin besar ketika botol semakin dalam menjauhi permukaaan air. Lantas bagaimana fenomena ini dapat dijelaskan? Amatilah Gambar 1.2 berikut ini.</p1>',
       body5:
@@ -72,11 +72,13 @@ export default {
       body6:
         '<p1 style="textAlign: justify;">Lapisan 3 memiliki gaya gravitasi pada partikel-partikelnya sendiri ditambah berat dua lapisan pertama yang mendorong ke bawah lapisan 3 tersebut. Akibatnya, tekanan pada lapisan 3 lebih besar dari lapisan manapun di atasnya. Lapisan paling bawah atau kedalaman paling dalam dari setiap fluida akan memiliki tekanan paling besar karena lapisan itu mendapatkan gaya dorong paling besar dari lapisan di atasnya.</p1>',
       body7:
-        '<p1 style="textAlign: justify;">Secara matermatis, tekanan didefinisikan sebagai gaya per satuan luas, dengan gaya F dipahami sebagai gaya yang bekerja pada arah tegak lurus terhadap bidang seluas A. Dengan demikian, tekanan dapat dituliskan sebagai berikut.</p1>',
+        '<p1 style="textAlign: justify;">Secara matematis, tekanan didefinisikan sebagai gaya per satuan luas, dengan gaya F dipahami sebagai gaya yang bekerja pada arah tegak lurus terhadap bidang seluas A. Dengan demikian, tekanan dapat dituliskan sebagai berikut.</p1>',
       body8:
-        '<p1 style="textAlign: justify;">Satuan tekanan ini resmi diberi nama Pascal untuk menghormati Blaise Pascal, yaitu 1 Pa = 1 N/m 2 . Pada setiap titik di dalam fluida yang diam, tekanan akan bernilai sama ke segala arah pada kedalaman yang sama. Gaya akibat tekanan di dalam fluida yang diam selalu bekerja tegak-lurus terhadap permukaan kontak.</p1>',
+        '<p style="textAlign: justify;">Satuan tekanan ini resmi diberi nama Pascal untuk menghormati Blaise Pascal, yaitu 1 Pa = 1 N/m <sup>2</sup>. Pada setiap titik di dalam fluida yang diam, tekanan akan bernilai sama ke segala arah pada kedalaman yang sama. Gaya akibat tekanan di dalam fluida yang diam selalu bekerja tegak-lurus terhadap permukaan kontak.</p>',
       body9:
-        '<p1 style="textAlign: justify;">Berdasarkan Gambar 1.3, tekanan yang diberikan oleh cairan pada kedalaman h timbul akibat berat lapisan-lapisan cairan di atas titik tersebut. Sehingga gaya dari berat cairan yang bekerja pada bidang seluas A adalah F= m.g = (ρV)g =ρAhg, dengan Ah adalah volume lapisan-lapisan cairan diatas titik yang dimaksud, ρ adalah densitas cairan (diasumsikan bernilai konstan), dan g adalah percepatan gravitasi. Tekanan P akibat berat cairan adalah:</p1> <br>Selanjutnya, coba Anda amati Video 1.3 berikut ini!</br>',
+        '<p1 style="textAlign: justify;">Berdasarkan Gambar 1.3, tekanan yang diberikan oleh cairan pada kedalaman h timbul akibat berat lapisan-lapisan cairan di atas titik tersebut. Sehingga gaya dari berat cairan yang bekerja pada bidang seluas A adalah F= m.g = (ρV)g =ρAhg, dengan Ah adalah volume lapisan-lapisan cairan diatas titik yang dimaksud, ρ adalah densitas cairan (diasumsikan bernilai konstan), dan g adalah percepatan gravitasi. Tekanan P akibat berat cairan adalah:</p1>',
+      body9r:
+        '<p1 style="textAlign: justify;">Selanjutnya, coba Anda amati Video 1.3 berikut ini!</p1>',
       body10:
         '<p1 style="textAlign: justify;">Maka diketahui bahwa tekanan yang dilakukan oleh zat cair besarnya tergantung pada kedalamannya (h). Hal ini menunjukkan bahwa titik-titik yang berada pada kedalaman yang sama mengalami tekanan hidrostatik yang sama pula. Fenomena ini dikenal dengan Hukum Utama Hidrostatis yang menyatakan:</p1>',
       body11:
@@ -105,7 +107,7 @@ export default {
   ],
   databagian3: [
     {
-      bab: 'BAGIAN 3',
+      bab: 'BAGIAN III',
       title: 'Teks Identifikasi Ulang Keadaan Konsepsi',
       tier1: {
         soal1:

@@ -7,6 +7,7 @@ export default {
     grey: '#f6f6f6',
     greyLine: '#A0A0A0',
     greyLineGood: '#707070',
+    greylight: '#f0f0f0',
     greyText: '#A8A9AD',
     inActive: '#bdc3c7',
     transparent: 'transparent',

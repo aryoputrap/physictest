@@ -9,9 +9,9 @@ import {
   TouchableOpacity,
   Animated,
   Keyboard,
-  SafeAreaView,
 } from 'react-native';
 import HTML from 'react-native-render-html';
+import Video from 'react-native-video';
 // import ViewPager from '@react-native-community/viewpager';
 // import {IndicatorViewPager} from 'react-native-best-viewpager';
 import StepIndicator from 'react-native-step-indicator';
@@ -29,19 +29,19 @@ const secondIndicatorStyles = {
   currentStepIndicatorSize: 45, //ukuran lingkaran sesudah
   separatorStrokeWidth: 3, //lebar-garis
   currentStepStrokeWidth: 5, //lingkaran
-  stepStrokeCurrentColor: '#fe7013',
+  stepStrokeCurrentColor: '#008CC9',
   stepStrokeWidth: 4,
   separatorStrokeFinishedWidth: 5, //lebar_garis
-  stepStrokeFinishedColor: '#fe7013',
+  stepStrokeFinishedColor: '#008CC9',
   stepStrokeUnFinishedColor: '#aaaaaa',
-  separatorFinishedColor: '#fe7013',
+  separatorFinishedColor: '#008CC9',
   separatorUnFinishedColor: '#aaaaaa',
-  stepIndicatorFinishedColor: '#fe7013',
+  stepIndicatorFinishedColor: '#008CC9',
   stepIndicatorUnFinishedColor: '#ffffff',
   stepIndicatorCurrentColor: '#ffffff',
   stepIndicatorLabelFontSize: 13,
   currentStepIndicatorLabelFontSize: 13,
-  stepIndicatorLabelCurrentColor: '#fe7013',
+  stepIndicatorLabelCurrentColor: '#008CC9',
   stepIndicatorLabelFinishedColor: '#ffffff',
   stepIndicatorLabelUnFinishedColor: '#aaaaaa',
   labelColor: '#999999',
@@ -52,36 +52,36 @@ const secondIndicatorStyles = {
 const getStepIndicatorIconConfig = ({position, stepStatus}) => {
   const iconConfig = {
     name: 'feed',
-    color: stepStatus === 'finished' ? '#ffffff' : '#fe7013',
-    size: 17,
+    color: stepStatus === 'finished' ? '#ffffff' : '#008CC9',
+    size: 19,
   };
   switch (position) {
     case 0: {
-      iconConfig.name = 'shopping-cart';
+      iconConfig.name = 'filter-1';
       break;
     }
     case 1: {
-      iconConfig.name = 'location-on';
+      iconConfig.name = 'filter-2';
       break;
     }
     case 2: {
-      iconConfig.name = 'assessment';
+      iconConfig.name = 'filter-3';
       break;
     }
     case 3: {
-      iconConfig.name = 'payment';
+      iconConfig.name = 'filter-4';
       break;
     }
     case 4: {
-      iconConfig.name = 'directions-boat';
+      iconConfig.name = 'filter-5';
       break;
     }
     case 5: {
-      iconConfig.name = 'ac-unit';
+      iconConfig.name = 'filter-6';
       break;
     }
     case 6: {
-      iconConfig.name = 'directions-boat';
+      iconConfig.name = 'filter-7';
       break;
     }
     default: {
@@ -232,9 +232,6 @@ export default class App extends Component {
 
   soal = () => {
     const page = this.state;
-    const {shift} = this.state;
-    // const {checked} = this.state;
-    // const {navigate} = this.props.navigation;
     const jwb = this.state;
     if (page.currentPage === 1) {
       return (
@@ -419,19 +416,14 @@ export default class App extends Component {
       );
     } else if (page.currentPage === 0) {
       return (
-        <Animated.View
-          style={[styles.containdata, {transform: [{translateY: shift}]}]}>
+        <View style={style.containdata}>
           <FlatList
             key="flatList"
             style={style.flatlist}
             data={data1.databagian2}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
-              <Animated.View
-                style={[
-                  styles.containdata,
-                  {transform: [{translateY: shift}]},
-                ]}>
+              <View>
                 <View>
                   <Text style={style.itmtitle}>{item.bab}</Text>
                   <Text style={style.itmtitle}>{item.title}</Text>
@@ -439,18 +431,14 @@ export default class App extends Component {
                     <HTML html={item.body1} />
                   </View>
                   <View>
-                    <YouTube
-                      videoId="EP3AMzadA_o"
-                      apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
-                      play={this.state.isPlaying}
-                      loop={this.state.isLooping}
-                      // onReady={true}
-                      // onChangeState={e => this.setState({status: e.state})}
-                      // onChangeQuality={e => this.setState({quality: e.quality})}
-                      // onError={e => this.setState({error: e.error})}
-                      fullscreen={this.state.fullscreen}
-                      // eslint-disable-next-line react-native/no-inline-styles
-                      style={{alignSelf: 'stretch', height: 300, width: 300}}
+                    <Video
+                      source={require('../../../asset/Video/vid11.mp4')}
+                      ref={ref => {
+                        this.player = ref;
+                      }}
+                      onBuffer={this.onBuffer} // Callback when remote video is buffering
+                      onError={this.videoError} // Callback when video cannot be loaded
+                      style={style.backgroundVideo}
                     />
                     <HTML html={item.titlevideo1} />
                   </View>
@@ -460,12 +448,12 @@ export default class App extends Component {
                 </View>
                 <View style={style.image}>
                   <Image source={require('../../../asset/img11.png')} />
-                  <HTML html={item.titlegambar1} />
                 </View>
+                <HTML html={item.titlegambar1} />
                 <View style={style.itmBody}>
                   <HTML html={item.body3} />
+                  <HTML html={item.bodyr1} />
                 </View>
-                <HTML html={item.bodyr1} />
                 <View>
                   <YouTube
                     videoId="0EdWEQjFr-M"
@@ -478,7 +466,7 @@ export default class App extends Component {
                     // onError={e => this.setState({error: e.error})}
                     fullscreen={this.state.fullscreen}
                     // eslint-disable-next-line react-native/no-inline-styles
-                    style={{alignSelf: 'stretch', height: 300, width: 300}}
+                    style={{alignSelf: 'stretch', height: 300, width: 280}}
                   />
                   <HTML html={item.titlevideo2} />
                 </View>
@@ -487,8 +475,8 @@ export default class App extends Component {
                 </View>
                 <View style={style.image}>
                   <Image source={require('../../../asset/img12.png')} />
-                  <HTML html={item.titlegambar2} />
                 </View>
+                <HTML html={item.titlegambar2} />
                 <View style={style.itmBody}>
                   <HTML html={item.body5} />
                   <HTML html={item.body6} />
@@ -496,17 +484,25 @@ export default class App extends Component {
                 <View style={style.itmBody}>
                   <HTML html={item.body7} />
                 </View>
+                <View style={style.image}>
+                  <Image source={require('../../../asset/IMG1/equal2.png')} />
+                </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body8} />
                 </View>
                 <View style={style.image}>
                   <Image source={require('../../../asset/img13.png')} />
-                  <HTML html={item.titlegambar3} />
                 </View>
+                <HTML html={item.titlegambar3} />
                 <View style={style.itmBody}>
                   <HTML html={item.body9} />
                 </View>
+                <Image
+                  style={styles.imgcenter}
+                  source={require('../../../asset/IMG1/e3.png')}
+                />
                 <View>
+                  <HTML html={item.body9r} />
                   <YouTube
                     videoId="qxzgDw1rZZA"
                     apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
@@ -555,7 +551,7 @@ export default class App extends Component {
                   <HTML html={item.body17} />
                 </View>
                 <AutoGrowingTextInput
-                  autoFocus={true}
+                  // autoFocus={true}
                   onChangeText={txt => this.setState({tier21: txt})}
                   style={style.inputcct}
                   placeholder={'Isi Simpulan Anda Disini'}
@@ -565,10 +561,10 @@ export default class App extends Component {
                   onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
-              </Animated.View>
+              </View>
             )}
           />
-        </Animated.View>
+        </View>
       );
     } else if (page.currentPage === 2) {
       return (
@@ -1125,7 +1121,7 @@ export default class App extends Component {
         <View style={style.header}>
           <Text style={style.titletest}>TEKANAN HIDROSTATIS</Text>
         </View>
-        <SafeAreaView style={style.mainbody}>
+        <View style={style.mainbody}>
           <ScrollView style={style.scrollview}>
             <View style={style.viewindicator}>
               <StepIndicator
@@ -1135,20 +1131,11 @@ export default class App extends Component {
                 currentPosition={this.state.currentPage}
                 direction={'vertical'}
                 onPress={this.onStepPress}
-                labels={[
-                  'Bag 1',
-                  'Bag 2',
-                  'Bag 3',
-                  'Bag 4',
-                  'Bag 5',
-                  'Bag 6',
-                  'Bag 7',
-                ]}
               />
             </View>
           </ScrollView>
           {this.soal()}
-        </SafeAreaView>
+        </View>
       </View>
     );
   }
@@ -1158,30 +1145,9 @@ export default class App extends Component {
     // this.indicatorviewPager.setPage(position);
   };
 
-  renderViewPagerPage = data => {
-    return (
-      <View style={styles.page}>
-        <Text>{data} haha</Text>
-      </View>
-    );
-  };
-
   renderStepIndicator = params => (
     <MaterialIcon {...getStepIndicatorIconConfig(params)} />
   );
-
-  renderLabel = ({position, stepStatus, label, currentPosition}) => {
-    return (
-      <Text
-        style={
-          position === currentPosition
-            ? styles.stepLabelSelected
-            : styles.stepLabel
-        }>
-        {label}
-      </Text>
-    );
-  };
 }
 
 const styles = StyleSheet.create({
@@ -1192,10 +1158,8 @@ const styles = StyleSheet.create({
   stepIndicator: {
     marginVertical: 50,
   },
-  page: {
-    flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
+  imgcenter: {
+    alignSelf: 'center',
   },
   stepLabel: {
     fontSize: 12,

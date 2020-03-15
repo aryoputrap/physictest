@@ -19,7 +19,9 @@ export default StyleSheet.create({
     height: height * 0.06,
   },
   header: {
-    backgroundColor: 'lightgrey',
+    backgroundColor: Color.main.greylight,
+    borderWidth: 3,
+    borderColor: Color.main.blueAkun,
     justifyContent: 'center',
     alignSelf: 'center',
     borderRadius: 10,
@@ -28,19 +30,26 @@ export default StyleSheet.create({
     marginTop: height * 0.005,
   },
   containdata: {
-    width: width * 0.75,
+    width: width * 0.8,
+    marginRight: 20,
   },
   flatlist: {
     flex: 1,
-    width: width * 0.73,
+    marginLeft: 13,
+    width: width * 0.785,
     height: height,
     marginBottom: height * 0.22,
   },
   titletest: {
+    color: Color.main.blueAkun,
+    fontWeight: 'bold',
     justifyContent: 'center',
     fontSize: 15,
-    fontWeight: 'bold',
     alignSelf: 'center',
+  },
+  backgroundVideo: {
+    width: width * 0.8,
+    height: height * 0.3,
   },
   mainbody: {
     flexDirection: 'row',
@@ -50,7 +59,7 @@ export default StyleSheet.create({
     top: 5,
     paddingBottom: height * 0.2,
     height,
-    width: width * 0.15,
+    width: width * 0.05,
   },
   scrollview2: {
     height,
@@ -70,7 +79,8 @@ export default StyleSheet.create({
     marginBottom: height * 0.2,
   },
   viewindicator: {
-    marginLeft: width * 0.03,
+    width: width * 0.05,
+    marginLeft: width * 0.04,
     height: height * 0.65,
     marginBottom: height * 0.25,
   },
