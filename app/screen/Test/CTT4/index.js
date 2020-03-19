@@ -197,7 +197,7 @@ export default class App extends Component {
   soal = () => {
     const page = this.state;
     const jwb = this.state;
-    if (page.currentPage === 0) {
+    if (page.currentPage === 1) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -376,7 +376,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 1) {
+    } else if (page.currentPage === 0) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -411,11 +411,12 @@ export default class App extends Component {
                     <HTML html={item.body2} />
                   </View>
                   <View style={style.image}>
-                    <Image source={require('../../../asset/IMG4/img12.png')} />
+                    <Image source={require('../../../asset/IMG4/img41.png')} />
+                    <HTML html={item.titlegambar41} />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.body3} />
-                    <Text>Amatilah Video 4.2 berikut ini dengan seksama!</Text>
+                    <HTML html={item.body3e} />
                   </View>
                   <View>
                     <YouTube
@@ -431,16 +432,18 @@ export default class App extends Component {
                       // eslint-disable-next-line react-native/no-inline-styles
                       style={{alignSelf: 'stretch', height: 300, width: 300}}
                     />
+                    <HTML html={item.titlevideo42} />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.body4} />
                   </View>
                   <View style={style.image}>
-                    <Image source={require('../../../asset/IMG4/img13.png')} />
+                    <Image source={require('../../../asset/IMG4/img42.png')} />
+                    <HTML html={item.titlegambar42} />
                   </View>
-                </View>
-                <View style={style.itmBody}>
-                  <HTML html={item.body5} />
+                  <View style={style.itmBody}>
+                    <HTML html={item.body5} />
+                  </View>
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.soal} />

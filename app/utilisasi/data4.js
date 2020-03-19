@@ -44,16 +44,26 @@ export default {
     {
       bab: 'BAGIAN II',
       title: 'Teks Pembentukan Konsepsi (Conceptual Development)',
+      titlevideo41:
+        '<p1 style="textAlign: center;"><b>Video 4.1 Balok kayu yang terapung di atas permukaan air</b></p1>',
+      titlevideo42:
+        '<p1 style="textAlign: center;"><b>Video 4.2 Perbandingan gaya apung dan gaya berat berbagai jenis balok</b></p1>',
+      titlegambar41:
+        '<p1 style="textAlign: center;"><b>Gambar 4.1 Gaya pada balok kayu terapung</b></p1>',
+      titlegambar42:
+        '<p1 style="textAlign: center;"><b>Gambar 4.2 (a) Terapung, (b) melayang, (c) tenggelam</b></p1>',
       body1:
-        '<p1 style="textAlign: justify;">Sebelum Anda melakukan aktivitas selanjutnya, amati kembali dengan seksama video berikut ini!</p1>',
+        '<p1 style="textAlign: justify;">Amatilah Video 4.1 berikut ini dengan seksama!</p1>',
       body2:
-        '<p1 style="textAlign: justify;">Berdasarkan video diatas, diketahui bahwa ketika gaya apung lebih besar daripada gaya berat benda (Fa < w) maka benda akan tenggelam, namun ketika gaya apung lebih besar dari pada gaya berat (Fa > w) maka benda akan terapung, dan benda akan melayang ketika gaya apung tersebut sama dengan berta benda (Fa=w).</p1>',
+        '<p1 style="textAlign: justify;">Pada Video 4.2 menunjukkan simulasi suatu balok kayu dengan massa 4 kg dimasukkan ke dalam air dan mengapung di air. Ketika pengaturan vektor gaya yang bekerja pada benda dimunculkan dalam simulasi, maka diketahui bahwa ada dua gaya yang bekerja secara vertikal yaitu gaya berat balok kayu yang arahnya menuju pusat bumi dan gaya apung yang arahnya berlawanan dengan gaya berat berat balok. </p1>',
       body3:
-        '<p1 style="textAlign: justify;">Jika sebuah benda dimasukkan ke dalam suatu fluida maka sebuah benda akan mengalami tiga hal yaitu terapung, melayang, dan tenggelam. Suatu benda dapat tenggelam di dalam suatu fluida jika terdapat perbedaan antara gaya apung dan gaya berat yang bekerja pada benda tersebut. Jika gaya apung lebih kecil daripada berat benda maka benda itu akan tenggelam. Jika gaya apung tersebut sama dengan berat benda maka benda akan melayang. Kemudian jika gaya apung lebih besar dibandingkan berat benda maka benda akan terapung.</p1>',
+        '<p1 style="textAlign: justify;">Berdasarkan Gambar 4.1 diketahui bahwa gaya apung yang bekerja pada balok kayu lebih besar dibandingkan gaya berat balok kayu, sehingga balok kayu menjadi terapung ketika dimasukkan ke dalam air.</p1>',
+      body3e:
+        '<p1 style="textAlign: justify;">Sebelum Anda melakukan aktivitas selanjutnya, amati kembali dengan seksama video berikut ini!</p1>',
       body4:
-        '<p1 style="textAlign: justify;">Pada Video 4.2 menunjukkan simulasi suatu balok kayu dengan massa 4 kg dimasukkan ke dalam air dan mengapung di air. Ketika pengaturan vektor gaya yang bekerja pada benda dimunculkan dalam simulasi, maka diketahui bahwa ada dua gaya yang bekerja secara vertikal yaitu gaya berat balok kayu dan gaya apung seperti pada Gambar 4.2.</p1>',
+        '<p1 style="textAlign: justify;">Pada Video 4.2 menunjukkan simulasi suatu balok kayu dengan massa 4 kg dimasukkan ke dalam air dan mengapung di air. Ketika pengaturan vektor gaya yang bekerja pada benda dimunculkan dalam simulasi, maka diketahui bahwa ada dua gaya yang bekerja secara vertikal yaitu gaya berat balok kayu dan gaya apung seperti pada Gambar 4.2.Berdasarkan video diatas, diketahui bahwa ketika gaya apung lebih besar daripada gaya berat benda (Fa < w) maka benda akan tenggelam, namun ketika gaya apung lebih besar dari pada gaya berat (Fa > w) maka benda akan terapung, dan benda akan melayang ketika gaya apung tersebut sama dengan berta benda (Fa=w).</p1>',
       body5:
-        '<p1 style="textAlign: justify;">Berdasarkan Video 4.1. diketahui bahwa gaya berat benda balok kayu tersebut sebesar adanya perbedaan antara gaya apung dan gaya berat balok kayu, yakni gaya apung yang bekerja pada balok kayu lebih besar dibandingkan gaya berat balok kayu, sehingga balok kayu menjadi terapung ketika dimasukkan ke dalam air.</p1>',
+        '<p1 style="textAlign: justify;">Jika sebuah benda dimasukkan ke dalam suatu fluida maka sebuah benda akan mengalami tiga hal yaitu terapung, melayang, dan tenggelam. Suatu benda dapat tenggelam di dalam suatu fluida jika terdapat perbedaan antara gaya apung dan gaya berat yang bekerja pada benda tersebut. Jika gaya apung lebih kecil daripada berat benda maka benda itu akan tenggelam. Jika gaya apung tersebut sama dengan berat benda maka benda akan melayang. Kemudian jika gaya apung lebih besar dibandingkan berat benda maka benda akan terapung.</p1>',
       soal:
         '<p1 style="textAlign: justify;">Dari visualisasi tersebut apa yang dapat Anda simpulkan tentang terapung, melayang, dan tenggelam? Apakah Anda sepakat apabila terapung dan tenggelam merupakan dampak dari adanya perbedaan gaya apung dan gaya berat benda ketika di dalam fluida? </p1>',
     },

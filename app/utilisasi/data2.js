@@ -44,6 +44,10 @@ export default {
     {
       bab: 'BAGIAN II',
       title: 'Teks Pembentukan Konsepsi (Conceptual Development)',
+      titlevideo1:
+        '<p1 style="textAlign: center;"><b>Video 2.1 Bola yang dicelupkan ke dalam air</b></p1>',
+      titlegambar1:
+        '<p1 style="textAlign: center;"><b>Gambar 2.1 Ilustrasi seseorang yang sedang mengangkat batu di darat di sungai</b></p1>',
       body1:
         '<p1 style="textAlign: justify;">Pernahkan Anda mencoba mengambil sebuah batu di dalam air?</p1>',
       body2:
@@ -124,6 +128,8 @@ export default {
     {
       bab: 'BAGIAN IV',
       title: 'Teks Konfrontasi Keyakinan Konsepsi',
+      titlevideo1:
+        '<p1 style="textAlign: center;"><b>Video 2.2 Pengukuran berat benda ketika benda tercelup seluruhnya dan sebagian di dalam zat cair</b></p1>',
       body1:
         '<p1 style="textAlign: justify;">Amatilah Video 2.2 dibawah ini secara seksama.</p1>',
       body2:
@@ -146,6 +152,10 @@ export default {
     {
       bab: 'BAGIAN V',
       title: 'Teks Pengubahan Konsepsi (Conceptual Change)',
+      titlevideo1:
+        '<p1 style="textAlign: center;"><b>Video 2.3 Pengukuran berat air yang tumpah ketika plastisin dimasukkan ke dalam air</b></p1>',
+      titlegambar1:
+        '<p1 style="textAlign: center;"><b>Gambar 2.2 Diagram gaya saat benda di udara dan di dalam air</b></p1>',
       body1:
         '<p1 style="textAlign: justify;">Gaya apung merupakan gaya yang diberikan oleh fluida pada benda-benda yang ada didalamnya yang mendorong benda-benda tersebut naik ke atas, seperti hal nya dengan keadaan benda saat ditimbang di dalam air. Skala yang ditunjukkan neraca pegas di dalam air lebih kecil dikarenakan adanya gaya apung, bukan karena benda lebih ringan ketika di dalam air. Skala yang ditunjukkan pada neraca pegas saat menimbang benda di udara maupun di air merupakan resultan gaya yang dialami benda dan gaya apung. Ketika menimbang di udara skala yang terbaca pada neraca pegas merupakan resultan dari gaya berat benda dengan gaya apung di udara, sedangkan ketika menimbang benda di dalam air skala yang terbaca lebih kecil, hal ini dikarenakan adanya gaya yang arahnya berlawanan dengan gaya berat benda yaitu gaya apung.</p1>',
       body2:

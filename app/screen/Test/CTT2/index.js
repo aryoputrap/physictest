@@ -13,11 +13,11 @@ import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
 // import ViewPager from '@react-native-community/viewpager';
 // import {IndicatorViewPager} from 'react-native-best-viewpager';
 import AsyncStorage from '@react-native-community/async-storage';
+import VideoPlayer from 'react-native-video-controls';
 import axios from 'axios';
 import StepIndicator from 'react-native-step-indicator';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import {RadioButton} from 'react-native-paper';
-import YouTube from 'react-native-youtube';
 import data2 from '../../../utilisasi/data2';
 import style from '../style_ctt';
 
@@ -220,7 +220,7 @@ export default class App extends Component {
                   <HTML html={item.body} />
                 </View>
                 <View style={style.soal}>
-                  <Text style={style.tier}>Tier 1:</Text>
+                  <Text style={style.tier}>Tier 1</Text>
                   <View style={style.itmBody}>
                     <HTML html={item.tier1.soal} />
                   </View>
@@ -269,7 +269,7 @@ export default class App extends Component {
                 </View>
                 <View style={style.soal}>
                   <Text>{item.tier2.soal}</Text>
-                  <Text style={style.tier}>Tier 2:</Text>
+                  <Text style={style.tier}>Tier 2</Text>
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
@@ -293,7 +293,7 @@ export default class App extends Component {
                 </View>
                 <View style={style.soal}>
                   <Text>{item.tier3.soal}</Text>
-                  <Text style={style.tier}>Tier 3:</Text>
+                  <Text style={style.tier}>Tier 3</Text>
                   <View style={style.answer}>
                     <RadioButton
                       value="a"
@@ -346,7 +346,7 @@ export default class App extends Component {
                   </View>
                 </View>
                 <View style={style.soal}>
-                  <Text style={style.tier}>Tier 4:</Text>
+                  <Text style={style.tier}>Tier 4</Text>
                   <Text>{item.tier4.soal}</Text>
                   <View style={style.answer}>
                     <RadioButton
@@ -372,7 +372,7 @@ export default class App extends Component {
                 <TouchableOpacity
                   style={style.button}
                   onPress={() => this.sumbmitInc()}>
-                  <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
+                  <Text style={style.textbtn}>LANJUT</Text>
                 </TouchableOpacity>
               </View>
             )}
@@ -397,6 +397,7 @@ export default class App extends Component {
                   </View>
                   <View style={style.image}>
                     <Image source={require('../../../asset/IMG2/img21.png')} />
+                    <HTML html={item.titlegambar1} />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.body2} />
@@ -416,19 +417,15 @@ export default class App extends Component {
                   <HTML html={item.body9} />
                 </View>
                 <View>
-                  <YouTube
-                    videoId="tWWuYBdi2eA"
-                    apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
-                    play={this.state.isPlaying}
-                    loop={this.state.isLooping}
-                    // onReady={true}
-                    // onChangeState={e => this.setState({status: e.state})}
-                    // onChangeQuality={e => this.setState({quality: e.quality})}
-                    // onError={e => this.setState({error: e.error})}
-                    fullscreen={this.state.fullscreen}
-                    // eslint-disable-next-line react-native/no-inline-styles
-                    style={{alignSelf: 'stretch', height: 300, width: 300}}
+                  <VideoPlayer
+                    source={require('../../../asset/Video/vid21.mp4')}
+                    ref={ref => {
+                      this.player = ref;
+                    }}
+                    style={style.backgroundVideo}
+                    showOnStart={false}
                   />
+                  <HTML html={item.titlevideo1} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body11} />
@@ -458,7 +455,7 @@ export default class App extends Component {
                 <TouchableOpacity
                   style={style.button}
                   onPress={() => this.sumbmitInc()}>
-                  <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
+                  <Text style={style.textbtn}>LANJUT</Text>
                 </TouchableOpacity>
               </View>
             )}
@@ -481,7 +478,7 @@ export default class App extends Component {
                 </View>
                 <View style={style.soal}>
                   <HTML html={item.pengantar} />
-                  <Text style={style.tier}>Tier 1:</Text>
+                  <Text style={style.tier}>Tier 1</Text>
                   <View style={style.itmBody}>
                     <HTML html={item.tier1.soal1} />
                   </View>
@@ -529,7 +526,7 @@ export default class App extends Component {
                   </View>
                 </View>
                 <View style={style.soal}>
-                  <Text style={style.tier}>Tier 2:</Text>
+                  <Text style={style.tier}>Tier 2</Text>
                   <Text>{item.tier2.soal}</Text>
                   <View style={style.answer}>
                     <RadioButton
@@ -553,7 +550,7 @@ export default class App extends Component {
                   </View>
                 </View>
                 <View style={style.soal}>
-                  <Text style={style.tier}>Tier 3:</Text>
+                  <Text style={style.tier}>Tier 3</Text>
                   <Text>{item.tier3.soal}</Text>
                   <View style={style.answer}>
                     <RadioButton
@@ -607,7 +604,7 @@ export default class App extends Component {
                   </View>
                 </View>
                 <View style={style.soal}>
-                  <Text style={style.tier}>Tier 4:</Text>
+                  <Text style={style.tier}>Tier 4</Text>
                   <Text>{item.tier4.soal}</Text>
                   <View style={style.answer}>
                     <RadioButton
@@ -658,27 +655,19 @@ export default class App extends Component {
                   <HTML html={item.body1} />
                 </View>
                 <View>
-                  <YouTube
-                    videoId="i9qtJ-4RUyk"
-                    apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
-                    play={this.state.isPlaying}
-                    loop={this.state.isLooping}
-                    // onReady={true}
-                    // onChangeState={e => this.setState({status: e.state})}
-                    // onChangeQuality={e => this.setState({quality: e.quality})}
-                    // onError={e => this.setState({error: e.error})}
-                    fullscreen={this.state.fullscreen}
-                    // eslint-disable-next-line react-native/no-inline-styles
-                    style={{alignSelf: 'stretch', height: 300, width: 300}}
+                  <VideoPlayer
+                    source={require('../../../asset/Video/vid22.mp4')}
+                    ref={ref => {
+                      this.player = ref;
+                    }}
+                    style={style.backgroundVideo}
+                    showOnStart={false}
                   />
+                  <HTML html={item.titlevideo1} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body2} />
-                </View>
-                <View style={style.itmBody}>
                   <HTML html={item.body3} />
-                </View>
-                <View style={style.itmBody}>
                   <HTML html={item.body4} />
                 </View>
                 <View style={style.soal}>
@@ -726,7 +715,7 @@ export default class App extends Component {
                 <TouchableOpacity
                   style={style.button}
                   onPress={() => this.sumbmitInc()}>
-                  <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
+                  <Text style={style.textbtn}>LANJUT</Text>
                 </TouchableOpacity>
               </View>
             )}
@@ -755,6 +744,7 @@ export default class App extends Component {
                 </View>
                 <View style={style.image}>
                   <Image source={require('../../../asset/IMG2/img51.png')} />
+                  <HTML html={item.titlegambar1} />
                 </View>
                 <HTML html={item.body3} />
                 <View style={style.image}>
@@ -786,24 +776,15 @@ export default class App extends Component {
                 </View>
                 <HTML html={item.body16} />
                 <View>
-                  <YouTube
-                    videoId="AW_iTEymu2A"
-                    apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
-                    play={this.state.isPlaying}
-                    loop={this.state.isLooping}
-                    // onReady={true}
-                    // onChangeState={e => this.setState({status: e.state})}
-                    // onChangeQuality={e => this.setState({quality: e.quality})}
-                    // onError={e => this.setState({error: e.error})}
-                    fullscreen={this.state.fullscreen}
-                    // eslint-disable-next-line react-native/no-inline-styles
-                    style={{
-                      alignSelf: 'stretch',
-                      height: 300,
-                      width: 300,
-                      marginTop: 10,
+                  <VideoPlayer
+                    source={require('../../../asset/Video/vid23.mp4')}
+                    ref={ref => {
+                      this.player = ref;
                     }}
+                    style={style.backgroundVideo}
+                    showOnStart={false}
                   />
+                  <HTML html={item.titlevideo1} />
                 </View>
                 <Text>Berdasarkan video 2.3, maka dapat diketahui bahwa: </Text>
                 <View style={style.itmBody}>
@@ -852,7 +833,7 @@ export default class App extends Component {
                 <TouchableOpacity
                   style={style.button}
                   onPress={() => this.sumbmitInc()}>
-                  <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
+                  <Text style={style.textbtn}>LANJUT</Text>
                 </TouchableOpacity>
               </View>
             )}
@@ -877,7 +858,7 @@ export default class App extends Component {
                   <HTML html={item.body1} />
                 </View>
                 <View style={style.soal}>
-                  <Text style={style.tier}>Tier 1:</Text>
+                  <Text style={style.tier}>Tier 1</Text>
                   <View style={style.itmBody}>
                     <HTML html={item.tier1.soal1} />
                   </View>
@@ -925,7 +906,7 @@ export default class App extends Component {
                   </View>
                 </View>
                 <View style={style.soal}>
-                  <Text style={style.tier}>Tier 2:</Text>
+                  <Text style={style.tier}>Tier 2</Text>
                   <Text>{item.tier2.soal}</Text>
                   <View style={style.answer}>
                     <RadioButton
@@ -949,7 +930,7 @@ export default class App extends Component {
                   </View>
                 </View>
                 <View style={style.soal}>
-                  <Text style={style.tier}>Tier 3:</Text>
+                  <Text style={style.tier}>Tier 3</Text>
                   <Text>{item.tier3.soal}</Text>
                   <View style={style.answer}>
                     <RadioButton
@@ -1003,7 +984,7 @@ export default class App extends Component {
                   </View>
                 </View>
                 <View style={style.soal}>
-                  <Text style={style.tier}>Tier 4:</Text>
+                  <Text style={style.tier}>Tier 4</Text>
                   <Text>{item.tier4.soal}</Text>
                   <View style={style.answer}>
                     <RadioButton
