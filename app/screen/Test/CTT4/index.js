@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import HTML from 'react-native-render-html';
+import VideoPlayer from 'react-native-video-controls';
 // import ViewPager from '@react-native-community/viewpager';
 // import {IndicatorViewPager} from 'react-native-best-viewpager';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
@@ -18,7 +19,6 @@ import axios from 'axios';
 import StepIndicator from 'react-native-step-indicator';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import {RadioButton} from 'react-native-paper';
-import YouTube from 'react-native-youtube';
 import data4 from '../../../utilisasi/data4';
 import style from '../style_ctt';
 
@@ -197,7 +197,7 @@ export default class App extends Component {
   soal = () => {
     const page = this.state;
     const jwb = this.state;
-    if (page.currentPage === 1) {
+    if (page.currentPage === 0) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -376,7 +376,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 0) {
+    } else if (page.currentPage === 1) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -393,19 +393,15 @@ export default class App extends Component {
                     <HTML html={item.body1} />
                   </View>
                   <View>
-                    <YouTube
-                      videoId="tWWuYBdi2eA"
-                      apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
-                      play={this.state.isPlaying}
-                      loop={this.state.isLooping}
-                      // onReady={true}
-                      // onChangeState={e => this.setState({status: e.state})}
-                      // onChangeQuality={e => this.setState({quality: e.quality})}
-                      // onError={e => this.setState({error: e.error})}
-                      fullscreen={this.state.fullscreen}
-                      // eslint-disable-next-line react-native/no-inline-styles
-                      style={{alignSelf: 'stretch', height: 300, width: 300}}
+                    <VideoPlayer
+                      source={require('../../../asset/Video/vid32.mp4')}
+                      ref={ref => {
+                        this.player = ref;
+                      }}
+                      style={style.backgroundVideo}
+                      showOnStart={false}
                     />
+                    <HTML html={item.titlevideo1} />
                   </View>
                   <View style={style.itmBody}>
                     <HTML html={item.body2} />
@@ -419,18 +415,13 @@ export default class App extends Component {
                     <HTML html={item.body3e} />
                   </View>
                   <View>
-                    <YouTube
-                      videoId="tWWuYBdi2eA"
-                      apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
-                      play={this.state.isPlaying}
-                      loop={this.state.isLooping}
-                      // onReady={true}
-                      // onChangeState={e => this.setState({status: e.state})}
-                      // onChangeQuality={e => this.setState({quality: e.quality})}
-                      // onError={e => this.setState({error: e.error})}
-                      fullscreen={this.state.fullscreen}
-                      // eslint-disable-next-line react-native/no-inline-styles
-                      style={{alignSelf: 'stretch', height: 300, width: 300}}
+                    <VideoPlayer
+                      source={require('../../../asset/Video/vid42.mp4')}
+                      ref={ref => {
+                        this.player = ref;
+                      }}
+                      style={style.backgroundVideo}
+                      showOnStart={false}
                     />
                     <HTML html={item.titlevideo42} />
                   </View>
@@ -448,7 +439,7 @@ export default class App extends Component {
                 <View style={style.itmBody}>
                   <HTML html={item.soal} />
                 </View>
-                <View style={style.input}>
+                <View style={style.inputcct}>
                   <AutoGrowingTextInput
                     placeholder={'Isi Simpulan Anda Disini'}
                     onChangeText={txt => this.setState({tier21: txt})}
@@ -653,24 +644,18 @@ export default class App extends Component {
                 <View style={style.itmBody}>
                   <HTML html={item.body1} />
                   <HTML html={item.body2} />
+                  <Text>Amatilah video percobaan berikut ini</Text>
                 </View>
-                <Text style={style.itmtitle}>
-                  Amatilah video percobaan berikut ini
-                </Text>
                 <View>
-                  <YouTube
-                    videoId="i9qtJ-4RUyk"
-                    apiKey="AIzaSyCs0MWSrT-_Jbw0KQWaVR756AsiANxgmb8"
-                    play={this.state.isPlaying}
-                    loop={this.state.isLooping}
-                    // onReady={true}
-                    // onChangeState={e => this.setState({status: e.state})}
-                    // onChangeQuality={e => this.setState({quality: e.quality})}
-                    // onError={e => this.setState({error: e.error})}
-                    fullscreen={this.state.fullscreen}
-                    // eslint-disable-next-line react-native/no-inline-styles
-                    style={{alignSelf: 'stretch', height: 300, width: 300}}
+                  <VideoPlayer
+                    source={require('../../../asset/Video/vid43.mp4')}
+                    ref={ref => {
+                      this.player = ref;
+                    }}
+                    style={style.backgroundVideo}
+                    showOnStart={false}
                   />
+                  <HTML html={item.titlevideo1} />
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body3} />
@@ -746,9 +731,13 @@ export default class App extends Component {
                 </View>
                 <View style={style.itmBody}>
                   <HTML html={item.body1} />
+                  <HTML html={item.body2} />
+                </View>
+                <View style={style.image}>
+                  <Image source={require('../../../asset/IMG4/img51.png')} />
+                  <HTML html={item.titlegambar1} />
                 </View>
                 <View style={style.itmBody}>
-                  <HTML html={item.body2} />
                   <HTML html={item.body3} />
                 </View>
                 <TouchableOpacity
@@ -815,6 +804,12 @@ export default class App extends Component {
                 <View style={style.soal}>
                   <Text style={style.tier}>Tier 1</Text>
                   <View style={style.itmBody}>
+                    <View style={style.image}>
+                      <Text> Perhatikan gambar dibawah ini!</Text>
+                      <Image
+                        source={require('../../../asset/IMG4/img71.png')}
+                      />
+                    </View>
                     <HTML html={item.tier1.soal} />
                   </View>
                   <View style={style.itmBody}>

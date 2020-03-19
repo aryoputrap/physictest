@@ -50,7 +50,7 @@ export default StyleSheet.create({
   },
   backgroundVideo: {
     width: width * 0.8,
-    height: height * 0.3,
+    height: height * 0.35,
   },
   mainbody: {
     flexDirection: 'row',
@@ -192,6 +192,7 @@ export default StyleSheet.create({
   },
   inputcct: {
     width: width * 0.7,
+    marginTop: 5,
     justifyContent: 'center',
     textAlignVertical: 'center',
     fontSize: 13,

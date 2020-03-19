@@ -44,6 +44,8 @@ export default {
     {
       bab: 'BAGIAN II',
       title: 'Teks Pembentukan Konsepsi (Conceptual Development)',
+      titlevideo1:
+        '<p1 style="textAlign: center;"><b>Video 4.1 Balok kayu yang terapung di atas permukaan air</b></p1>',
       titlevideo41:
         '<p1 style="textAlign: center;"><b>Video 4.1 Balok kayu yang terapung di atas permukaan air</b></p1>',
       titlevideo42:
@@ -110,10 +112,12 @@ export default {
     {
       bab: 'BAGIAN IV',
       title: 'Teks Konfrontasi Keyakinan Konsepsi',
+      titlevideo1:
+        '<p1 style="textAlign: center;"><b>Video 4.3 Keadaan balok plastisin dan potongan plastisin dalam air</b></p1>',
       body1:
         '<p1 style="textAlign: justify;">Jika sebuah plastisin berbentuk balok dimasukkan ke dalam wadah berisi air, maka plastisin tersebut akan tenggelam. Kemudian jika balok plastisin tersebut di potong menjadi potongan-potongan plastisin, maka apa yang akan terjadi pada potongan plastisin tersebut? Apakah ini berarti potongan plastisin yang kecil dan ringan akan terapung? </p1>',
       body2:
-        '<p1 style="textAlign: justify;">Untuk memastikannya, silahkan Anda perhatikan dengan seksama Video 4.2. dibawah ini. </p1>',
+        '<p1 style="textAlign: justify;">Untuk memastikannya, silahkan Anda perhatikan dengan seksama Video 4.3 dibawah ini. </p1>',
       body3:
         '<p1 style="textAlign: justify;">Apabila Anda telah melihat Video 4.3 di atas, silahkan Anda jawab pertanyaan-pertanyaan berikut.</p1>',
       soal1:
@@ -132,12 +136,14 @@ export default {
     {
       bab: 'BAGIAN V',
       title: 'Teks Pengubahan Konsepsi (Conceptual Change)',
+      titlegambar1:
+        '<p1 style="textAlign: center;"><b>Gambar 4.3 Vektor gaya pada balok plastisin dan potongan plastisin</b></p1>',
       body1:
-        '<p1 style="textAlign: justify;">Sebagian orang akan beranggapan bahwa benda akan tenggelam apabila benda tersebut besar dan berat dan akan terapung apabila benda tersebut ringan, padahal kenyaannya tidak semua benda yang berat akan tenggelam dan benda yang ringan akan mengapung. Contohnya, pernahkah Anda melihat kapal laut yang besar? Kapal tersebut pasti sangat berat namun kapal tersebut mampu membawa banyak penumpang tanpa tenggelam. Coba Anda bandingkan dengan koin yang memiliki massa lebih ringan dibandingkan kapal tersebut, apabila kita lemparkan ke dalam laut maka koin tersebut akan tenggelam. Berdasarkan peristiwa tersebut dapat disimpulkan bahwa benda yang berat belum tentu akan tenggelam dan benda yang ringan belum tentu terapung. Lalu apakah yang mempengaruhi benda akan terapung, melayang, dan tenggelam dalam kasus ini?  </p1>',
+        '<p1 style="textAlign: justify;">Berdasarkan aktivitas sebelumnya, diketahui bahwa suatu benda dapat tenggelam karena gaya apung lebih kecil dibandingkan dengan gaya berat yang bekerja pada benda (FA < w), sedangkan benda terapung karena gaya apung lebih besar dibandingkan dengan gaya berat yang bekerja pada benda (FA > w), dan sebuah benda dapat melayang jika gaya apung yang dialami benda sama dengan gaya beratnya (FA=w).</p1>',
       body2:
-        '<p1 style="textAlign: justify;">Seperti yang telah Anda pelajari sebelumnya bahwa ketika sebuah benda dicelupkan ke dalam fluida maka benda akan mengalami gaya apung. Gaya apung merupakan gaya yang diberikan oleh fluida pada benda-benda yang ada didalamnya yang mendorong benda-benda tersebut ke atas. Berdasarkan hukum Archimedes, sebuah benda yang tenggelam seluruhnya atau sebagian dalam fluida yang dipindahkan, lalu apakah yang mempengaruhi gaya apung tersebut, mengapa balok plastisin dan potongan plastisin tersebut dapat tenggelam padahal memiliki massa yang berbeda? </p1>',
+        '<p1 style="textAlign: justify;">Selain itu sebagian orang akan beranggapan bahwa benda akan tenggelam apabila benda tersebut besar dan berat dan akan terapung apabila benda tersebut ringan, padahal kenyaannya tidak semua benda yang berat akan tenggelam dan benda yang ringan akan mengapung. Contohnya, fenomena balok platisin dan potongan plastisin pada Video 4.3 sebelumnya. Apabila kedua plastisin dibandingkan maka dapat kita ketahui bahwa massa balok plastisin akan lebih besar dari massa potongan plastisin (m balok plastisin> m potongan plastisin) dan volume balok plastisin juga lebih besar dari potongan plastisin. Lalu mengapa balok plastisin dan potongan plastisin tersebut dapat tenggelam padahal memiliki massa yang berbeda? Ketika balok plastisin dan potongan plastisin tercelup seluruhnya maka volume balok plastisin tercelup lebih besar dibandingkan dengan volume potongan plastisin yang tercelup, sehingga gaya apung yang dialami balok plastisin lebih besar dibandingkan potongan plastisin</p1>',
       body3:
-        '<p1 style="textAlign: justify;">Suatu benda dapat tenggelam karena gaya apung lebih kecil dibandingkan dengan gaya berat yang bekerja pada benda (FA < w), sedangkan benda terapung karena gaya apung lebih besar dibandingkan dengan gaya berat yang bekerja pada benda (FA>w), dan sebuah benda dapat melayang jika gaya apung yang dialami benda sama dengan gaya beratnya (FA=w).</p1>',
+        '<p1 style="textAlign: justify;">Berdasarkan Gambar 4.3 terlihat bahwa terdapat dua gaya yang bekerja pada plastisin gaya tersebut adalah gaya berat (w) dan gaya apung (Fa). Apabila Anda perhatikan besarnya selisih panjang kedua vektor gaya balok plastisin dan potongan plastisin adalah sama panjang dan resultan kedua gaya tersebut mengarah ke bawah sehingga balok platisin maupun potongan plastisin akan tenggelam, karena berat potongan balok maupun gaya apungnya akan berkurang seiring dengan volume potongan balok yang tercelup.</p1>',
     },
   ],
   databagian6: [

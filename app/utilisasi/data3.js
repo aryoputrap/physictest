@@ -40,6 +40,16 @@ export default {
     {
       bab: 'BAGIAN II',
       title: 'Teks Pembentukan Konsepsi (Conceptual Development)',
+      titlevideo1:
+        '<p1 style="textAlign: center;"><b>Video 3.1 Aplikasi konsep terapung, melayang, dan tenggelam</b></p1>',
+      titlevideo2:
+        '<p1 style="textAlign: center;"><b>Video 3.2 Perbandingan gaya apung dan gaya berat berbagai jenis balok</b></p1>',
+      titlevideo3:
+        '<p1 style="textAlign: center;"><b>Video 3.3 Fenomena benda terapung dan tenggelam</b></p1>',
+      titlegambar1:
+        '<p1 style="textAlign: center;"><b>Gambar 3.1 Gaya apung saat berenang</b></p1>',
+      titlegambar2:
+        '<p1 style="textAlign: center;"><b>Gambar 3.2 (a) Terapung, (b) melayang, (c) tenggelam</b></p1>',
       body1:
         '<p1 style="textAlign: justify;">Dalam kehidupan sehari-hari kita pasti pernah melihat fenomena maupun aplikasi dari konsep terapung, melayang, dan tenggelam. Contohnya seperti kapal laut yang dapat terapung di permukaan air laut dan kapal selam yang dapat terapung dan melayang bahkan tenggelam di laut yang ditunjukkan dalam video berikut</p1>',
       body2:
@@ -98,6 +108,8 @@ export default {
     {
       bab: 'BAGIAN IV',
       title: 'Teks Konfrontasi Keyakinan Konsepsi',
+      titlevideo1:
+        '<p1 style="textAlign: center;"><b>Video 3.4 Piring yang dicelupkan ke dalam air</b></p1>',
       body1:
         '<p1 style="textAlign: justify;">Video 3.3 dibawah ini menunjukkan sebuah piring berbahan keramik dengan massa (m=0.17 kg), mempunyai volume (V=60 cm3 atau 0.00006 m3) maka massa jenis piring tersebut dapat diperoleh sebesar (ρ=2891 kg/m3).  Piring keramik tersebut dimasukkan ke dalam air yang memiliki massa jenis lebih kecil dibandingkan massa jenis piring keramik yaitu sebesar ρ=1000 kg/m3, kira-kira apa yang akan terjadi?</p1>',
       body2:
@@ -118,6 +130,8 @@ export default {
     {
       bab: 'BAGIAN V',
       title: 'Teks Pengubahan Konsepsi (Conceptual Change)',
+      titlevideo1:
+        '<p1 style="textAlign: center;"><b>Video 3.5 Percobaan terapung, melayang, dan tenggelam menggunakan plastisin</b></p1>',
       body1:
         '<p1 style="textAlign: justify;">Jika sebuah benda dimasukkan ke dalam fluida maka sebuah benda akan mengalami tiga hal yaitu terapung, melayang, dan tenggelam, sebagian besar berangggapan bahwa ketika massa jenis benda tersebut lebih besar di banding massa jenis air, maka benda tersebut akan tenggelam. Piring tersebut memiliki massa jenis yang lebih besar dibandingkan dengan air, namun apabila kita meletakkan dengan posisi horizontal piring tersebut akan terapung. Oleh karena itu, ternyata tidak semua benda yang memiliki massa jenis yang lebih besar dibandingkan dengan massa jenis fluida akan tenggelam, begitupun sebaliknya untuk massa jenis yang lebih kecil dibandingkan fluida tidak selalu terapung.</p1>',
       body2:
