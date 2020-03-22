@@ -12,6 +12,8 @@ import SplashScreen from '../screen/Auth/Splash';
 import Login from '../screen/Auth/Login';
 import Register from '../screen/Auth/Register';
 //import Home
+import TentangScreen from '../screen/Home/tentang';
+import KikdScreen from '../screen/Home/kikd';
 import HomeScreen from '../screen/Home';
 import AkunScreen from '../screen/Akun';
 import TestScreen from '../screen/Test';
@@ -23,7 +25,7 @@ import Ctt4Screen from '../screen/Test/CTT4';
 
 const ROUTES = {
   Home: {name: 'home', label: 'Home'},
-  Test: {name: 'test', label: 'Test'},
+  Aktivitas: {name: 'aktivitas', label: 'Aktivitas'},
   Akun: {name: 'akun', label: 'Akun'},
 };
 
@@ -35,7 +37,7 @@ const TabBarIcon = (props, tintColor) => {
   if (routeName.toLowerCase() === ROUTES.Home.name) {
     iconName = 'home';
     iconType = 'AntDesign';
-  } else if (routeName.toLowerCase() === ROUTES.Test.name) {
+  } else if (routeName.toLowerCase() === ROUTES.Aktivitas.name) {
     iconName = 'ship';
     iconType = 'FontAwesome';
   } else if (routeName.toLowerCase() === ROUTES.Akun.name) {
@@ -64,7 +66,7 @@ const TabBarLabel = (props, tintColor) => {
 const StackPublic = createBottomTabNavigator(
   {
     Home: HomeScreen,
-    Test: TestScreen,
+    Aktivitas: TestScreen,
     Akun: AkunScreen,
   },
   {
@@ -75,7 +77,7 @@ const StackPublic = createBottomTabNavigator(
     // headerMode: null,
     tabBarOptions: {
       showLabel: true,
-      activeTintColor: Color.main.primaryorange,
+      activeTintColor: Color.main.blueAkun,
       inactiveTintColor: 'gray',
       keyboardHidesTabBar: false,
       tabStyle: {
@@ -88,7 +90,7 @@ const StackPublic = createBottomTabNavigator(
       },
     },
     // initialRouteName: 'Home',
-    initialRouteName: 'Test',
+    initialRouteName: 'Aktivitas',
     // initialRouteName: 'Akun',
   },
 );
@@ -123,6 +125,8 @@ const PublicStack = createStackNavigator(
     Ctt2Screen: Ctt2Screen,
     Ctt3Screen: Ctt3Screen,
     Ctt4Screen: Ctt4Screen,
+    TentangScreen: TentangScreen,
+    KikdScreen: KikdScreen,
     // Absensi: Absensi,
     // InputData: InputData,
   },
@@ -130,9 +134,9 @@ const PublicStack = createStackNavigator(
     headerMode: 'screen',
     // initialRouteName: 'Ctt1Screen',
     // initialRouteName: 'Login',
-    initialRouteName: 'StackPublic',
+    // initialRouteName: 'StackPublic',
     // initialRouteName: 'Register',
-    // initialRouteName: 'SplashScreen',
+    initialRouteName: 'SplashScreen',
   },
 );
 

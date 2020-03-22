@@ -44,56 +44,46 @@ export default class Home extends Component {
           <Text style={styles.TeksPilihMenu}>Pilih Menu</Text>
         </View>
         <View style={styles.ViewMenu}>
-          <TouchableOpacity style={styles.TouchMenu}>
-            <Image
-              resizeMode="contain"
-              style={styles.MenuImage}
-              source={require('../../asset/KI.png')}
-            />
-            <Text style={styles.TeksMenu}>KI/KD</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.TouchMenu}>
-            <Image
-              resizeMode="contain"
-              style={styles.MenuImage}
-              source={require('../../asset/i.png')}
-            />
-            <Text style={styles.TeksMenu}>Angket</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('Bantuan')}
-            style={styles.TouchMenu}>
-            <Image
-              resizeMode="contain"
-              style={styles.MenuImage}
-              source={require('../../asset/bantu.png')}
-            />
-            <Text style={styles.TeksMenu}>Bantuan</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.TouchMenu}>
-            <Image
-              resizeMode="contain"
-              style={styles.MenuImage}
-              source={require('../../asset/grap.jpg')}
-            />
-            <Text style={styles.TeksMenu}>Angket</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.TouchMenu}>
-            <Image
-              resizeMode="contain"
-              style={styles.MenuImage}
-              source={require('../../asset/about.png')}
-            />
-            <Text style={styles.TeksMenu}>Tentang</Text>
-          </TouchableOpacity>
-          {/* <TouchableOpacity style={styles.TouchMenu}>
-            <Image
-              resizeMode="contain"
-              style={styles.MenuImage}
-              source={require('../../asset/Games.gif')}
-            />
-            <Text style={styles.TeksMenu}>Games</Text>
-          </TouchableOpacity> */}
+          <View style={styles.menudisplay}>
+            <TouchableOpacity
+              style={styles.TouchMenu}
+              onPress={() => this.props.navigation.navigate('KikdScreen')}>
+              <Image
+                resizeMode="contain"
+                style={styles.MenuImage}
+                source={require('../../asset/KI.png')}
+              />
+              <Text style={styles.TeksMenu}>KI/KD</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.TouchMenu}>
+              <Image
+                resizeMode="contain"
+                style={styles.MenuImage}
+                source={require('../../asset/i.png')}
+              />
+              <Text style={styles.TeksMenu}>Angket</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.menudisplay}>
+            <TouchableOpacity style={styles.TouchMenu}>
+              <Image
+                resizeMode="contain"
+                style={styles.MenuImage}
+                source={require('../../asset/bantu.png')}
+              />
+              <Text style={styles.TeksMenu}>Bantuan</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.TouchMenu}
+              onPress={() => this.props.navigation.navigate('TentangScreen')}>
+              <Image
+                resizeMode="contain"
+                style={styles.MenuImage}
+                source={require('../../asset/about.png')}
+              />
+              <Text style={styles.TeksMenu}>Tentang</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     );

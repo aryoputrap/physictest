@@ -4,7 +4,7 @@ import Color from '../../constant/Color';
 const {width, height} = Dimensions.get('window');
 export default StyleSheet.create({
   container: {
-    backgroundColor: Color.main.primaryorange,
+    backgroundColor: Color.main.blueAkun,
     // flex: 1,
   },
   flexcolumn: {
@@ -13,7 +13,7 @@ export default StyleSheet.create({
   profil: {
     width: width,
     height: height * 0.2,
-    backgroundColor: 'black',
+    backgroundColor: Color.main.bluedeep,
     borderBottomRightRadius: 40,
     borderBottomLeftRadius: 40,
   },

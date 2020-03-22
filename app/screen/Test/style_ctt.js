@@ -10,7 +10,7 @@ export default StyleSheet.create({
   },
   headerTitleStyle: {
     fontFamily: 'Montserrat-Bold',
-    fontWeight: '200',
+    fontWeight: 'bold',
     fontSize: 18,
     alignSelf: 'center',
     textAlign: 'center',

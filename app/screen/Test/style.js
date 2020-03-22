@@ -22,9 +22,10 @@ export default StyleSheet.create({
     alignContent: 'center',
     alignSelf: 'center',
     marginTop: height * 0.01,
+    margin: 10,
   },
   textBtn: {
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: 'bold',
     color: Color.main.baseBlack,
     alignContent: 'center',

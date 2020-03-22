@@ -1,11 +1,33 @@
 import {Dimensions, StyleSheet} from 'react-native';
-// import Color from '../../../config/color';
+import Color from '../../constant/Color';
 
 const {width, height} = Dimensions.get('window');
 export default StyleSheet.create({
   container: {
     flexDirection: 'row',
     flex: 1,
+  },
+  tentang: {
+    alignSelf: 'center',
+    padding: 10,
+    paddingHorizontal: 30,
+  },
+  bodyki: {
+    flexDirection: 'row',
+    alignSelf: 'center',
+    padding: 10,
+    paddingHorizontal: 30,
+  },
+  headerTitleStyle: {
+    fontFamily: 'Montserrat-Bold',
+    fontWeight: 'bold',
+    fontSize: 18,
+    alignSelf: 'center',
+    textAlign: 'center',
+    justifyContent: 'center',
+  },
+  headerStyle: {
+    height: height * 0.06,
   },
   user: {
     flexDirection: 'row',
@@ -31,30 +53,21 @@ export default StyleSheet.create({
     marginTop: 100,
   },
   ViewMenu: {
-    width: '100%',
-    height: '100%',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    marginTop: 5,
-    marginLeft: 10,
-    marginRight: 5,
+    alignSelf: 'center',
   },
-  TouchMenu: {
-    overflow: 'hidden',
-    width: '32%',
-    height: '20%',
-    position: 'relative',
+  menudisplay: {
+    flexDirection: 'row',
+    alignSelf: 'center',
   },
   MenuImage: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-    marginTop: 20,
+    width: width * 0.25,
+    height: height * 0.12,
+    marginTop: height * 0.04,
     marginBottom: 10,
     alignSelf: 'center',
     justifyContent: 'space-around',
-    marginLeft: 5,
-    marginRight: 5,
+    marginLeft: 20,
+    marginRight: 20,
   },
   backgroundContainer: {
     position: 'absolute',
@@ -66,7 +79,7 @@ export default StyleSheet.create({
   PilihMenu: {
     width: '90%',
     height: '6%',
-    backgroundColor: '#042B3E',
+    backgroundColor: Color.main.bluedeep,
     borderLeftColor: '#042B3E',
     borderColor: 'black',
     alignContent: 'center',
@@ -99,7 +112,7 @@ export default StyleSheet.create({
   Shape1: {
     width: '100%',
     height: '40%',
-    backgroundColor: '#042B3E',
+    backgroundColor: Color.main.bluedeep,
     borderBottomRightRadius: 40,
     borderBottomLeftRadius: 40,
   },

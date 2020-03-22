@@ -19,6 +19,8 @@ export default {
     texttColor: '#3E3E3E',
     buttonGreen: '#0CDF64',
     blueAkun: '#008CC9',
+    bluedeep: '#006b99',
+    bluedark: '#042B3E',
     orange: '#fe7013',
     red: '#FF0000',
   },
