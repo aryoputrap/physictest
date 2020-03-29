@@ -14,6 +14,7 @@ import Register from '../screen/Auth/Register';
 //import Home
 import TentangScreen from '../screen/Home/tentang';
 import KikdScreen from '../screen/Home/kikd';
+import Bantuan from '../screen/Home/bantuan';
 import HomeScreen from '../screen/Home';
 import AkunScreen from '../screen/Akun';
 import TestScreen from '../screen/Test';
@@ -127,6 +128,7 @@ const PublicStack = createStackNavigator(
     Ctt4Screen: Ctt4Screen,
     TentangScreen: TentangScreen,
     KikdScreen: KikdScreen,
+    Bantuan: Bantuan,
     // Absensi: Absensi,
     // InputData: InputData,
   },

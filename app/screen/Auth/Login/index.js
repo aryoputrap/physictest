@@ -23,6 +23,8 @@ class Welcome extends Component {
     this.state = {
       showPass: true,
       press: false,
+      username: '',
+      Password: '',
     };
   }
 
@@ -38,7 +40,7 @@ class Welcome extends Component {
     return (
       <KeyboardAvoidingView
         behavior={Platform.OS === 'android' ? 'padding' : null}
-        style={{flex: 1}}>
+        style={styles.fle}>
         <StatusBar translucent backgroundColor="transparent" />
         <ImageBackground
           style={styles.container}
@@ -84,11 +86,15 @@ class Welcome extends Component {
                     />
                   </TouchableOpacity>
                 </View>
-
                 <TouchableOpacity
                   style={styles.Buttonx}
                   onPress={() => this.props.navigation.navigate('StackPublic')}>
                   <Text style={styles.Submit}>SUBMIT</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.Buttonx}
+                  onPress={() => this.props.navigation.navigate('Register')}>
+                  <Text style={styles.Submit}>REGISTER</Text>
                 </TouchableOpacity>
               </View>
             </TouchableWithoutFeedback>

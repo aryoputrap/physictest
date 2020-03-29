@@ -8,10 +8,7 @@ import {
   ImageBackground,
   Dimensions,
 } from 'react-native';
-
-// import {connect} from 'react-redux';
 import {StackActions, NavigationActions} from 'react-navigation';
-// import {createIDSetToken} from '../../redux/auth/authActions';
 
 const {width, height} = Dimensions.get('window');
 const styles = StyleSheet.create({
@@ -44,13 +41,6 @@ class SplashScreen extends Component {
         );
       }
     }, 5000);
-    // if (Platform.OS === 'android') {
-    //   Linking.getInitialURL().then(url => {
-    //     this.navigate(url);
-    //   });
-    // } else {
-    //   Linking.addEventListener('url', this.handleOpenURL);
-    // }
   }
 
   componentWillUnmount() {
@@ -62,43 +52,17 @@ class SplashScreen extends Component {
     this.navigate(event.url);
   };
 
-  //   navigate = url => {
-  //     if (url) {
-  //       const route = url.replace(/.*?:\/\//g, '');
-  //       const id = route.match(/\/([^\/]+)\/?$/)[1];
-  //       const routeName = route.split('/');
-  //       if (routeName[1] === 'createID') {
-  //         this.props.createIDSetToken(routeName[2]);
-  //         this.props.navigation.navigate('CreateIDScreen');
-  //         clearInterval(this.interval);
-  //       }
-  //     }
-  //   };
-
   render() {
     return (
       <View style={styles.container}>
         <StatusBar translucent backgroundColor="transparent" />
         <ImageBackground
-          source={require('../../../asset/Sp.gif')}
+          source={require('../../../asset/sp.png')}
           resizeMode={'stretch'}
-          style={styles.container}/>
+          style={styles.container}
+        />
       </View>
     );
   }
 }
-
-// const mapStateToProps = state => ({
-//   action: state.auth.action,
-//   loggedIn: state.account.loggedIn,
-// });
-
-// const mapDispatchToProps = {
-//   createIDSetToken: payload => createIDSetToken(payload),
-// };
-
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps,
-// )(SplashScreen);
 export default SplashScreen;

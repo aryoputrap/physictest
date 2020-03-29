@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
 import {
   StyleSheet,
@@ -11,15 +13,12 @@ import {
   Keyboard,
 } from 'react-native';
 import HTML from 'react-native-render-html';
-// import Video from 'react-native-video';
 import VideoPlayer from 'react-native-video-controls';
-// import ViewPager from '@react-native-community/viewpager';
-// import {IndicatorViewPager} from 'react-native-best-viewpager';
 import StepIndicator from 'react-native-step-indicator';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
 import {RadioButton} from 'react-native-paper';
-import AsyncStorage from '@react-native-community/async-storage';
+// import AsyncStorage from '@react-native-community/async-storage';
 import axios from 'axios';
 import data1 from '../../../utilisasi/data1';
 import style from '../style_ctt';
@@ -107,36 +106,39 @@ export default class App extends Component {
       isLooping: true,
       fullscreen: false,
       shift: new Animated.Value(0),
-      tier11: '',
-      tier12: '',
-      tier13: '',
-      tier13_e: '',
-      tier14: '',
-      tier21: '',
-      tier31: '',
-      tier32: '',
-      tier33: '',
-      tier33_e: '',
-      tier34: '',
-      tier41: '',
-      tier42: '',
-      tier43: '',
-      tier44: '',
-      tier51: '',
-      tier52: '',
-      tier53: '',
-      tier61: '',
-      tier71: '',
-      tier72: '',
-      tier73: '',
-      tier73_e: '',
-      tier74: '',
+      tier11: 'a',
+      tier12: 's',
+      tier13: 'a',
+      tier13_e: 'kosong',
+      tier14: 'a',
+      tier21: 'v',
+      tier31: 'v',
+      tier32: 'v',
+      tier33: 'v',
+      tier33_e: 'kosong',
+      tier34: 'v',
+      tier41: 'v',
+      tier42: 'v',
+      tier43: 'v',
+      tier44: 'vv',
+      tier51: 'v',
+      tier52: 'v',
+      tier53: 'v',
+      tier61: 'v',
+      tier71: 'v',
+      tier72: 'v',
+      tier73: 'v',
+      tier73_e: 'kosong',
+      tier74: 'v',
     };
   }
 
-  kirimJawaban = async () => {
+  kirimJawaban = () => {
     const jwb = this.state;
-    const user = {
+    const users = {
+      nama: 'aryo',
+      nik: '112312323123',
+      kelas: 'ipa',
       tier11: jwb.tier11,
       tier12: jwb.tier12,
       tier13: jwb.tier13,
@@ -152,8 +154,6 @@ export default class App extends Component {
       tier42: jwb.tier42,
       tier43: jwb.tier43,
       tier44: jwb.tier44,
-      tier45: jwb.tier45,
-      tier46: jwb.tier46,
       tier51: jwb.tier51,
       tier52: jwb.tier52,
       tier53: jwb.tier53,
@@ -164,37 +164,22 @@ export default class App extends Component {
       tier73_e: jwb.tier73_e,
       tier74: jwb.tier74,
     };
-    console.log(user);
-    const tokenx = await AsyncStorage.getItem('token');
     const header = {
-      Authorization: 'Bearer ' + tokenx,
-      'Content-Type': 'application/json',
-      'x-api-key':
-        '$2a$10$QNB/3KKnXvzSRQMd/stp1eDEHbtZHlAaKfeTKKJ9R5.OtUnEgnrA6',
+      'Content-Type': 'application/json'
     };
+    console.log(users);
     axios({
       method: 'POST',
-      url: 'http://support.tokopandai.id:3003/Api/isiSaldo/validasi',
+      url: 'http://192.168.1.109:8000/api/cc1/post',
       headers: header,
-      data: user,
+      data: users,
     })
       .then(response => {
         this.response = response.data;
-        this.dropDownAlertRef.alertWithType(
-          'success',
-          'Mohon diperiksa kembali !',
-          response.data.message,
-        );
         console.log(response);
-        this.onSuccessUpdate();
       })
       .catch(error => {
-        console.log(error.response.data.message);
-        this.dropDownAlertRef.alertWithType(
-          'warn',
-          'Mohon diperiksa kembali !',
-          error.response.data.message,
-        );
+        console.log(error);
       });
   };
 
@@ -233,7 +218,7 @@ export default class App extends Component {
   soal = () => {
     const page = this.state;
     const jwb = this.state;
-    if (page.currentPage === 0) {
+    if (page.currentPage === 6) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -927,7 +912,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 6) {
+    } else if (page.currentPage === 0) {
       return (
         <View style={style.containdata}>
           <FlatList

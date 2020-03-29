@@ -1,9 +1,22 @@
-/* eslint-disable no-alert */
-/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import {View, StyleSheet, Text, Linking, TextInput, Button} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  Linking,
+  TextInput,
+  Button,
+  Alert,
+} from 'react-native';
+import style from '../style';
 
 export default class App extends Component {
+  static navigationOptions = () => ({
+    title: 'HOME',
+    headerTransparent: false,
+    headerTitleStyle: style.headerTitleStyle,
+    headerStyle: style.headerStyle,
+  });
   constructor(props) {
     super(props);
     this.state = {
@@ -30,19 +43,19 @@ export default class App extends Component {
             console.log('WhatsApp Opened');
           })
           .catch(() => {
-            alert('Make sure Whatsapp installed on your device');
+            Alert.alert('Make sure Whatsapp installed on your device');
           });
       } else {
-        alert('Please insert message to send');
+        Alert.alert('Please insert message to send');
       }
     } else {
-      alert('Please insert mobile no');
+      Alert.alert('Please insert mobile no');
     }
   };
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{textAlign: 'center', fontSize: 20, paddingVertical: 30}}>
+        <Text style={styles.send}>
           Example to Send WhatsApp Message from React Native App
         </Text>
         <TextInput
@@ -58,7 +71,7 @@ export default class App extends Component {
           placeholder={'Enter message'}
           style={styles.input}
         />
-        <View style={{marginTop: 20}}>
+        <View style={styles.sendwa}>
           <Button onPress={this.sendOnWhatsApp} title="Send WhatsApp Message" />
         </View>
       </View>
@@ -80,5 +93,13 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 20,
     backgroundColor: '#D3D3D3',
+  },
+  send: {
+    textAlign: 'center',
+    fontSize: 20,
+    paddingVertical: 30,
+  },
+  sendwa: {
+    marginTop: 20,
   },
 });

@@ -65,7 +65,9 @@ export default class Home extends Component {
             </TouchableOpacity>
           </View>
           <View style={styles.menudisplay}>
-            <TouchableOpacity style={styles.TouchMenu}>
+            <TouchableOpacity
+              style={styles.TouchMenu}
+              onPress={() => this.props.navigation.navigate('Bantuan')}>
               <Image
                 resizeMode="contain"
                 style={styles.MenuImage}

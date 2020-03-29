@@ -10,6 +10,9 @@ export default StyleSheet.create({
   BtnEye: {
     justifyContent: 'flex-end',
   },
+  fle: {
+    flex: 1,
+  },
   login: {
     position: 'absolute',
     alignContent: 'center',
@@ -22,19 +25,16 @@ export default StyleSheet.create({
   Submit: {
     color: '#042B3E',
     textAlign: 'center',
-    fontSize: 35,
+    fontSize: 25,
     fontWeight: 'bold',
+    margin: 10,
   },
   Buttonx: {
-    elevation: 20,
     textAlign: 'center',
     alignContent: 'center',
     width: width * 0.8,
-    height: height * 0.06,
     borderRadius: 10,
     marginTop: 15,
-    marginBottom: 100,
-    marginHorizontal: 280,
     alignItems: 'center',
     alignSelf: 'center',
     backgroundColor: '#FFC90E',
@@ -42,7 +42,7 @@ export default StyleSheet.create({
   inner: {
     position: 'relative',
     alignItems: 'center',
-    marginTop: 300,
+    marginTop: 275,
     alignContent: 'center',
     flex: 3,
   },
@@ -51,7 +51,7 @@ export default StyleSheet.create({
     color: '#042B3E',
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 40,
+    fontSize: 30,
   },
   InputIconPass: {
     top: 8,
@@ -64,7 +64,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white',
     bottom: 10,
-    marginTop: 10,
+    marginTop: 20,
     height: height * 0.07,
     width: width * 0.8,
   },
