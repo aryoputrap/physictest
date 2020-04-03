@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 import styles from './style';
 
 export default class Test extends Component {
@@ -26,6 +26,7 @@ export default class Test extends Component {
           onPress={() => this.props.navigation.navigate('Ctt4Screen')}>
           <Text style={styles.textBtn}>E-CDCCText-4</Text>
         </TouchableOpacity>
+        <Image source={require('../../asset/awan.png')} style={styles.awan} />
       </View>
     );
   }

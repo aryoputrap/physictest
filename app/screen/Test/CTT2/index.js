@@ -165,7 +165,7 @@ export default class App extends Component {
       tier73_e: jwb.tier73_e,
       tier74: jwb.tier74,
     };
-    console.log(user);
+    // console.log(user);
     const header = {
       'Content-Type': 'application/json',
     };

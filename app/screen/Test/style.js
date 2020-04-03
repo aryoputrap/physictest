@@ -5,11 +5,16 @@ const {width, height} = Dimensions.get('window');
 export default StyleSheet.create({
   container: {
     flex: 1,
-    width: width,
-    height: height,
     marginTop: 10,
     alignSelf: 'center',
     justifyContent: 'center',
+  },
+  awan: {
+    width,
+    height: height * 0.1,
+    resizeMode: 'cover',
+    alignSelf: 'stretch',
+    marginTop: height * 0.1,
   },
   btnTest: {
     backgroundColor: Color.main.primaryorange,
