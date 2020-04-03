@@ -63,15 +63,15 @@ class Welcome extends Component {
     })
       .then(response => {
         this.response = response.data;
-        // console.log(response.status);
-        if (response.status === 201) {
+        // console.log(response);
+        if (response.data.status === 201) {
           this.dropDownAlertRef.alertWithType(
             'success',
             'Login Berhasil',
             response.data.message,
           );
           this.onSuccessUpload();
-        } else if (response.status === 401) {
+        } else if (response.data.status === 401) {
           this.dropDownAlertRef.alertWithType(
             'success',
             'Login Berhasil',
