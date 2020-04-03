@@ -15,6 +15,7 @@ import Register from '../screen/Auth/Register';
 import TentangScreen from '../screen/Home/tentang';
 import KikdScreen from '../screen/Home/kikd';
 import Bantuan from '../screen/Home/bantuan';
+import Angket from '../screen/Home/angket';
 import HomeScreen from '../screen/Home';
 import AkunScreen from '../screen/Akun';
 import TestScreen from '../screen/Test';
@@ -90,8 +91,8 @@ const StackPublic = createBottomTabNavigator(
         borderTopWidth: 0,
       },
     },
-    // initialRouteName: 'Home',
-    initialRouteName: 'Aktivitas',
+    initialRouteName: 'Home',
+    // initialRouteName: 'Aktivitas',
     // initialRouteName: 'Akun',
   },
 );
@@ -129,16 +130,16 @@ const PublicStack = createStackNavigator(
     TentangScreen: TentangScreen,
     KikdScreen: KikdScreen,
     Bantuan: Bantuan,
-    // Absensi: Absensi,
+    Angket: Angket,
     // InputData: InputData,
   },
   {
     headerMode: 'screen',
     // initialRouteName: 'Ctt1Screen',
     // initialRouteName: 'Login',
-    // initialRouteName: 'StackPublic',
+    initialRouteName: 'StackPublic',
     // initialRouteName: 'Register',
-    initialRouteName: 'SplashScreen',
+    // initialRouteName: 'SplashScreen',
   },
 );
 

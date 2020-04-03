@@ -55,7 +55,9 @@ export default class Home extends Component {
               />
               <Text style={styles.TeksMenu}>KI/KD</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.TouchMenu}>
+            <TouchableOpacity
+              style={styles.TouchMenu}
+              onPress={() => this.props.navigation.navigate('Angket')}>
               <Image
                 resizeMode="contain"
                 style={styles.MenuImage}

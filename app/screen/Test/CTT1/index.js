@@ -14,6 +14,8 @@ import {
 } from 'react-native';
 import HTML from 'react-native-render-html';
 import VideoPlayer from 'react-native-video-controls';
+import DropdownAlert from 'react-native-dropdownalert';
+import Loading from '../../../component/loading';
 import StepIndicator from 'react-native-step-indicator';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
@@ -22,6 +24,8 @@ import {RadioButton} from 'react-native-paper';
 import axios from 'axios';
 import data1 from '../../../utilisasi/data1';
 import style from '../style_ctt';
+import {YellowBox} from 'react-native';
+console.disableYellowBox = true;
 
 const secondIndicatorStyles = {
   stepIndicatorSize: 34, //ukurang lingkaran
@@ -100,45 +104,52 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
+      loading: false,
       currentPage: 0,
       checked: 'first',
       isPlaying: true,
       isLooping: true,
       fullscreen: false,
       shift: new Animated.Value(0),
-      tier11: 'a',
-      tier12: 's',
-      tier13: 'a',
-      tier13_e: 'kosong',
-      tier14: 'a',
-      tier21: 'v',
-      tier31: 'v',
-      tier32: 'v',
-      tier33: 'v',
-      tier33_e: 'kosong',
-      tier34: 'v',
-      tier41: 'v',
-      tier42: 'v',
-      tier43: 'v',
-      tier44: 'vv',
-      tier51: 'v',
-      tier52: 'v',
-      tier53: 'v',
-      tier61: 'v',
-      tier71: 'v',
-      tier72: 'v',
-      tier73: 'v',
-      tier73_e: 'kosong',
-      tier74: 'v',
+      kelas: 'kelas',
+      nik: 'nik',
+      nama: 'nama',
+      tier11: 'null',
+      tier12: 'null',
+      tier13: 'null',
+      tier13_e: 'null',
+      tier14: 'null',
+      tier21: 'null',
+      tier31: 'null',
+      tier32: 'null',
+      tier33: 'null',
+      tier33_e: 'null',
+      tier34: 'null',
+      tier41: 'null',
+      tier42: 'null',
+      tier43: 'null',
+      tier44: 'null',
+      tier51: 'null',
+      tier52: 'null',
+      tier53: 'null',
+      tier61: 'null',
+      tier71: 'null',
+      tier72: 'null',
+      tier73: 'null',
+      tier73_e: 'null',
+      tier74: 'null',
     };
   }
-
+  yellowbox = () => YellowBox.ignoreWarnings(['Warning: ...']);
   kirimJawaban = () => {
+    this.setState({
+      loading: true,
+    });
     const jwb = this.state;
     const users = {
-      nama: 'aryo',
-      nik: '112312323123',
-      kelas: 'ipa',
+      nama: jwb.nama,
+      nik: jwb.nik,
+      kelas: jwb.nik,
       tier11: jwb.tier11,
       tier12: jwb.tier12,
       tier13: jwb.tier13,
@@ -170,22 +181,50 @@ export default class App extends Component {
     console.log(users);
     axios({
       method: 'POST',
-      url: 'http://192.168.1.109:8000/api/cc1/post',
+      url: 'http://elearnphysics.com/api/cct1/post',
       headers: header,
       data: users,
     })
       .then(response => {
         this.response = response.data;
         console.log(response);
+        if (response.status === 201) {
+          this.dropDownAlertRef.alertWithType(
+            'success',
+            'Data telah terkirim.!',
+            response.data.message,
+          );
+          this.onSuccessUpload();
+        }
       })
       .catch(error => {
         console.log(error);
+        this.dropDownAlertRef.alertWithType(
+          'warn',
+          'Mohon diperiksa kembali, data yang telah anda input!',
+          error.message,
+        );
+        this.onFailedUpload();
       });
   };
 
   sumbmitInc = () => {
     this.setState(prevState => ({currentPage: prevState.currentPage + 1}));
   };
+
+  onSuccessUpload() {
+    this.setState({loading: false});
+    setTimeout(() => {
+      this.props.navigation.navigate('StackPublic');
+    }, 5000);
+  }
+
+  onFailedUpload() {
+    this.setState({loading: false});
+    setTimeout(() => {
+      this.props.navigation.navigate('StackPublic');
+    }, 5000);
+  }
 
   UNSAFE_componentWillMount() {
     this.keyboardDidShowSub = Keyboard.addListener(
@@ -218,7 +257,7 @@ export default class App extends Component {
   soal = () => {
     const page = this.state;
     const jwb = this.state;
-    if (page.currentPage === 6) {
+    if (page.currentPage === 0) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -912,7 +951,7 @@ export default class App extends Component {
           />
         </View>
       );
-    } else if (page.currentPage === 0) {
+    } else if (page.currentPage === 6) {
       return (
         <View style={style.containdata}>
           <FlatList
@@ -1104,6 +1143,10 @@ export default class App extends Component {
   render() {
     return (
       <View>
+        <View>
+          <DropdownAlert ref={ref => (this.dropDownAlertRef = ref)} />
+        </View>
+        <Loading flag={this.state.loading} />
         <View style={style.header}>
           <Text style={style.titletest}>TEKANAN HIDROSTATIS</Text>
         </View>

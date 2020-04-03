@@ -11,16 +11,18 @@ import {
 } from 'react-native';
 import HTML from 'react-native-render-html';
 import VideoPlayer from 'react-native-video-controls';
-// import ViewPager from '@react-native-community/viewpager';
-// import {IndicatorViewPager} from 'react-native-best-viewpager';
+import DropdownAlert from 'react-native-dropdownalert';
+import Loading from '../../../component/loading';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
-import AsyncStorage from '@react-native-community/async-storage';
+// import AsyncStorage from '@react-native-community/async-storage';
 import axios from 'axios';
 import StepIndicator from 'react-native-step-indicator';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import {RadioButton} from 'react-native-paper';
 import data4 from '../../../utilisasi/data4';
 import style from '../style_ctt';
+import {YellowBox} from 'react-native';
+console.disableYellowBox = true;
 
 const secondIndicatorStyles = {
   stepIndicatorSize: 37,
@@ -105,34 +107,43 @@ export default class App extends Component {
       isPlaying: true,
       isLooping: true,
       fullscreen: false,
-      tier11: '',
-      tier12: '',
-      tier13: '',
-      tier13_e: '',
-      tier14: '',
-      tier21: '',
-      tier31: '',
-      tier32: '',
-      tier33: '',
-      tier33_e: '',
-      tier34: '',
-      tier41: '',
-      tier42: '',
-      tier43: '',
-      tier44: '',
-      tier45: '',
-      tier61: '',
-      tier71: '',
-      tier72: '',
-      tier73: '',
-      tier73_e: '',
-      tier74: '',
+      kelas: 'kelas',
+      nik: 'nik',
+      nama: 'nama',
+      tier11: 'null',
+      tier12: 'null',
+      tier13: 'null',
+      tier13_e: 'null',
+      tier14: 'null',
+      tier21: 'null',
+      tier31: 'null',
+      tier32: 'null',
+      tier33: 'null',
+      tier33_e: 'null',
+      tier34: 'null',
+      tier41: 'null',
+      tier42: 'null',
+      tier43: 'null',
+      tier44: 'null',
+      tier45: 'null',
+      tier61: 'null',
+      tier71: 'null',
+      tier72: 'null',
+      tier73: 'null',
+      tier73_e: 'null',
+      tier74: 'null',
     };
   }
-
+  yellowbox = () => YellowBox.ignoreWarnings(['Warning: ...']);
   kirimJawaban = async () => {
+    this.setState({
+      loading: true,
+    });
     const jwb = this.state;
     const user = {
+      kelas: jwb.nama,
+      nik: jwb.nik,
+      nama: jwb.nama,
       tier11: jwb.tier11,
       tier12: jwb.tier12,
       tier13: jwb.tier13,
@@ -157,42 +168,56 @@ export default class App extends Component {
       tier74: jwb.tier74,
     };
     console.log(user);
-    const tokenx = await AsyncStorage.getItem('token');
+    // const tokenx = await AsyncStorage.getItem('token');
     const header = {
-      Authorization: 'Bearer ' + tokenx,
       'Content-Type': 'application/json',
-      'x-api-key':
-        '$2a$10$QNB/3KKnXvzSRQMd/stp1eDEHbtZHlAaKfeTKKJ9R5.OtUnEgnrA6',
     };
     axios({
       method: 'POST',
-      url: 'http://support.tokopandai.id:3003/Api/isiSaldo/validasi',
+      url: 'http://elearnphysics.com/api/cct4/post',
       headers: header,
       data: user,
     })
       .then(response => {
         this.response = response.data;
-        this.dropDownAlertRef.alertWithType(
-          'success',
-          'Mohon diperiksa kembali !',
-          response.data.message,
-        );
-        console.log(response);
-        this.onSuccessUpdate();
+        // console.log(response.status);
+        if (response.status === 201) {
+          this.dropDownAlertRef.alertWithType(
+            'success',
+            'Data telah terkirim!',
+            response.data.message,
+          );
+          this.onSuccessUpload();
+        }
       })
       .catch(error => {
-        console.log(error.response.data.message);
+        // console.log(error.message);
         this.dropDownAlertRef.alertWithType(
           'warn',
-          'Mohon diperiksa kembali !',
-          error.response.data.message,
+          'Mohon diperiksa kembali, data yang telah anda input!',
+          error.message,
         );
+        this.onFailedUpload();
       });
   };
 
   sumbmitInc = () => {
     this.setState(prevState => ({currentPage: prevState.currentPage + 1}));
   };
+
+  onSuccessUpload() {
+    this.setState({loading: false, isModalSucces: true});
+    setTimeout(() => {
+      this.props.navigation.navigate('StackPublic');
+    }, 5000);
+  }
+
+  onFailedUpload() {
+    this.setState({loading: false, isModalFailed: false});
+    setTimeout(() => {
+      this.props.navigation.navigate('StackPublic');
+    }, 5000);
+  }
 
   soal = () => {
     const page = this.state;
@@ -976,6 +1001,10 @@ export default class App extends Component {
   render() {
     return (
       <View>
+        <View>
+          <DropdownAlert ref={ref => (this.dropDownAlertRef = ref)} />
+        </View>
+        <Loading flag={this.state.loading} />
         <View style={style.header}>
           <Text style={style.titletest}>
             Konsep Terapung, Melayang, dan Tenggelam (2)
