@@ -13,7 +13,8 @@ import DropdownAlert from 'react-native-dropdownalert';
 import Loading from '../../../component/loading';
 import VideoPlayer from 'react-native-video-controls';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
-// import AsyncStorage from '@react-native-community/async-storage';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 import axios from 'axios';
 import StepIndicator from 'react-native-step-indicator';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
@@ -178,7 +179,7 @@ export default class App extends Component {
     };
     axios({
       method: 'POST',
-      url: 'http://elearnphysics.com/api/cct3/post',
+      url: 'https://elearnphysics.com/api/cct3/post',
       headers: header,
       data: user,
     })
@@ -231,7 +232,7 @@ export default class App extends Component {
             data={data3.databagian1}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
-              <View>
+              <KeyboardAwareScrollView>
                 <View>
                   <Text style={style.itmtitle}>{item.bab}</Text>
                   <Text style={style.itmtitle}>{item.title}</Text>
@@ -393,7 +394,7 @@ export default class App extends Component {
                   onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>LANJUT</Text>
                 </TouchableOpacity>
-              </View>
+              </KeyboardAwareScrollView>
             )}
           />
         </View>
@@ -407,7 +408,7 @@ export default class App extends Component {
             data={data3.databagian2}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
-              <View>
+              <KeyboardAwareScrollView>
                 <View>
                   <Text style={style.itmtitle}>{item.bab}</Text>
                   <Text style={style.itmtitle}>{item.title}</Text>
@@ -481,12 +482,13 @@ export default class App extends Component {
                     onChangeText={txt => this.setState({tier21: txt})}
                   />
                 </View>
+                <KeyboardSpacer />
                 <TouchableOpacity
                   style={style.button}
                   onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>LANJUT</Text>
                 </TouchableOpacity>
-              </View>
+              </KeyboardAwareScrollView>
             )}
           />
         </View>
@@ -500,7 +502,7 @@ export default class App extends Component {
             data={data3.databagian3}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
-              <View>
+              <KeyboardAwareScrollView>
                 <View>
                   <Text style={style.itmtitle}>{item.bab}</Text>
                   <Text style={style.itmtitle}>{item.title}</Text>
@@ -655,7 +657,7 @@ export default class App extends Component {
                   onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>LANJUT</Text>
                 </TouchableOpacity>
-              </View>
+              </KeyboardAwareScrollView>
             )}
           />
         </View>
@@ -669,7 +671,7 @@ export default class App extends Component {
             data={data3.databagian4}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
-              <View>
+              <KeyboardAwareScrollView>
                 <View>
                   <Text style={style.itmtitle}>{item.bab}</Text>
                   <Text style={style.itmtitle}>{item.title}</Text>
@@ -738,6 +740,7 @@ export default class App extends Component {
                       placeholder={'5. Jawab Disini'}
                       onChangeText={txt => this.setState({tier45: txt})}
                     />
+                    <KeyboardSpacer />
                   </View>
                 </View>
                 <TouchableOpacity
@@ -745,7 +748,7 @@ export default class App extends Component {
                   onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>LANJUT</Text>
                 </TouchableOpacity>
-              </View>
+              </KeyboardAwareScrollView>
             )}
           />
         </View>
@@ -759,7 +762,7 @@ export default class App extends Component {
             data={data3.databagian5}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
-              <View>
+              <KeyboardAwareScrollView>
                 <View>
                   <Text style={style.itmtitle}>{item.bab}</Text>
                   <Text style={style.itmtitle}>{item.title}</Text>
@@ -791,7 +794,7 @@ export default class App extends Component {
                   onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>LANJUT</Text>
                 </TouchableOpacity>
-              </View>
+              </KeyboardAwareScrollView>
             )}
           />
         </View>
@@ -805,7 +808,7 @@ export default class App extends Component {
             data={data3.databagian6}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
-              <View>
+              <KeyboardAwareScrollView>
                 <View>
                   <Text style={style.itmtitle}>{item.bab}</Text>
                   <Text style={style.itmtitle}>{item.title}</Text>
@@ -825,7 +828,7 @@ export default class App extends Component {
                   onPress={() => this.sumbmitInc()}>
                   <Text style={style.textbtn}>LANJUT</Text>
                 </TouchableOpacity>
-              </View>
+              </KeyboardAwareScrollView>
             )}
           />
         </View>
@@ -839,7 +842,7 @@ export default class App extends Component {
             data={data3.databagian7}
             keyExtractor={(item, index) => `${item}--${index}`}
             renderItem={({item}) => (
-              <View>
+              <KeyboardAwareScrollView>
                 <View>
                   <Text style={style.itmtitle}>{item.bab}</Text>
                   <Text style={style.itmtitle}>{item.title}</Text>
@@ -999,7 +1002,7 @@ export default class App extends Component {
                   onPress={() => this.kirimJawaban()}>
                   <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
                 </TouchableOpacity>
-              </View>
+              </KeyboardAwareScrollView>
             )}
           />
         </View>

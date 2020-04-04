@@ -11,6 +11,7 @@ import {
 import HTML from 'react-native-render-html';
 import DropdownAlert from 'react-native-dropdownalert';
 import Loading from '../../../component/loading';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
 import VideoPlayer from 'react-native-video-controls';
 import axios from 'axios';
@@ -171,7 +172,7 @@ export default class App extends Component {
     };
     axios({
       method: 'POST',
-      url: 'http://elearnphysics.com/api/cct2/post',
+      url: 'https://elearnphysics.com/api/cct2/post',
       headers: header,
       data: user,
     })
@@ -469,6 +470,7 @@ export default class App extends Component {
                     onChangeText={txt => this.setState({tier21: txt})}
                   />
                 </View>
+                <KeyboardSpacer />
                 <TouchableOpacity
                   style={style.button}
                   onPress={() => this.sumbmitInc()}>
@@ -727,6 +729,7 @@ export default class App extends Component {
                       placeholder={'5. Jawab Disini'}
                       onChangeText={txt => this.setState({tier45: txt})}
                     />
+                    <KeyboardSpacer />
                   </View>
                 </View>
                 <TouchableOpacity

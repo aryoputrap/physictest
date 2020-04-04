@@ -14,7 +14,7 @@ import VideoPlayer from 'react-native-video-controls';
 import DropdownAlert from 'react-native-dropdownalert';
 import Loading from '../../../component/loading';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
-// import AsyncStorage from '@react-native-community/async-storage';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 import axios from 'axios';
 import StepIndicator from 'react-native-step-indicator';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
@@ -174,7 +174,7 @@ export default class App extends Component {
     };
     axios({
       method: 'POST',
-      url: 'http://elearnphysics.com/api/cct4/post',
+      url: 'https://elearnphysics.com/api/cct4/post',
       headers: header,
       data: user,
     })
@@ -469,6 +469,7 @@ export default class App extends Component {
                     placeholder={'Isi Simpulan Anda Disini'}
                     onChangeText={txt => this.setState({tier21: txt})}
                   />
+                  <KeyboardSpacer />
                 </View>
                 <TouchableOpacity
                   style={style.button}
@@ -728,6 +729,7 @@ export default class App extends Component {
                       placeholder={'5. Jawab Disini'}
                       onChangeText={txt => this.setState({tier45: txt})}
                     />
+                    <KeyboardSpacer />
                   </View>
                 </View>
                 <TouchableOpacity

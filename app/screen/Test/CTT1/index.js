@@ -20,7 +20,7 @@ import StepIndicator from 'react-native-step-indicator';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
 import {RadioButton} from 'react-native-paper';
-// import AsyncStorage from '@react-native-community/async-storage';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 import axios from 'axios';
 import data1 from '../../../utilisasi/data1';
 import style from '../style_ctt';
@@ -181,7 +181,7 @@ export default class App extends Component {
     console.log(users);
     axios({
       method: 'POST',
-      url: 'http://elearnphysics.com/api/cct1/post',
+      url: 'https://elearnphysics.com/api/cct1/post',
       headers: header,
       data: users,
     })
@@ -564,12 +564,14 @@ export default class App extends Component {
                 <View style={style.itmBody}>
                   <HTML html={item.body17} />
                 </View>
-                <AutoGrowingTextInput
-                  // autoFocus={true}
-                  onChangeText={txt => this.setState({tier21: txt})}
-                  style={style.inputcct}
-                  placeholder={'Isi Simpulan Anda Disini'}
-                />
+                <View>
+                    <AutoGrowingTextInput
+                    onChangeText={txt => this.setState({tier21: txt})}
+                    style={style.inputcct}
+                    placeholder={'Isi Simpulan Anda Disini'}
+                  />
+                </View>
+                <KeyboardSpacer/>
                 <TouchableOpacity
                   style={style.button}
                   onPress={() => this.sumbmitInc()}>

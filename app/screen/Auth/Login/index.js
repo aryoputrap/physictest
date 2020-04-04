@@ -57,7 +57,7 @@ class Welcome extends Component {
     };
     axios({
       method: 'POST',
-      url: 'http://elearnphysics.com/api/user/login',
+      url: 'https://elearnphysics.com/api/user/login',
       headers: header,
       data: user,
     })
@@ -84,7 +84,7 @@ class Welcome extends Component {
         // console.log(error.message);
         this.dropDownAlertRef.alertWithType(
           'warn',
-          'Mohon diperiksa kembali, data yang telah anda input!',
+          'Mohon diperiksa kembali',
           error.message,
         );
         this.onFailedUpload();
@@ -101,7 +101,7 @@ class Welcome extends Component {
   onFailedUpload() {
     this.setState({loading: false, isModalFailed: false});
     setTimeout(() => {
-      this.props.navigation.navigate('SplashScreen');
+      this.props.navigation.navigate('StackPublic');
     }, 5000);
   }
 

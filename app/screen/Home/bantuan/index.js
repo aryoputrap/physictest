@@ -55,9 +55,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.send}>
-          Example to Send WhatsApp Message from React Native App
-        </Text>
+        <Text style={styles.send}>BANTUAN</Text>
         <TextInput
           value={this.state.mobile_no}
           onChangeText={mobile_no => this.setState({mobile_no})}
@@ -72,7 +70,7 @@ export default class App extends Component {
           style={styles.input}
         />
         <View style={styles.sendwa}>
-          <Button onPress={this.sendOnWhatsApp} title="Send WhatsApp Message" />
+          <Button onPress={this.sendOnWhatsApp} title="KIRIM PESAN WHATSAPP" />
         </View>
       </View>
     );
@@ -101,5 +99,8 @@ const styles = StyleSheet.create({
   },
   sendwa: {
     marginTop: 20,
+    width: '50%',
+    borderRadius: 10,
+    height: '10%',
   },
 });

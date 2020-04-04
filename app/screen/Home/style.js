@@ -58,7 +58,7 @@ export default StyleSheet.create({
     width,
     flexDirection: 'column',
     top: 5,
-    marginBottom: height * 0.45,
+    marginBottom: height * 0.4,
   },
   bodyki: {
     flexDirection: 'row',

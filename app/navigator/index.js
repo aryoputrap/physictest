@@ -92,8 +92,6 @@ const StackPublic = createBottomTabNavigator(
       },
     },
     initialRouteName: 'Home',
-    // initialRouteName: 'Aktivitas',
-    // initialRouteName: 'Akun',
   },
 );
 
@@ -135,10 +133,6 @@ const PublicStack = createStackNavigator(
   },
   {
     headerMode: 'screen',
-    // initialRouteName: 'Ctt1Screen',
-    // initialRouteName: 'Login',
-    // initialRouteName: 'StackPublic',
-    // initialRouteName: 'Register',
     initialRouteName: 'SplashScreen',
   },
 );
