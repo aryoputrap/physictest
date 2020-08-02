@@ -21,6 +21,7 @@ import {RadioButton} from 'react-native-paper';
 import data2 from '../../../utilisasi/data2';
 import style from '../style_ctt';
 import {YellowBox} from 'react-native';
+const timer = require('react-native-timer');
 console.disableYellowBox = true;
 
 const secondIndicatorStyles = {
@@ -100,9 +101,15 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
+      waktu: 'null',
+      time: false,
+      timer: 'null',
+      minutes_Counter: '00',
+      seconds_Counter: '00',
       currentPage: 0,
       checked: 'first',
       loading: false,
+      startDisable: false,
       //inner data base
       kelas: 'kelas',
       nik: 'nik',
@@ -135,8 +142,12 @@ export default class App extends Component {
   //bagian 5 tidak ada
   yellowbox = () => YellowBox.ignoreWarnings(['Warning: ...']);
   kirimJawaban = async () => {
+    clearInterval(this.state.waktu);
     this.setState({
       loading: true,
+      minutes_Counter: '00',
+      seconds_Counter: '00',
+      startDisable: false,
     });
     const jwb = this.state;
     const user = {
@@ -387,11 +398,20 @@ export default class App extends Component {
                     <Text style={style.jawaban}>{item.tier4.jwb_b}</Text>
                   </View>
                 </View>
-                <TouchableOpacity
-                  style={style.button}
-                  onPress={() => this.sumbmitInc()}>
-                  <Text style={style.textbtn}>LANJUT</Text>
-                </TouchableOpacity>
+                {jwb.tier11 &&
+                jwb.tier12 &&
+                jwb.tier13 &&
+                jwb.tier14 === 'null' ? (
+                  <View style={style.buttonf}>
+                    <Text style={style.textbtn}>SOAL BELUM TERISI</Text>
+                  </View>
+                ) : (
+                  <TouchableOpacity
+                    style={style.button}
+                    onPress={() => this.sumbmitInc()}>
+                    <Text style={style.textbtn}>LANJUT</Text>
+                  </TouchableOpacity>
+                )}
               </View>
             )}
           />
@@ -471,11 +491,17 @@ export default class App extends Component {
                   />
                 </View>
                 <KeyboardSpacer />
-                <TouchableOpacity
-                  style={style.button}
-                  onPress={() => this.sumbmitInc()}>
-                  <Text style={style.textbtn}>LANJUT</Text>
-                </TouchableOpacity>
+                {jwb.tier21 === 'null' || '' ? (
+                  <View style={style.buttonf}>
+                    <Text style={style.textbtn}>SOAL BELUM TERISI</Text>
+                  </View>
+                ) : (
+                  <TouchableOpacity
+                    style={style.button}
+                    onPress={() => this.sumbmitInc()}>
+                    <Text style={style.textbtn}>LANJUT</Text>
+                  </TouchableOpacity>
+                )}
               </View>
             )}
           />
@@ -646,11 +672,21 @@ export default class App extends Component {
                     <Text style={style.jawaban}>{item.tier4.jwb_b}</Text>
                   </View>
                 </View>
-                <TouchableOpacity
-                  style={style.button}
-                  onPress={() => this.sumbmitInc()}>
-                  <Text style={style.textbtn}>LANJUT</Text>
-                </TouchableOpacity>
+                {(jwb.tier31 &&
+                  jwb.tier32 &&
+                  jwb.tier33 &&
+                  jwb.tier34 === 'null') ||
+                '' ? (
+                  <View style={style.buttonf}>
+                    <Text style={style.textbtn}>SOAL BELUM TERISI</Text>
+                  </View>
+                ) : (
+                  <TouchableOpacity
+                    style={style.button}
+                    onPress={() => this.sumbmitInc()}>
+                    <Text style={style.textbtn}>LANJUT</Text>
+                  </TouchableOpacity>
+                )}
               </View>
             )}
           />
@@ -732,11 +768,20 @@ export default class App extends Component {
                     <KeyboardSpacer />
                   </View>
                 </View>
-                <TouchableOpacity
-                  style={style.button}
-                  onPress={() => this.sumbmitInc()}>
-                  <Text style={style.textbtn}>LANJUT</Text>
-                </TouchableOpacity>
+                {jwb.tier41 &&
+                jwb.tier42 &&
+                jwb.tier43 &&
+                jwb.tier44 === 'null' ? (
+                  <View style={style.buttonf}>
+                    <Text style={style.textbtn}>SOAL BELUM TERISI</Text>
+                  </View>
+                ) : (
+                  <TouchableOpacity
+                    style={style.button}
+                    onPress={() => this.sumbmitInc()}>
+                    <Text style={style.textbtn}>LANJUT</Text>
+                  </TouchableOpacity>
+                )}
               </View>
             )}
           />
@@ -850,11 +895,17 @@ export default class App extends Component {
                     />
                   </View>
                 </View>
-                <TouchableOpacity
-                  style={style.button}
-                  onPress={() => this.sumbmitInc()}>
-                  <Text style={style.textbtn}>LANJUT</Text>
-                </TouchableOpacity>
+                {jwb.tier61 === 'null' || '' ? (
+                  <View style={style.buttonf}>
+                    <Text style={style.textbtn}>SOAL BELUM TERISI</Text>
+                  </View>
+                ) : (
+                  <TouchableOpacity
+                    style={style.button}
+                    onPress={() => this.sumbmitInc()}>
+                    <Text style={style.textbtn}>LANJUT</Text>
+                  </TouchableOpacity>
+                )}
               </View>
             )}
           />
@@ -1027,11 +1078,20 @@ export default class App extends Component {
                     <Text style={style.jawaban}>{item.tier4.jwb_b}</Text>
                   </View>
                 </View>
-                <TouchableOpacity
-                  style={style.button}
-                  onPress={() => this.kirimJawaban()}>
-                  <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
-                </TouchableOpacity>
+                {jwb.tier71 &&
+                jwb.tier72 &&
+                jwb.tier73 &&
+                jwb.tier74 === 'null' ? (
+                  <View style={style.buttonf}>
+                    <Text style={style.textbtn}>SOAL BELUM TERISI</Text>
+                  </View>
+                ) : (
+                  <TouchableOpacity
+                    style={style.button}
+                    onPress={() => this.kirimJawaban()}>
+                    <Text style={style.textbtn}>SUBMIT JAWABAN</Text>
+                  </TouchableOpacity>
+                )}
               </View>
             )}
           />
@@ -1040,6 +1100,37 @@ export default class App extends Component {
     }
   };
 
+  showMsg() {
+    let waktu = setInterval(() => {
+      var num = (Number(this.state.seconds_Counter) + 1).toString(),
+        count = this.state.minutes_Counter;
+      if (Number(this.state.seconds_Counter) === 59) {
+        count = (Number(this.state.minutes_Counter) + 1).toString();
+        num = '00';
+      }
+      this.setState({
+        minutes_Counter: count.length === 1 ? '0' + count : count,
+        seconds_Counter: num.length === 1 ? '0' + num : num,
+      });
+    }, 1000);
+    this.setState({waktu});
+    this.setState({time: true}, () =>
+      timer.setTimeout(
+        this,
+        'hideMsg',
+        () =>
+          this.setState({
+            time: false,
+            loading: true,
+            minutes_Counter: '00',
+            seconds_Counter: '00',
+            startDisable: false,
+          }),
+        5000000,
+      ),
+    );
+  }
+
   render() {
     return (
       <View>
@@ -1047,24 +1138,37 @@ export default class App extends Component {
           <DropdownAlert ref={ref => (this.dropDownAlertRef = ref)} />
         </View>
         <Loading flag={this.state.loading} />
-        <View style={style.header}>
-          <Text style={style.titletest}>GAYA APUNG</Text>
-        </View>
-        <View style={style.mainbody}>
-          <ScrollView style={style.scrollview}>
-            <View style={style.viewindicator}>
-              <StepIndicator
-                stepCount={7}
-                renderStepIndicator={this.renderStepIndicator}
-                customStyles={secondIndicatorStyles}
-                currentPosition={this.state.currentPage}
-                direction={'vertical'}
-                onPress={this.onStepPress}
-              />
+        {this.state.time ? (
+          <View>
+            <View style={style.header}>
+              <Text style={style.titletest}>GAYA APUNG</Text>
+              <Text style={style.titlet}>
+                Waktu {this.state.minutes_Counter}:{this.state.seconds_Counter}
+              </Text>
             </View>
-          </ScrollView>
-          {this.soal()}
-        </View>
+            <View style={style.mainbody}>
+              <ScrollView style={style.scrollview}>
+                <View style={style.viewindicator}>
+                  <StepIndicator
+                    stepCount={7}
+                    renderStepIndicator={this.renderStepIndicator}
+                    customStyles={secondIndicatorStyles}
+                    currentPosition={this.state.currentPage}
+                    direction={'vertical'}
+                    onPress={this.onStepPress}
+                  />
+                </View>
+              </ScrollView>
+              {this.soal()}
+            </View>
+          </View>
+        ) : (
+          <TouchableOpacity
+            style={style.button}
+            onPress={() => requestAnimationFrame(() => this.showMsg())}>
+            <Text style={style.textbtn}>MULAI</Text>
+          </TouchableOpacity>
+        )}
       </View>
     );
   }

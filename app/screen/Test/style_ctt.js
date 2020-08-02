@@ -48,6 +48,13 @@ export default StyleSheet.create({
     fontSize: 15,
     alignSelf: 'center',
   },
+  titlet: {
+    color: Color.main.blueAkun,
+    fontWeight: 'bold',
+    justifyContent: 'center',
+    fontSize: 15,
+    alignSelf: 'center',
+  },
   backgroundVideo: {
     width: width * 0.8,
     height: height * 0.35,
@@ -228,6 +235,15 @@ export default StyleSheet.create({
   button: {
     justifyContent: 'center',
     backgroundColor: Color.main.orange,
+    borderRadius: 10,
+    width: width * 0.7,
+    height: height * 0.08,
+    alignSelf: 'center',
+    margin: 20,
+    marginBottom: height * 0.1,
+  },
+  buttonf: {
+    justifyContent: 'center',
     borderRadius: 10,
     width: width * 0.7,
     height: height * 0.08,

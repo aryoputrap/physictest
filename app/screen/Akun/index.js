@@ -15,7 +15,7 @@ export default class Home extends Component {
           <View style={Styles.bodyprofil}>
             <Icon name="user-circle-o" size={45} color="white" />
             <View style={Styles.flexcolumn}>
-              <Text style={Styles.TextWellcome}>Aryo Putra Purwanto</Text>
+              <Text style={Styles.TextWellcome}>Nurdini</Text>
               <Text style={Styles.schoolName}>SMAN 1 Cianjur</Text>
             </View>
           </View>
@@ -41,10 +41,10 @@ export default class Home extends Component {
           </View>
           <View style={Styles.columnText}>
             <Text style={Styles.textBarrier}>SMAN 1 Cianjur</Text>
-            <Text style={Styles.textBarrier}>Aryo Putra Purwanto</Text>
+            <Text style={Styles.textBarrier}>Nurdini</Text>
             <Text style={Styles.textBarrier}>XI IPA 1</Text>
             <Text style={Styles.textBarrier}>10</Text>
-            <Text style={Styles.textBarrier}>Laki-Laki</Text>
+            <Text style={Styles.textBarrier}>Perempuan</Text>
           </View>
         </View>
         <Image

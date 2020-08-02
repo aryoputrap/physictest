@@ -73,8 +73,8 @@ class Welcome extends Component {
           this.onSuccessUpload();
         } else if (response.data.status === 401) {
           this.dropDownAlertRef.alertWithType(
-            'success',
-            'Login Berhasil',
+            'info',
+            'Login Tidak Berhasil',
             response.data.message,
           );
           this.onFailedUpload();
@@ -83,7 +83,7 @@ class Welcome extends Component {
       .catch(error => {
         // console.log(error.message);
         this.dropDownAlertRef.alertWithType(
-          'warn',
+          'error',
           'Mohon diperiksa kembali',
           error.message,
         );
@@ -101,7 +101,7 @@ class Welcome extends Component {
   onFailedUpload() {
     this.setState({loading: false, isModalFailed: false});
     setTimeout(() => {
-      this.props.navigation.navigate('StackPublic');
+      // this.props.navigation.navigate('StackPublic');
     }, 5000);
   }
 

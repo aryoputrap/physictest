@@ -22,7 +22,7 @@ export default class Home extends Component {
           <View style={styles.user}>
             <Icon name="user-circle-o" size={45} color="white" />
             <View style={styles.viewUser}>
-              <Text style={styles.userGreeting}>Aryo Putra Purwanto</Text>
+              <Text style={styles.userGreeting}>Nurdini</Text>
               <Text style={styles.schoolofUser}>SMAN 1 Cianjur</Text>
             </View>
           </View>

@@ -10,6 +10,16 @@ export default StyleSheet.create({
   tentang: {
     padding: 10,
     paddingHorizontal: 30,
+    justifyContent: 'center',
+    alignSelf: 'center',
+  },
+  tentangb: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  kikd: {
+    fontSize: 15,
+    fontWeight: 'bold',
   },
   main: {
     flexDirection: 'row',
@@ -60,11 +70,17 @@ export default StyleSheet.create({
     top: 5,
     marginBottom: height * 0.4,
   },
+  scbody: {
+    width: width * 0.8,
+    marginRight: width * 0.1,
+    marginLeft: width * 0.1,
+    height: height * 0.8,
+  },
   bodyki: {
     flexDirection: 'row',
-    // padding: 5,
-    paddingLeft: 20,
-    width: width * 0.57,
+    padding: 5,
+    paddingRight: 5,
+    width: width * 0.73,
   },
   headerTitleStyle: {
     fontFamily: 'Montserrat-Bold',
@@ -175,7 +191,7 @@ export default StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginLeft: 10,
-    textAlign: 'center',
+    // textAlign: 'center',
     color: 'white',
   },
   schoolofUser: {
